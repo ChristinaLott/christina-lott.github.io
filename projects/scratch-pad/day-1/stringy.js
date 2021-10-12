@@ -132,10 +132,7 @@ function concat(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
         //combine two strings into one
             //use the + sign also known as an operator t o concatenate
-    /*
-    *
-    * NOT DONE YET */
-
+    return stringOne + stringTwo;
 
     // YOUR CODE ABOVE HERE //
 }
@@ -155,6 +152,7 @@ function join(stringOne, stringTwo) {
     var args = Array.from(arguments);
         //concatenate all given strings 
             //combined string should have no spaces
+                //use a loop to iterate through the strings/array?
         /*
         *
         * NOT DONE YET */
@@ -176,6 +174,13 @@ function longest(stringOne, stringTwo) {
         //input two strings, output the longest of the two strings
             //compare string length? 
                 //return the longest given string
+   // if (stringOne.length > stringTwo.length) ? stringOne:stringTwo
+    //if (stringOne.length > stringTwo.length){
+       // return stringOne; {
+         //   else if return stringTwo
+        //}
+   // }
+      // return longest;
         /*
         *
         * NOT DONE YET */
