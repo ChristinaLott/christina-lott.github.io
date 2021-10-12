@@ -26,8 +26,8 @@ function reverseString(input) {
             //return each of the letters in reverse
               //use a regular for loop AND use .length-1
                 //start at last index, instead of 0
-                  //end at 
-    
+                  //end at 0
+    for (){} //is this the right starting synatax?
     
     
     // YOUR CODE GOES ABOVE HERE //

@@ -62,6 +62,9 @@ function toDashCase(string) {
             //make string/value have dashes between words
     string = string.toLowerCase();        
     return string.join(""); //this is missing the dash
+        /*NOT DONE YET
+        *
+        */
 
 
     // YOUR CODE ABOVE HERE //
@@ -81,8 +84,15 @@ function toDashCase(string) {
  */
 function beginsWith(string, char) {
     // YOUR CODE BELOW HERE //
-
-    
+        //input is a string and a single character
+            //need to return a boolean of true if string starts with the character
+                //else if return false if string does not start with character
+                    //if, else if statement
+                        //use indexing? so like if the index 0 of the string = the single character
+                            //it's an array, need to get to the specfic parts of it 
+            /*
+            *
+            * NOT DONE YET */
 
     // YOUR CODE ABOVE HERE //
 }
@@ -101,7 +111,13 @@ function beginsWith(string, char) {
  */
 function endsWith(string, char) {
     // YOUR CODE BELOW HERE //
-
+        //same as above except accessing the last index
+            //need to test with boolean if statement is true or false
+                //return true if string starts with single character
+                    //return false if string does not start with single character
+        /*
+        *
+        * NOT DONE YET */
 
 
     // YOUR CODE ABOVE HERE //
@@ -114,7 +130,11 @@ function endsWith(string, char) {
  */
 function concat(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
+        //combine two strings into one
+            //use the + sign also known as an operator t o concatenate
+    /*
+    *
+    * NOT DONE YET */
 
 
     // YOUR CODE ABOVE HERE //
@@ -133,7 +153,11 @@ function concat(stringOne, stringTwo) {
 function join(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
     var args = Array.from(arguments);
-
+        //concatenate all given strings 
+            //combined string should have no spaces
+        /*
+        *
+        * NOT DONE YET */
 
     // YOUR CODE ABOVE HERE //
 }
@@ -149,7 +173,12 @@ function join(stringOne, stringTwo) {
  */
 function longest(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
+        //input two strings, output the longest of the two strings
+            //compare string length? 
+                //return the longest given string
+        /*
+        *
+        * NOT DONE YET */
 
 
     // YOUR CODE ABOVE HERE //
@@ -164,7 +193,15 @@ function longest(stringOne, stringTwo) {
  */
 function sortAscending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
+        //input two strings, return a number value of either 1, 0, -1
+            //if first string higher alphabetically return 1
+                //if second string is higher return -1
+                    //if both strings are equal return 0
+                        //comparing the first index of 0 between two strings
+                            //need to figure out how compare order of alphabets
+            /*
+            *
+            *NOT DONE  YET */
 
 
     // YOUR CODE ABOVE HERE //
@@ -180,8 +217,15 @@ function sortAscending(stringOne, stringTwo) {
  */
 function sortDescending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
-
+        //doing the same as above, but in reverse
+            //input given two strings
+                //output number value based upon comparison of the strings
+                    //if first string is lower in alpha order return 1
+                        //if the second is lower in alphabetical order than return -1
+                            //return 0 if they two strings are equal 
+        /*
+        *
+        * NOT DONE YET */
 
 
     // YOUR CODE ABOVE HERE //
