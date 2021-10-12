@@ -16,9 +16,9 @@ function length(string) {
     // YOUR CODE BELOW HERE //
     return string.length
 
-
     // YOUR CODE ABOVE HERE //
 }
+
 
 /**
  * Given an input String, return a new String forced to lowercase.
@@ -27,9 +27,9 @@ function toLowerCase(string) {
     // YOUR CODE BELOW HERE //
     return string.toLowerCase();
 
-
     // YOUR CODE ABOVE HERE //
 }
+
 
 /**
  * Given an input String, return a new String forced to uppercase.
@@ -37,11 +37,10 @@ function toLowerCase(string) {
 function toUpperCase(string) {
     // YOUR CODE BELOW HERE //
     return string.toUpperCase();
-    
-
 
     // YOUR CODE ABOVE HERE //
 }
+
 
 /**
  * Given an input String, return a new String forced to dash-case.
@@ -60,12 +59,14 @@ function toDashCase(string) {
     // YOUR CODE BELOW HERE //
         //make string/value lowercase
             //make string/value have dashes between words
-    string = string.toLowerCase();        
-    return string.join(""); //this is missing the dash
-        /*NOT DONE YET
-        *
-        */
-
+    string = string.toLowerCase();  //test is looking for this, even though not explicit     
+    string = string.split(" ").join("-");
+    return string;
+    /*string = string.split(" "); 
+    *string = string.join("-"); this works too, though basic */
+        // return(string.replace(/\s+/g, "-")); this works, but I don't get why just putting " " instead of the pattern for space doesn't
+            //regular expression / and / marks begining and end of pattern, \s+ matches one space charcter, g to search all occurances of pattern in string
+                //return string(string.replace(" ", "-")); DOES NOT WORK like the above does
 
     // YOUR CODE ABOVE HERE //
 }
