@@ -91,12 +91,38 @@ function beginsWith(string, char) {
                     //if, else if statement
                         //use indexing? so like if the index 0 of the string = the single character
                             //it's an array, need to get to the specfic parts of it 
-            /*
+                            //var whatLetter = string + " " + char;
+                            // whatLetter = whatLetter.split(" ");
+   //string = string.toLowerCase();
+   //char = char.toLowerCase();
+    return string[0].toLowerCase() === char.toLowerCase();
+
+//indexing is always bracket notation!
+      // return true;
+       //} else {
+       //    return false;
+      // }
+   //if (whatLetter[0][0] = char){
+  //     return "true";    
+   //} else {
+  //     return "false";
+  // }
+    //var arr1 = string;
+    // var arr2 = char;
+    //if "string".includes(char[0]){
+    //if (arr1[0] = arr2){
+    //    return true;
+    //  } else {
+    //    return false;
+    //}
+        
+             /*
             *
             * NOT DONE YET */
 
     // YOUR CODE ABOVE HERE //
 }
+
 
 /**
  * Given an input String and a single character, return true if the String
@@ -124,6 +150,7 @@ function endsWith(string, char) {
     // YOUR CODE ABOVE HERE //
 }
 
+
 /**
  * Given two input Strings, return the Strings concatenated into one.
  *
@@ -137,6 +164,7 @@ function concat(stringOne, stringTwo) {
 
     // YOUR CODE ABOVE HERE //
 }
+
 
 /**
  * Given any number of Strings, return all of them joined together.
@@ -154,6 +182,10 @@ function join(stringOne, stringTwo) {
         //concatenate all given strings 
             //combined string should have no spaces
                 //use a loop to iterate through the strings/array?
+        for (var i = 0; i < args.length; i++){
+            return i;
+        }
+        
         /*
         *
         * NOT DONE YET */
