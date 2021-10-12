@@ -21,7 +21,12 @@
 
 function reverseString(input) {
     // YOUR CODE GOES BELOW HERE //
-    
+        //get string letters in reverse
+          //use a loop to iterate through each character
+            //return each of the letters in reverse
+              //use a regular for loop AND use .length-1
+                //start at last index, instead of 0
+                  //end at 
     
     
     

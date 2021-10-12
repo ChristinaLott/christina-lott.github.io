@@ -58,7 +58,10 @@ function toUpperCase(string) {
  */
 function toDashCase(string) {
     // YOUR CODE BELOW HERE //
-
+        //make string/value lowercase
+            //make string/value have dashes between words
+    string = string.toLowerCase();        
+    return string.join(""); //this is missing the dash
 
 
     // YOUR CODE ABOVE HERE //
