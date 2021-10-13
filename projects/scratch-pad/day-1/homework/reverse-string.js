@@ -28,13 +28,14 @@ function reverseString(input) {
                 //start at last index, instead of 0
                   //end at 0
                   //create an empty string to COLLECT i as it iterates
+
     var newString = "";
-     for (var i = input.length - 1; i = 0; i--){
+     for (var i = input.length - 1; i >= 0; i--){
        newString += input[i];
-      return newString;
     }  
-    
-    //not sure why this doesn't passt he test now...
+      return newString;
+      
+    //not sure why this doesn't past the test now...
     
     // YOUR CODE GOES ABOVE HERE //
 }
