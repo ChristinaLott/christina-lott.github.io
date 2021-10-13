@@ -178,20 +178,19 @@ function join(stringOne, stringTwo) {
 function longest(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
         //input two strings, output the longest string
-        //compare string length? 
+        //compare string length
+        //use conditional statement to give longest string after compare
+        //assign comparison to a new var
+        //return new var
 
    var longestStr = (stringOne.length > stringTwo.length) ?  stringOne: stringTwo;
     return longestStr;
 
         //don't need if when using ternary 
-        
-        /*
-        *
-        * NOT DONE YET */
-
 
     // YOUR CODE ABOVE HERE //
 }
+
 
 /**
  * Given two Strings, return 1 if the first is higher in alphabetical order than
@@ -208,9 +207,19 @@ function sortAscending(stringOne, stringTwo) {
                     //if both strings are equal return 0
                         //comparing the first index of 0 between two strings
                             //need to figure out how compare order of alphabets
+           
+
+        if (stringOne[0] > stringTwo[0]){
+               return 1;
+           } else if (stringOne < stringTwo){
+               return 0;
+           } else {
+               return -1;
+           } 
+
             /*
             *
-            *NOT DONE  YET */
+            *NOT PASSING THE TEST but was mentioned that ascending and descending tests not quite working??*/
 
 
     // YOUR CODE ABOVE HERE //
@@ -226,12 +235,21 @@ function sortAscending(stringOne, stringTwo) {
  */
 function sortDescending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-        //doing the same as above, but in reverse
-            //input given two strings
-                //output number value based upon comparison of the strings
-                    //if first string is lower in alpha order return 1
-                        //if the second is lower in alphabetical order than return -1
-                            //return 0 if they two strings are equal 
+    //doing the same as above, but in reverse
+    //input given two strings
+    //output number value based upon comparison of the strings
+    //if first string is lower in alpha order return 1
+    //if the second is lower in alphabetical order than return -1
+    //return 0 if they two strings are equal 
+    
+             if (stringOne[0] < stringTwo[0]){
+               return -1;
+           } else if (stringOne < stringTwo){
+               return 0;
+           } else {
+               return 1;
+           } 
+        
         /*
         *
         * NOT DONE YET */
