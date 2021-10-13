@@ -157,16 +157,11 @@ function concat(stringOne, stringTwo) {
 function join(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
     var args = Array.from(arguments);
-        //concatenate all given strings 
-            //combined string should have no spaces
-                //use a loop to iterate through the strings/array?
-        for (var i = 0; i < args.length; i++){
-            return i;
-        }
-        
-        /*
-        *
-        * NOT DONE YET */
+        //concatenate all given strings with NO spaces
+        //use .join method on the given array that is collecting the strings
+                
+       return args.join("");
+
 
     // YOUR CODE ABOVE HERE //
 }
