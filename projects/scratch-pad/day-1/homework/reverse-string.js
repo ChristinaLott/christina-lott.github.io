@@ -27,7 +27,11 @@ function reverseString(input) {
               //use a regular for loop AND use .length-1
                 //start at last index, instead of 0
                   //end at 0
-    for (var i = ){} //is this the right starting synatax?
+    var newString = ""; //create an empty string to COLLECT i as it iterates
+     for (var i = input.length - 1; i >= 0; i--){
+       newString += input[i];
+      return newString;
+    }  //not sure why this doesn't passt he test now...
     
     
     // YOUR CODE GOES ABOVE HERE //

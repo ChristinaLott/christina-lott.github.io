@@ -177,16 +177,14 @@ function join(stringOne, stringTwo) {
  */
 function longest(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-        //input two strings, output the longest of the two strings
-            //compare string length? 
-                //return the longest given string
-   // if (stringOne.length > stringTwo.length) ? stringOne:stringTwo
-    //if (stringOne.length > stringTwo.length){
-       // return stringOne; {
-         //   else if return stringTwo
-        //}
-   // }
-      // return longest;
+        //input two strings, output the longest string
+        //compare string length? 
+
+   var longestStr = (stringOne.length > stringTwo.length) ?  stringOne: stringTwo;
+    return longestStr;
+
+        //don't need if when using ternary 
+        
         /*
         *
         * NOT DONE YET */
