@@ -86,39 +86,15 @@ function toDashCase(string) {
 function beginsWith(string, char) {
     // YOUR CODE BELOW HERE //
         //input is a string and a single character
-            //need to return a boolean of true if string starts with the character
-                //else if return false if string does not start with character
-                    //if, else if statement
-                        //use indexing? so like if the index 0 of the string = the single character
-                            //it's an array, need to get to the specfic parts of it 
-                            //var whatLetter = string + " " + char;
-                            // whatLetter = whatLetter.split(" ");
-   //string = string.toLowerCase();
-   //char = char.toLowerCase();
+        //need to return a boolean of true if string starts with the character
+        //use indexing? so like if the index 0 of the string = the single character
+        //it's a string, need to get to the specfic parts of it with indexing
+   
+        /*string = string.toLowerCase(); 
+        *char = char.toLowerCase(); this works too, but is breaking up the below step by step */
     return string[0].toLowerCase() === char.toLowerCase();
 
-//indexing is always bracket notation!
-      // return true;
-       //} else {
-       //    return false;
-      // }
-   //if (whatLetter[0][0] = char){
-  //     return "true";    
-   //} else {
-  //     return "false";
-  // }
-    //var arr1 = string;
-    // var arr2 = char;
-    //if "string".includes(char[0]){
-    //if (arr1[0] = arr2){
-    //    return true;
-    //  } else {
-    //    return false;
-    //}
-        
-             /*
-            *
-            * NOT DONE YET */
+//indexing is always bracket notation! Can't use dot notation
 
     // YOUR CODE ABOVE HERE //
 }
@@ -139,12 +115,14 @@ function beginsWith(string, char) {
 function endsWith(string, char) {
     // YOUR CODE BELOW HERE //
         //same as above except accessing the last index
-            //need to test with boolean if statement is true or false
-                //return true if string starts with single character
-                    //return false if string does not start with single character
-        /*
-        *
-        * NOT DONE YET */
+        //need to COMPARE char against last index to see if they're the same
+        //need to also change the case of both given parameters
+        /*string = string.toUpperCase();
+        *char = char.toUpperCase(); this also works, just breaking up the steps below */
+        
+        return string[string.length - 1].toUpperCase() === char.toUpperCase();
+        
+        //can NOT use .length - 1 with just dot notation, need to use bracket notation
 
 
     // YOUR CODE ABOVE HERE //

@@ -27,7 +27,7 @@ function reverseString(input) {
               //use a regular for loop AND use .length-1
                 //start at last index, instead of 0
                   //end at 0
-    for (){} //is this the right starting synatax?
+    for (var i = ){} //is this the right starting synatax?
     
     
     // YOUR CODE GOES ABOVE HERE //
