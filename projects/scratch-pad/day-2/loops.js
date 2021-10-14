@@ -68,6 +68,10 @@ function getObjectKeys(object) {
  */
 function printObjectKeys(object) {
   // YOUR CODE BELOW HERE //
+    //input is an object
+    //loop over the object
+    //print its keys
+
   for (var key in object){
     console.log(key);
   }
@@ -81,15 +85,13 @@ function printObjectKeys(object) {
  */
 function getObjectValues(object) {
   // YOUR CODE BELOW HERE //
-  for (var key in object){
-    console.log(key);
-    console.log(object[key]);
-  }
-  
-    /*
-  *
-  * NOT DONE YET ...guessing...doesn't work*/
-  
+    //input is an object
+    //want to return an array of the values
+
+    return Object.values(object);
+
+    //this method grabs the values and puts them into an array
+
   // YOUR CODE ABOVE HERE //
 }
 
@@ -100,9 +102,11 @@ function getObjectValues(object) {
  */
 function printObjectValues(object) {
   // YOUR CODE BELOW HERE //
+      //given input of an object
+      //loop over the object, use for-in loop
+      //to PRINT its VALUES to console.log
 
   for (var key in object){
-    console.log(key);
     console.log(object[key]);
   }
   
