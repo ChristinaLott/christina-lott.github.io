@@ -53,14 +53,10 @@ function printArrayValuesInReverse(array) {
  */
 function getObjectKeys(object) {
   // YOUR CODE BELOW HERE //
-  var array = [];
-  for (var key in object){
-    console.log(key);
-  }
-  
-    /*
-  *
-  * NOT DONE YET/ not passing any tests*/
+    return Object.keys(object);
+    
+    //so Object.keys is a method. Remember to make keys plural
+    //to use Object.keys use the method name and then put in para the name of the object working with/the parameter if in a function
   
   // YOUR CODE ABOVE HERE //
 }
