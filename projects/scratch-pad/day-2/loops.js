@@ -109,10 +109,9 @@ function printObjectValues(object) {
   for (var key in object){
     console.log(object[key]);
   }
-  
-    /*
-  *
-  * NOT DONE YET */
+      //still struggling a bit with this...
+      //I think we're telling it to go through each key/pair AND print it
+      //need the argument/object for looking into, then need to tell it key with bracket notation
   
   // YOUR CODE ABOVE HERE //
 }
@@ -123,14 +122,12 @@ function printObjectValues(object) {
  */
 function getObjectLength(object) {
   // YOUR CODE BELOW HERE //
-   for (var key in object){
-    console.log(key);
-    console.log(object[key].length);
-  }
+      //given input object
+      //return the # of key/value pairs in that given object
+
+    return Object.keys(object).length;
   
-    /*
-  *
-  * NOT DONE YET */
+      //use the method Object.keys, specify the given object, add .length
   
   // YOUR CODE ABOVE HERE //
 }
