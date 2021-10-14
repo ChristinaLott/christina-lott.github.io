@@ -139,6 +139,7 @@ function getObjectLength(object) {
  */
 function printObjectValuesInReverse(object) {
   // YOUR CODE BELOW HERE //
+    //given input object
     //loop through an object with for-in loop
     //loop in REVERSE by using .length - 1? Need to add onto an array instead of actual object?
     //print values using console.log()
@@ -147,6 +148,9 @@ function printObjectValuesInReverse(object) {
       console.log(key);
       
     }
+
+    //right...objects are UNordered lists...hrm
+    
   /*
   *
   * NOT DONE YET */
