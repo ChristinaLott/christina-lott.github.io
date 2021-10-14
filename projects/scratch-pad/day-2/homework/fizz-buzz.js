@@ -14,11 +14,11 @@ function fizzBuzz() {
     // YOUR CODE GOES BELOW HERE //
         //use a for loop because need to increment up to 100
         //identify multiples of three
-        //change multiples of three to string of "Fizz"
+        //condition - change multiples of three to string of "Fizz"
         //identify multiples of five
-        //change multiples of five to string of "Buzz"
+        //condition - change multiples of five to string of "Buzz"
         //identify multiples of both three and five
-        //change multiples of both three and five to print string of "FizzBuzz"
+        //condition - change multiples of both three and five to print string of "FizzBuzz"
         
     for(var i = 1; i <= 100; i++){
         console.log(input[i]);

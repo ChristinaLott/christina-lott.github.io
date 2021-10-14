@@ -12,16 +12,17 @@
  */
 function printArrayValues(array) {
   // YOUR CODE BELOW HERE //
-  
- // var arrayValues = "";
-  for (var i = 0; i < array.length - 1; i++){
+    //input is an array
+    //look forward -> through that array
+    //print its values to console.log()
+
+
+  for (var i = 0; i <= array.length - 1; i++){
     console.log(array[i]);
   }
-    /*
-    *
-    * NOT DONE only passing one of two tests */
 
     //refresher needed on why it's bracket notation instead of ()
+    //REMEMBER to do <= otherwise if just do < it'll stop BEFORE the last element in the array
 
   // YOUR CODE ABOVE HERE //
 }
@@ -33,13 +34,15 @@ function printArrayValues(array) {
  */
 function printArrayValuesInReverse(array) {
   // YOUR CODE BELOW HERE //
+    //input is an array
+    //loop backwards/reverse over array
+    //print values to console.log()
   
-  for (var i = array.length - 1; i >= 0; i--){}
+  for (var i = array.length - 1; i >= 0; i--){
   console.log(array[i]);
+  }
 
-    /*
-  *
-  * NOT DONE YET/passing no tests */
+  
   
   // YOUR CODE ABOVE HERE //
 }
@@ -50,6 +53,7 @@ function printArrayValuesInReverse(array) {
  */
 function getObjectKeys(object) {
   // YOUR CODE BELOW HERE //
+  var array = [];
   for (var key in object){
     console.log(key);
   }

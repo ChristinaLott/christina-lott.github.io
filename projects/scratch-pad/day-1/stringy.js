@@ -253,8 +253,8 @@ function sortDescending(stringOne, stringTwo) {
         /*
         *
         * NOT DONE YET */
-//...test to see if  I can push updates
-var = testingYup
+
+
 
     // YOUR CODE ABOVE HERE //
 }
