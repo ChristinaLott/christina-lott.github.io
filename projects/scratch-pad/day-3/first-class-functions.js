@@ -120,9 +120,12 @@ function modifyStrings(strings, modify) {
         //RETURN [the array of the strings], but modified
             //what kind of modification do we need to do? check the tests?
         //looping over the array of strings; need to collect their looped values in something
-    /**
-     * NOT DONE YET
-     */
+    
+    var outputArr = [];
+        for (var i = 0; i <= strings.length - 1; i++){
+            outputArr.push(modify(strings[i]));
+        }
+        return outputArr;
     
     
     // YOUR CODE ABOVE HERE //

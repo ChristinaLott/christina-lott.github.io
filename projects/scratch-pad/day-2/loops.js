@@ -154,12 +154,6 @@ function printObjectValuesInReverse(object) {
                               //then iterate through that array in reverse
                                   //console.log those reverse values at each iteration
 
-    //right...objects are UNordered lists...hrm
-    
-  /*
-  *
-  * NOT DONE YET */
-  
   
   // YOUR CODE ABOVE HERE //
 }
