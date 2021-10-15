@@ -14,8 +14,16 @@
 function createGreaterThanFilter(base) {
     // YOUR CODE BELOW HERE //
     
-    
-    
+        //testing against a base (input) that can either be a string or number
+        //RETURN a FUNCTION
+        //the function needs to test if a GIVEN VALUE is greater than the base
+        //this test should work with both a string and a number
+            //(value) > base
+    function testGreaterThan(value){
+        var test = value > base
+        return test;
+    }
+    return testGreaterThan;
     
     // YOUR CODE ABOVE HERE //
 }
