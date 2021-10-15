@@ -143,11 +143,16 @@ function printObjectValuesInReverse(object) {
     //loop through an object with for-in loop
     //loop in REVERSE by using .length - 1? Need to add onto an array instead of actual object?
     //print values using console.log()
-
-    for (var key in object){
-      console.log(key);
-      
-    }
+    
+    var outputArray = Object.values(object);
+    for(var i = outputArray.length - 1; i >= 0; i--)
+    console.log(outputArray[i]);
+    
+    //kind of a trick question because objects are UNORDERED lists
+    //so had to change the object to an array using the Object.values(nameOfThing)
+   // Object.values(object) //will take in the object and return an array of the values
+                              //then iterate through that array in reverse
+                                  //console.log those reverse values at each iteration
 
     //right...objects are UNordered lists...hrm
     

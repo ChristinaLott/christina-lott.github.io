@@ -116,12 +116,18 @@ function createEndsWithFilter(endsWith) {
  */
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
-    
-    
+        //input [array of strings] && a function to modify a string
+        //RETURN [the array of the strings], but modified
+            //what kind of modification do we need to do? check the tests?
+        //looping over the array of strings; need to collect their looped values in something
+    /**
+     * NOT DONE YET
+     */
     
     
     // YOUR CODE ABOVE HERE //
 }
+
 
 /** 
  * Given an Array of Strings and a Function designed to test the String in some 
@@ -135,7 +141,9 @@ function modifyStrings(strings, modify) {
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
     
-    
+    /**
+     * NOT DONE YET
+     */
     
     
     // YOUR CODE ABOVE HERE //
