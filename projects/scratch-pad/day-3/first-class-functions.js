@@ -82,8 +82,25 @@ function createStartsWithFilter(startsWith) {
  */
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
+        //need to compare endsWith to string.length - 1
+        //return a function
+    function testEndsWith (string){
+        var newStr = string.toLowerCase();
+        var endsWithLowerCase = endsWith.toLowerCase();
+        if (newStr[newStr.length - 1] === endsWithLowerCase){
+            return true;
+        } else {
+            return false;
+        } 
+    }
+    return testEndsWith;
     
-    
+    /* Okaaay...so I tried at first to use dot notation to use .length - 1. That doesn't do a thing
+    *Instead I had to use bracket notation
+    *the bracket notation for .length - 1 is whateverDaHeck[whateverDaHeck.length - 1]
+    *so I think how this works is that you tell it the thing to look at, 
+    *then remind it about the thing looking at and plop .length - 1 on it...
+    * so it knows to return a value */
     
     
     // YOUR CODE ABOVE HERE //
