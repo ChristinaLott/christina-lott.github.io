@@ -56,12 +56,24 @@ function createLessThanFilter(base) {
  */
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
+        //RETURN a FUNCTION
+        //Function tests if given string starts with the startsWith single character
+            // givenStr[0] === startsWith 
+    function testStartsWith(string){
+        if(string[0].toLowerCase() === startsWith.toLowerCase()){
+            return true;
+        } else {
+            return false;
+        }
+    }
+    return testStartsWith;
+
+        //remember  to include () for the code block for .toLowerCase
+        //probably better practice would be to make new vars to assign the .toLowerCase updates to and then work with the new vars 
     
     // YOUR CODE ABOVE HERE //
 }
+
 
 /** 
  * Given a endsWith character, which will be a single character, return a 
@@ -76,6 +88,7 @@ function createEndsWithFilter(endsWith) {
     
     // YOUR CODE ABOVE HERE //
 }
+
 
 /** 
  * Given an Array of Strings and a Function designed to modify a String, 
