@@ -20,13 +20,14 @@ function createGreaterThanFilter(base) {
         //this test should work with both a string and a number
             //(value) > base
     function testGreaterThan(value){
-        var test = value > base
-        return test;
+        var greaterTest = value > base
+        return greaterTest;
     }
     return testGreaterThan;
     
     // YOUR CODE ABOVE HERE //
 }
+
 
 /** 
  * Given an input base to test against, which could be a String or Number, 
@@ -35,12 +36,18 @@ function createGreaterThanFilter(base) {
  */
 function createLessThanFilter(base) {
     // YOUR CODE BELOW HERE //
+        //return a function
+        //function needs to test against input base if given value is < base
     
-    
-    
+    function testLessThan(value){
+        var lessTest = value < base;
+        return lessTest
+    }
+    return testLessThan;
     
     // YOUR CODE ABOVE HERE //
 }
+
 
 /** 
  * Given a startsWith character, which will be a single character, return a 
