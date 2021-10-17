@@ -16,7 +16,7 @@ function isArray(value) {
     // YOUR CODE BELOW HERE //
         //need to return true if a value is an array
             //tricky because array's are classified as an object
-        //use method Array.isArray(varNameHere) to identify if an array
+        //use method Array.isArray(varNameHere) to identify if an array, returns a boolean
     
        return (Array.isArray(value));
     
@@ -35,9 +35,19 @@ function isArray(value) {
  */
 function isObject(value) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
+        //need to discern if value is a collection/collects key value pairs {}
+        //need to get a boolean response of either true or false
+        //so we're checking that different conditions are NOT true
+            //if the typeof is an object
+                //AND NOT equal to null
+                //AND NOT equal to an array
+                //AND NOT equal to a date
+
+        if (typeof value === "object" && value !== null && Array.isArray(value) !== true && !(value instanceof Date)){
+            return true;
+        } else {
+            return false;
+        }
     
     // YOUR CODE ABOVE HERE //
 }
