@@ -60,9 +60,19 @@ function isObject(value) {
  */
 function isCollection(value) {
     // YOUR CODE BELOW HERE //
+        //want to know if input value is an array OR and object with boolean response
+        //return a boolean of either true or false
+    if (typeof value === "object" && value !== null && !(value instanceof date) && Array.isArray(value) !== true){
+        return true;
+    } else if (Array.isArray(value) === true){
+        return true;
+    } else {
+        return false;
+    }
     
-    
-    
+    /**
+     * NOT DONE YET...I'm not sure why this does't work...maybe I need to break it out?
+     */
     
     // YOUR CODE ABOVE HERE //
 }
@@ -89,7 +99,17 @@ function isCollection(value) {
 function typeOf(value) {
     // YOUR CODE BELOW HERE //
         //will need a conditional statement, need to section off objects - cause array, null, etc. are labeled as objects
-    
+    if (typeof value !== "object"){
+        return typeof value;
+    } else if (Array.isArray(value) === true){
+        return "array";
+    } else if (typeof value === "object" && Array.isArray(value) !== true && value !== null && !(value instanceof Date)){
+        return "object";
+    } else if (value === null){
+        return "null";
+    } else {
+        return "date";
+    }
     
     
     // YOUR CODE ABOVE HERE //
