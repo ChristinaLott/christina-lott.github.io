@@ -23,7 +23,27 @@
  */
 function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
+        //use given/created function called range
+        //range takes 2 integers/whole numbers as parameters
+        //range should return an Array containing all integers between the two parameters
+            //para1 -(para#, para#, para#) para2
+        //if first parameter/argument is greater than the second return it in reverse order
+        //need a container for the outputs from loop, will use loop, will use push() on array
+
+        //I think this may need a nested function? I need a conditional statement to guage whether
+        //or not start > end, if false then it needs to loop in reverse
+        //need to loop over both start > end and start < end, but need to discern which direction to loop
+        //it feels possibly cumbersome to build 2 additional functions to decide if it's greater than or not...and then I'm a bit stuck on how to return the give strings
+
+    var outputArr = []; //making the container for the output array
+    function range (start, end){
+        start > end;
+        return start, end;
+    }
+    if (start > end){
     
+    }
+
     
     
     

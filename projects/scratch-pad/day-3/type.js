@@ -14,7 +14,11 @@
  */
 function isArray(value) {
     // YOUR CODE BELOW HERE //
+        //need to return true if a value is an array
+            //tricky because array's are classified as an object
+        //use method Array.isArray(varNameHere) to identify if an array
     
+       return (Array.isArray(value));
     
     
     
@@ -74,7 +78,7 @@ function isCollection(value) {
  */ 
 function typeOf(value) {
     // YOUR CODE BELOW HERE //
-    
+        //will need a conditional statement, need to section off objects - cause array, null, etc. are labeled as objects
     
     
     
