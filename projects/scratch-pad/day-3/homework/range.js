@@ -35,15 +35,22 @@ function range(start, end) {
         //need to loop over both start > end and start < end, but need to discern which direction to loop
         //it feels possibly cumbersome to build 2 additional functions to decide if it's greater than or not...and then I'm a bit stuck on how to return the give strings
 
-    var outputArr = []; //making the container for the output array
-    function range (start, end){
-        start > end;
-        return start, end;
+    var outputArr = [];
+    if (start < end){
+    for (var i = start; i <= end; i++){
+       outputArr.push(i);
     }
-    if (start > end){
+}else if (start > end){
+    for (var i = start; i >= end; i--)
+    outputArr.push(i);
+}
+    return outputArr;
     
-    }
-
+   // var outputArray = []; - my note says used to count..can I return with this?
+   // while (start < end){
+   //     console.log (start);
+  //      start ++;
+  //  }
     
     
     

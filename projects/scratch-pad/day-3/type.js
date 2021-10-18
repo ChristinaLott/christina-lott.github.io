@@ -20,10 +20,9 @@ function isArray(value) {
     
        return (Array.isArray(value));
     
-    
-    
     // YOUR CODE ABOVE HERE //
 }
+
 
 /** 
  * Given an input value, return true if the value is an Object intended as a 
@@ -69,10 +68,6 @@ function isCollection(value) {
         return false;
     }
  
-    /**
-     * NOT DONE YET...I'm not sure why this does't work...maybe I need to break it out?
-     */
-    
     // YOUR CODE ABOVE HERE //
 }
 
