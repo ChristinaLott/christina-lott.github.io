@@ -46,7 +46,7 @@ noises[0] = "woof";
 noises.push("growl"); 
 noises.unshift("bark");
 noises[noises.length]="howl"; //.length - 1 = IS NOT IT because it REPLACES that LAST value with whatever
-console.log (noises[noises.length]);
+console.log (noises.length - 1); //this is actually pulling the VALUE not the number
 console.log(noises);
 
 
