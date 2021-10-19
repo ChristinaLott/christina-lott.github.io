@@ -38,14 +38,14 @@ console.log(animal);
  8. [X] `console.log` the length of `noises`
  9. [ X] `console.log` the last element in `noises` again without hard coding the index.
  10. [X ] `console.log` the whole array.
- 11. [ ] Does it look right?
+ 11. [X] Does it look right?
  */
 
 var noises = [];
 noises[0] = "woof";
 noises.push("growl"); 
 noises.unshift("bark");
-noises[noises.length]="howl"; 
+noises[noises.length]="howl"; //OKAY so, we thought #3 could work with .length - 1 = IT DID NOT
 console.log (noises[noises.length]);
 console.log(noises);
 
@@ -55,11 +55,17 @@ console.log(noises);
 //////////////////////////////////////////////////////////////////////
 
 /**1. [ ] Using **bracket syntax**, assign the `noises` property on `animal` to our new `noises` array.
-2. [ ] Using any syntax add another noise to the `noises` property on `animal`.
-3. [ ] `console.log` `animal`.
+2. [X] Using any syntax add another noise to the `noises` property on `animal`.
+3. [X] `console.log` `animal`.
 4. [ ] Does it look right?
 */
+    //need to use bracket notation
+    //then add another noises property to the animal object, using any syntax
+    //print animal
 
+  animal.noises.unshift(noises);
+  animal.noises.push("snore");
+  console.log(animal);
 
 
 
@@ -72,6 +78,8 @@ console.log(noises);
  *
  * *******************************************************************
  */
+  //You can use dot notation and bracket notation
+  //...this I'm trying to understand more of... :/
 
 /* *******************************************************************
  * Step 5 - Take a Break!
@@ -85,7 +93,43 @@ console.log(noises);
 //////////////////////////////////////////////////////////////////////
 // Step 6 - A Collection of Animals //////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+/**1. [X] Create a variable named `animals` and assign it to an empty array.
+ 2. [X?] `push` our `animal` that we created to `animals`. You should now see your first animal appear on your `index.html` page!
+ 3. [X?] `console.log` `animals`. What does it look like?
+ 4. [X] Create a variable called `duck` and assign it to the data:
+  - `{ species: 'duck', name: 'Jerome', noises: ['quack', 'honk', 'sneeze', 'woosh'] }`
+ 5. [X] `push` `duck` to `animals`
+ 6. [X] `console.log` `animals`. What does it look like?
+ 7. [X] Create two more animal objects each with a species, a name, and at least two sounds sounds and add each one of them to `animals.
+ 8. [ ] `console.log` `animals`, and, `console.log` the length of `animals`. Is everything looking right?
+*/
 
+var animals = [];
+animals.push(animal);
+console.log(animals); //probably not right...looks like a giant array somehow...that is an obj
+
+var duck = {
+  species: "duck", 
+  name: "Jerome", 
+  noises: ["quack", "honk", "sneeze", "woosh"]
+};
+animals.push(duck);
+console.log(animals);
+
+var cat = {
+  species: "cat",
+  name: "Luna",
+  noises: ["purr", "scold", "meow", "hiss"]
+}
+
+var sloth = {
+  species: "sloth",
+  name: "Perky",
+  noises: ["yawn", "hum", "grumble","mumble"]
+}
+
+animals.push(cat, sloth);
+console.log(animals);
 
 
 //////////////////////////////////////////////////////////////////////
