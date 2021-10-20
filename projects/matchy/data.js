@@ -152,10 +152,21 @@ console.log(animals[length]);
 
   var friends = []; //assigning array data structure to var friends
   function getRandom(animals){
-    return Math.floor(Math.random() * 4 + 1); //using Math.floor to set range for random number. * 4 because have 4 animals. + 1 to round it up to a whole number
+    return Math.floor(Math.random() * animals.length); //using animals.length to not hard code 4 like below
+    //return friends.push(Math.floor(Math.random() * 4 + 1)); //using Math.floor to set range for random number. * 4 because have 4 animals. + 1 to round it up to a whole number
   }
 
+//array   rando# func      key value     
+animals[getRandom(animals)]["name"]; //looking in the animal array, at index 0 -
+                      // which is the first object in the array, and then returning the value of the name key in that specfic animal
+                      //pull name value from animal object; push that value into friends
+                      //getRandom(animals) <- this is returning a NUMBER value/data type, because it's the INDEX
 
+
+  //friends = animals.push(getRandom["name"]); <- this ain't it
+  //friends[0] = animals[getRandom(animals)]["name"]; <- NOPE
+
+  
   //need to use a random index from getRandom to get a random animal to add its NAME to FRIENDS
   console.log(friends);
   //bracket notation to add friends list as a property named FRIENDS on one of the animals in the animals array
