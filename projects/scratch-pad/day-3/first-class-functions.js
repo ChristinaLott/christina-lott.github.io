@@ -147,16 +147,13 @@ function allStringsPass(strings, test) {
         //use function given to test string in some way
         //RETURN a boolean - true if ALL strings pass the test
        // var testResult = []; //does it actually even need a container?
-    for (i = 0; i < strings.length; i++){
+    for (var i = 0; i < strings.length; i++){
        // testResult.push(test(strings[i])); //passing looped values to the test?
         if(test(strings[i]) === false){
           return false;
         }
     }
         return true;
-    /**
-     * NOT DONE YET..followed exmaple but unclear why failing...
-     */
     
     
     // YOUR CODE ABOVE HERE //
