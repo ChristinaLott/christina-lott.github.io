@@ -61,8 +61,8 @@
       if(this.from_yay !== undefined){
         in_foo = this.from_yay;
       }
-      assert.equal(in_foo, "???");
-      assert.equal(this.from_yay, "???");
+      assert.equal(in_foo, "i'm in foo"); //looked to prove that in_foo's if statement could not happen because of it being out of scope
+      assert.equal(this.from_yay, undefined); //looked to prove from_yay is not a global value, therefore undefined because in a local/block scope
     }
     yay();
     foo();
@@ -75,11 +75,11 @@
     function yay(){
       var peanuts = "roasted";
 
-      assert.equal(peanuts, "???");
+      assert.equal(peanuts, "roasted"); //demonstrating that local/inner scope overrides outter scope
     }
     yay();
 
-    assert.equal(peanuts, "???");
+    assert.equal(peanuts, 300); //demonstrating that peanuts value still 300 when in outter scope
   });
 
   QUnit.test("Variables created with var in a funtion are re-created each time", function(assert){
@@ -92,11 +92,11 @@
     }
 
     yay();
-    assert.equal(this.counter, "???");
+    assert.equal(this.counter, undefined);
     yay();
-    assert.equal(this.counter, "???");
+    assert.equal(this.counter, undefined);
     yay();
-    assert.equal(this.counter, "???");
+    assert.equal(this.counter, undefined);
   });
 
   QUnit.test("Inner scope can access outer scope", function(assert){
