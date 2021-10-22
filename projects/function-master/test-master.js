@@ -106,7 +106,7 @@
       return im_outside + im_inside;
     }
 
-    assert.equal(yay(), "???");
+    assert.equal(yay(), "alphaomega");
   });
 
   QUnit.test("Functions retain outer scope references between calls.", function(assert){
@@ -116,9 +116,9 @@
     }
 
     yay();
-    assert.equal(im_outside, "???");
+    assert.equal(im_outside, 14); //the function reassigns im_outside's value to be itself and adds 1
     yay();
-    assert.equal(im_outside, "???");
+    assert.equal(im_outside, 15); //I guess the function recalls that im_outside now equals its value plus 1, and it was already called so now it's 14 plus 1
   });
 
   QUnit.test("We can do goofy stuff with outer scope", function(assert){
@@ -131,11 +131,11 @@
     }
 
     yay();
-    assert.equal(name, "???");
+    assert.equal(name, "greg"); //remember that name has no string values
     yay();
-    assert.equal(name, "???");
+    assert.equal(name, "greggreg");
     yay();
-    assert.equal(name, "???");
+    assert.equal(name, "greggreggreg");
   });
 
   QUnit.test("We can pass functions to other functions and then run them.", function(assert){
