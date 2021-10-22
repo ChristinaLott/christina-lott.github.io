@@ -62,11 +62,11 @@ function makeContactList() {
         addContact: function(contact){
             return contacts.push(contact);
         },
-        findContact: function(fullname){ //takes fullName
+        findContact: function(fullname){ //takes fullName...do I need to split this string up?
             if (fullName === nameFirst + " " + nameLast){ //should check if it is in the contactList
-                return //if true/is on the contact list then return the contactObject
+                return //should if true/is on the contact list then return the contactObject
             } else {
-                return undefined; //if false return undefined
+                return undefined; //should if false return undefined
             }
             return
         },
