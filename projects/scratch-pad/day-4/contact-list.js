@@ -35,15 +35,21 @@
 
 // YOUR CODE GOES BELOW HERE //
 function makeContact(id, nameFirst, nameLast) {
-
+    var obj = {};
+    obj.id = id;
+    obj.nameFirst = nameFirst;
+    obj.nameLast = nameLast;
+    return obj;
 } 
 
+//list/collection = the contacts array that is an array populated with objects, reference back to line 37 obj
+//the parts of it will be named after methods, and need to create functions that do the thing, lines 54 to 57 were provided and are the first part of it as referenced in the  instructions
 
 function makeContactList() {
     /*
      * You need something here to hold contacts. See length api for a hint:
      */
-    var contacts;
+    var contacts = [];
     
     return {
         // we implemented the length api for you //
