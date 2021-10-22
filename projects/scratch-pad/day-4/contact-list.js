@@ -34,6 +34,7 @@
  */
 
 // YOUR CODE GOES BELOW HERE //
+
 function makeContact(id, nameFirst, nameLast) {
     var obj = {};
     obj.id = id;
@@ -46,6 +47,8 @@ function makeContact(id, nameFirst, nameLast) {
 //the parts of it will be named after methods, and need to create functions that do the thing, lines 54 to 57 were provided and are the first part of it as referenced in the  instructions
 
 function makeContactList() {
+   
+
     /*
      * You need something here to hold contacts. See length api for a hint:
      */
@@ -55,8 +58,23 @@ function makeContactList() {
         // we implemented the length api for you //
         length: function() {
             return contacts.length;
+        },
+        addContact: function(contact){
+            return contacts.push(contact);
+        },
+        findContact: function(fullname){ //takes fullName
+            if (fullName === nameFirst + " " + nameLast){ //should check if it is in the contactList
+                return //if true/is on the contact list then return the contactObject
+            } else {
+                return undefined; //if false return undefined
+            }
+            return
+        },
+        removeContact: function(){
+            return
         }
     }
+
 }
 
 
