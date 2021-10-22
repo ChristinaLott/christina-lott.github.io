@@ -148,7 +148,7 @@
       whatever();
     }
     something(yay);
-    assert.equal(im_outter, "???");
+    assert.equal(im_outter, 40);// func yay reassigned im_outter to 2. then func something reassigned it to the result of 2 * 20, so 40. the whatever() was a decoy
 
   });
 
@@ -159,7 +159,7 @@
     function foo(whatever){
       return "hello, this" + whatever();
     }
-    assert.equal(foo(yay), "???");
+    assert.equal(foo(yay), "hello, this is dog"); //returning the func yay concatenated with foo's return values
   });
 
 })();
