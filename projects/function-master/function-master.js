@@ -3,7 +3,8 @@
 //////////////////////////////////////////////////////////////////////
 
 function objectValues(object) {
-
+    var outputArray = Object.values(object); // used Object.values(nameOfThing) to grab values in an obj and put them into an array
+    return outputArray;
 } 
 
 //////////////////////////////////////////////////////////////////////
@@ -11,8 +12,13 @@ function objectValues(object) {
 //////////////////////////////////////////////////////////////////////
 
 function keysToString(object) {
-
+    var outputString = Object.keys(object);
+        return outputString;
 }
+/**
+ * NOT DONE YET... need to make the keys in obj into a string AND have each seperated with a space
+ */
+
 
 //////////////////////////////////////////////////////////////////////
 // Function 3 - Values to String /////////////////////////////////////
@@ -22,13 +28,21 @@ function valuesToString(object) {
     
 }
 
+/**
+ * NOT DONE YET... need to make the values in obj into a string AND have each seperated with a space
+ */
+
 //////////////////////////////////////////////////////////////////////
 // Function 4 - Array or Object //////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function arrayOrObject(collection) {
-    
+
 }
+
+/**
+ * NOT DONE YET... function that takes 1 argument, need conditional chain to return either array or object. Will need to deduce what kind of thing it is with typeOf and Array.isArray
+ */
 
 //////////////////////////////////////////////////////////////////////
 // Function 5 - Capitalize Word //////////////////////////////////////
@@ -37,6 +51,10 @@ function arrayOrObject(collection) {
 function capitalizeWord(string) {
     
 }
+
+/**
+ * NOT DONE YET... captalize the first letter, reference index 0 and use toUpperCase
+ */
 
 //////////////////////////////////////////////////////////////////////
 // Function 6 - Capitalize All Words /////////////////////////////////
