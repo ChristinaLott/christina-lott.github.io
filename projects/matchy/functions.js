@@ -30,10 +30,17 @@
         //for loop? if else statement? return null if no animal with name exists
 
 function search(animalsArray, animalName){
-    for (){
-        if
+    for (var i = 0; i <= animalsArray.length; i++){
+        if (animalName === animalsArray[i]){
+        return animalName[i];
+    } else {
+        return null;
     }
 }
+
+/**
+ * NOT DONE YET...think I'm missing things
+ */
 
  
 
@@ -54,6 +61,9 @@ function search(animalsArray, animalName){
     //If animal exists with that name in animals array, replace entire object with replacement object
     //if not, do nada
 
+    function replace(animalsArray, animalName, objectAnimal){
+        
+    }
 
 
 

@@ -62,16 +62,25 @@ function makeContactList() {
         addContact: function(contact){
             return contacts.push(contact);
         },
-        findContact: function(fullname){ //takes fullName...do I need to split this string up?
-            if (fullName === nameFirst + " " + nameLast){ //should check if it is in the contactList
+        findContact: function(fullname){ //takes fullName, will instead concatenate the comparison
+          for(var i = 0; i <= contacts.length - 1; i++){
+            //console.log(contacts[i]);
+            // console.log(fullname,contacts[i].nameFirst + " " + contacts[i].nameLast);
+            if (fullname === contacts[i].nameFirst + " " + contacts[i].nameLast){
+                  return contacts[i];//needs to loop over 1st and last name and return the contact it matches with
+          } else {
+              return undefined;
+        } 
+    }
+    
+            /**if (fullname === this.nameFirst + " " + this.nameLast){ //should check if it is in the contactList
                 return //should if true/is on the contact list then return the contactObject
             } else {
                 return undefined; //should if false return undefined
             }
-            return
-        },
-        removeContact: function(){
-            return
+            return */
+        //removeContact: function(){
+         //   return
         }
     }
 
