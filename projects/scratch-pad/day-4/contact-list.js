@@ -71,16 +71,18 @@ function makeContactList() {
           } else {
               return undefined;
         } 
-    }
-    
-            /**if (fullname === this.nameFirst + " " + this.nameLast){ //should check if it is in the contactList
-                return //should if true/is on the contact list then return the contactObject
-            } else {
-                return undefined; //should if false return undefined
+    }  
+    },
+        //need to take contact obj argument, search contacts, and remove contact obj from contacts list
+        //I think it needs to loop through the contacts array
+        //then look for a match
+        //then .splice out the match...somehow
+        removeContact: function(contact){
+            for(var i = 0; i <= contacts.length - 1; i++){
+                if (contact === contacts[i]){
+                    return contacts.splice(i, 1);
+                }
             }
-            return */
-        //removeContact: function(){
-         //   return
         }
     }
 
