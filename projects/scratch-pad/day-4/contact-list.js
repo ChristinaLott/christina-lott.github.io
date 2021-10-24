@@ -76,16 +76,33 @@ function makeContactList() {
         //need to take contact obj argument, search contacts, and remove contact obj from contacts list
         //I think it needs to loop through the contacts array
         //then look for a match
-        //then .splice out the match...somehow
+        //then .splice out the match...somehow...did it on my own!!!
         removeContact: function(contact){
-            for(var i = 0; i <= contacts.length - 1; i++){
-                if (contact === contacts[i]){
-                    return contacts.splice(i, 1);
+            for(var i = 0; i <= contacts.length - 1; i++){ //using this to search through the array of contact objs
+                if (contact === contacts[i]){ //telling it to look for the matching contact object
+                    return contacts.splice(i, 1); //splicing out the iterated object when there is a match
                 }
             }
         }
-    }
+        //not sure why I'm having an issue adding more code here
+        //should return all contacts full names
+        //should print full names as a string
+        //should have a new line break
+        //last entry should not have new line break
+        
+        //loop through to grab each full name
+        //likely will need a container for each name, make new output var to hold
+        //use console.log to print
+        //add \n to each iterations, EXCEPT last iterations
 
+        printAllContactNames: function(){
+            var outputContactNames = "";
+            for(var i = 0; i < contacts.length - 1; i++){
+                outputContactNames.push(contacts[i].nameFirst + " " + contacts[i].nameLast);
+            }
+            return outputContactNames.join("\n");
+        }
+    }
 }
 
 
