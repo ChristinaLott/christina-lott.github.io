@@ -31,13 +31,14 @@ const { animal } = require("./data");
     //looks through animals array, returns animal's object if an animal with name exists
         //for loop? if else statement? return null if no animal with name exists
 
-function search(animalsArray, animalName){
-    for (var i = 0; i <= animalsArray.length; i++){
-        if (animalName === animalsArray[i]){
+function search(animals, animalName){
+    for (var i = 0; i <= animals.length; i++){
+        if (animalName === animals[i].name){
         return animalName[i];
     } else {
         return null;
     }
+}
 }
 
 /**
