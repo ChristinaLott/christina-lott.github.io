@@ -9,6 +9,8 @@
  * and read every instruction carefully.
  */
 
+const { animal } = require("./data");
+
 //////////////////////////////////////////////////////////////////////
 // Step 1 - Search ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
@@ -49,9 +51,11 @@ function search(animalsArray, animalName){
 //////////////////////////////////////////////////////////////////////
 
 /**
- *  1. Write a function declaration called `replace` with a signature of `replace(animals, name, replacement) { //... } ` that:
+ *  1. Write a function declaration called `replace` with a 
+ * signature of `replace(animals, name, replacement) { //... } ` that:
    - Takes 3 parameters, an Array of animals, a String representing  the name of an animal on which to perform a search, and an Object that represents the replacement animal.
-   - If an animal with that name exists within the `animals` Array, replace it's entire Object with the replacement Object.
+   - If an animal with that name exists within the `
+   animals` Array, replace it's entire Object with the replacement Object.
    - Otherwise do nothing.
  2. Preview the `index.html` page to test it on the website.
  */
@@ -60,11 +64,19 @@ function search(animalsArray, animalName){
     //needs to take/input of 3 para: array of animals, string of name of an animal to search, and object animal to replace with
     //If animal exists with that name in animals array, replace entire object with replacement object
     //if not, do nada
+      //func, loop to search for animal to replace animal object, then have an if statement if a match 
 
-    function replace(animalsArray, animalName, objectAnimal){
-        
+    function replace(animals, name, replace){
+        for(var i = 0; i <= animals.length; i++){
+          if (name === animals.name){ //I think my issue is likely with my condition
+            animals.splice(i, 1, replace);
+          }
+        }
     }
-
+    /**
+     * 
+     * NOT DONE YET
+     */
 
 
 //////////////////////////////////////////////////////////////////////
@@ -83,12 +95,56 @@ function search(animalsArray, animalName){
     //needs to take/input 2 paras: array of animals and name of animal to do search
     //if an animal with name exists in animals array remove it
 
+    function remove(animals, name){
+      for(var i = 0; i <= animals.length - 1; i++);
+      if(name === animals.name){ //maybe my issue is here?
+        animals.splice(i, 1);
+      }
+    }
+
+    /**
+     * 
+     * NOT DONE YET
+     */
 
 //////////////////////////////////////////////////////////////////////
 // Step 4 - Add ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+/**
+ *  1. Write a function declaration called `add` with a signature of `add(animals, animal) { //... }` that:
+   - Takes 2 parameter, an Array of animals, and an Object representing a new animal to be added.
+   - Checks that the animal Object has a `name` property with a length > 0.
+   - Checks that the animal Object has a `species` property with a length > 0.
+   - Has a **unique** name, meaning no other animals have that name.
+   - Adds this new Object to the `animals` Array, **only** if all the other conditions pass.
+   - Make sure it works.
+ */
 
+   //make a func named add
+   //signature of add(animals, animal)
+      //animals is an array of animals
+      //animal is a new animal obj to add
+   //checks that name property in animal obj length > 0
+   //checks that species property in animal obj length > 0
+   //checks that no other animals have same name !==
+   //adds new animal obj ONLY if all above conditions && are met
+
+   //func, if: name in animal obj > 0 && species in animal obj > 0 && name !== another animal name
+   //then ADD new given animal obj
+
+   function add(animals, animal){
+    for (var i = 0; i <= animals.length - 1; i++){
+       if (animal.name.length > 0 && animal.species.length > 0 && animal.name !== animals.name){ //I'm pretty sure I'm off with the unqiue name search
+        return animals.push[i];
+       }
+     } 
+
+    /**return {
+      nameCheck: function()
+    }*/
+    
+   }
 
 /**
  * You did it! You're all done with Matchy!

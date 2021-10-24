@@ -83,8 +83,7 @@ function makeContactList() {
                     return contacts.splice(i, 1); //splicing out the iterated object when there is a match
                 }
             }
-        }
-        //not sure why I'm having an issue adding more code here
+        },
         //should return all contacts full names
         //should print full names as a string
         //should have a new line break
@@ -96,11 +95,11 @@ function makeContactList() {
         //add \n to each iterations, EXCEPT last iterations
 
         printAllContactNames: function(){
-            var outputContactNames = "";
+            var outputPrintNames = "";
             for(var i = 0; i < contacts.length - 1; i++){
-                outputContactNames.push(contacts[i].nameFirst + " " + contacts[i].nameLast);
+                outputPrintNames.push(contacts[i].nameFirst + " " + contacts[i].nameLast);
             }
-            return outputContactNames.join("\n");
+            return outputPrintNames.join("\n");
         }
     }
 }
