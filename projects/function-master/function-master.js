@@ -12,13 +12,9 @@ function objectValues(object) {
 //////////////////////////////////////////////////////////////////////
 
 function keysToString(object) {
-    var outputString = Object.keys(object);
-        return outputString;
+    var outputKeyString = Object.keys(object);  //this is grabbing all of the KEYS in the obj
+        return outputKeyString.join(" ");      //this is joining all of the keys with a SPACE between them, need to do at return- at least for this exercise
 }
-/**
- * NOT DONE YET... need to make the keys in obj into a string AND have each seperated with a space
- */
-
 
 //////////////////////////////////////////////////////////////////////
 // Function 3 - Values to String /////////////////////////////////////
@@ -28,13 +24,14 @@ function keysToString(object) {
     //what kind of method converts? Do I need to change it into an array to then pluck out into a string?
         //take an obj return values as a string seperated by a space
 
-function valuesToString(object) {
-    
+function valuesToString(object){
+    var outputValuesString = Object.values(object);
+        return outputValuesString.join(" ");
 }
 
 
 /**
- * NOT DONE YET... need to make the values in obj into a string AND have each seperated with a space
+ * NOT DONE YET... not sure why this isn't passing, looks good in console.log
  */
 
 //////////////////////////////////////////////////////////////////////
@@ -45,11 +42,15 @@ function valuesToString(object) {
     //return argument as either an "array" or as an "object"
 
 function arrayOrObject(collection) {
-
+    if(typeof collection === "object" && collection === Array.isArray){
+        return "array";
+    } else if (typeof collection === "object" && collection !== null && !(value instanceof date)){
+        return "object";
+    }
 }
 
 /**
- * NOT DONE YET... function that takes 1 argument, need conditional chain to return either array or object. Will need to deduce what kind of thing it is with typeOf and Array.isArray
+ * NOT DONE YET... think I'm really close...not sure what's wrong. Previously passed 1 of 2 tests when just had an if else
  */
 
 //////////////////////////////////////////////////////////////////////
