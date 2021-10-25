@@ -24,9 +24,14 @@ function keysToString(object) {
 // Function 3 - Values to String /////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+    //think that value means keypair value found in an obj. Can use some kind of code to convert to a string
+    //what kind of method converts? Do I need to change it into an array to then pluck out into a string?
+        //take an obj return values as a string seperated by a space
+
 function valuesToString(object) {
     
 }
+
 
 /**
  * NOT DONE YET... need to make the values in obj into a string AND have each seperated with a space
@@ -35,6 +40,9 @@ function valuesToString(object) {
 //////////////////////////////////////////////////////////////////////
 // Function 4 - Array or Object //////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+
+//have seen this before. need to use conditional statement, typeof, isArray...reference past function to double check
+    //return argument as either an "array" or as an "object"
 
 function arrayOrObject(collection) {
 
@@ -48,6 +56,9 @@ function arrayOrObject(collection) {
 // Function 5 - Capitalize Word //////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+//one worded string, caps first letter
+//toUpperCase
+
 function capitalizeWord(string) {
     
 }
@@ -60,6 +71,9 @@ function capitalizeWord(string) {
 // Function 6 - Capitalize All Words /////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+    //same question as above. All first characters of all words? Or all letters in the words?
+    //"return a string with all words capitalized" ...will try first if all letters in all the words need to be caps or if just first letter
+
 function capitalizeAllWords(string) {
     
 }
@@ -67,6 +81,9 @@ function capitalizeAllWords(string) {
 //////////////////////////////////////////////////////////////////////
 // Function 7 - Welcome Message //////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+
+    //take obj and pluck out name property to return below statement
+    //concatnate to include "Welcome <name>!"
 
 function welcomeMessage(object) {
 
@@ -76,6 +93,9 @@ function welcomeMessage(object) {
 // Function 8 - Profile Info /////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+    //take obj with a name and species
+    //return "<Name> is a <Species>"
+
 function profileInfo(object) {
 
 }
@@ -83,6 +103,8 @@ function profileInfo(object) {
 //////////////////////////////////////////////////////////////////////
 // Function 9 - Maybe Noises /////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+
+    //read test preview to see what need to do
 
 function maybeNoises(object) {
 
@@ -92,6 +114,8 @@ function maybeNoises(object) {
 // Function 10 - Has Words ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+    //read test preview to see what need to do
+
 function hasWord(string, word) {
 
 }
@@ -99,6 +123,8 @@ function hasWord(string, word) {
 //////////////////////////////////////////////////////////////////////
 // Function 11 - Add Friend //////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+
+    //read test preview to see what need to do
 
 function addFriend (name, object) {
 
@@ -108,6 +134,8 @@ function addFriend (name, object) {
 // Function 12 - Is Friend ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+    //read test preview to see what need to do
+
 function isFriend(name, object) {
 
 }
@@ -115,6 +143,8 @@ function isFriend(name, object) {
 //////////////////////////////////////////////////////////////////////
 // Function 13 - Non-Friends /////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+
+    //read test preview to see what need to do
 
 function nonFriends(name, array) {
 
@@ -124,6 +154,8 @@ function nonFriends(name, array) {
 // Function 14 - Update Object ///////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+    //read test preview to see what need to do
+
 function updateObject(object, key, value) {
 
 }
@@ -132,6 +164,8 @@ function updateObject(object, key, value) {
 // Function 15 - Remove Properties ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+    //.splice?
+
 function removeProperties(object, array) {
 
 }
@@ -139,6 +173,9 @@ function removeProperties(object, array) {
 //////////////////////////////////////////////////////////////////////
 // Function 16 - Dedup ///////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+
+    //read the test preview to see what need to do
+
 
 function dedup(array) {
 
