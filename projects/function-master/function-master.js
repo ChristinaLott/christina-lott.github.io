@@ -26,7 +26,13 @@ function keysToString(object) {
 
 function valuesToString(object){
     var outputValuesString = Object.values(object);
-        return outputValuesString.join(" ");
+    var actualString = [];
+    for(var i = 0; i <= outputValuesString.length - 1; i++){
+        if (typeof outputValuesString[i] === "string"){
+            actualString.push(outputValuesString[i]);
+        }
+    }
+        return actualString.join(" ");
 }
 
 
