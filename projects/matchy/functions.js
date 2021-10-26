@@ -32,8 +32,9 @@
         //for loop? if else statement? return null if no animal with name exists
 
 function search(animals, animalName){
+  var casedName = animalName.toLowerCase();
     for (var i = 0; i <= animals.length; i++){
-        if (animalName === animals[i].name){
+        if (casedName === animals[i].name){
         return animalName[i];
     }
 }
@@ -42,6 +43,11 @@ function search(animals, animalName){
 
 /**
  * NOT DONE YET...think I'm missing things
+ * 
+ *  var newStr = string.toLowerCase();
+        var endsWithLowerCase = endsWith.toLowerCase();
+        if (newStr[newStr.length - 1] === endsWithLowerCase){
+ * 
  */
 
  

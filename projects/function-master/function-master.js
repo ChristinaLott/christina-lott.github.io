@@ -63,22 +63,29 @@ function arrayOrObject(collection) {
 //toUpperCase
 
 function capitalizeWord(string) {
-    
+    return string.charAt(0).toUpperCase() + string.slice(1); //call upon string twice, first time to make first char upper and 2nd to slice out index 0 and add what's behind that to the first char
 }
 
-/**
- * NOT DONE YET... captalize the first letter, reference index 0 and use toUpperCase
- */
 
 //////////////////////////////////////////////////////////////////////
 // Function 6 - Capitalize All Words /////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-    //same question as above. All first characters of all words? Or all letters in the words?
-    //"return a string with all words capitalized" ...will try first if all letters in all the words need to be caps or if just first letter
+    //All first characters of all words, I think. 
+    //think I should split up the string by space, 
+    //then caps each 1st char of the words
+    //then rejoin them all with either .join(" ")?? or catanate
 
 function capitalizeAllWords(string) {
-    
+    //string.split(" ");
+   // return string.toUpperCase();
+    var outputCaps = [];
+    string.split(" ");
+    for(var i = 0; string <= length - 1; i++){
+      outputCaps = string[i][0].toUpperCase() + string[i][0].slice(1);
+      console.log(outputCaps);
+    }
+    return outputCaps;
 }
 
 //////////////////////////////////////////////////////////////////////

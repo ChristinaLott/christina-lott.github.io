@@ -52,15 +52,20 @@ _.typeOf = function(value){
       return typeOf (value);
     } else if (Array.isArray(value)){
         return "array";
+    } else if (typeOf (value) === "object" && Array.isArray(value) !== true && value !== null && !(value instanceof Date)){ //double check Scratch pad day 3 type.js
+        return "object";
     } else if (value === null){
         return "null";
-    } else if (value !== null && !(instanceof(date) && !Array.isArray(value)){ //double check Scratch pad day 3 type.js
-        return "object";
     } else {
         return "date";
     }
-    return typeOf (value);
 }
+
+/**
+ * NOT PASSING...looks complete to me though...
+ */
+
+
 
 
 /** _.first
