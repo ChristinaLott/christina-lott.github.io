@@ -77,15 +77,14 @@ function capitalizeWord(string) {
     //then rejoin them all with either .join(" ")?? or catanate
 
 function capitalizeAllWords(string) {
-    //string.split(" ");
-   // return string.toUpperCase();
-    var outputCaps = [];
-    string.split(" ");
-    for(var i = 0; string <= length - 1; i++){
-      outputCaps = string[i][0].toUpperCase() + string[i][0].slice(1);
-      console.log(outputCaps);
-    }
-    return outputCaps;
+var outputCaps = "";
+var newString = string.split(" ");
+for(var i = 0; i < newString.length; i++){   
+var replacement = newString[i].replace(newString[i][0], newString[i][0].toUpperCase());
+//need to concat each of the words together. REMEMBER can't use .join because var is a string not an array use
+outputCaps += replacement + " ";
+}
+return outputCaps.trim(); //use to remove spaces from begining and end of a string
 }
 
 //////////////////////////////////////////////////////////////////////
