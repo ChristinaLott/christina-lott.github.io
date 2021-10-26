@@ -9,7 +9,7 @@
  * and read every instruction carefully.
  */
 
-const { animal } = require("./data");
+//const { animal } = require("./data");
 
 //////////////////////////////////////////////////////////////////////
 // Step 1 - Search ///////////////////////////////////////////////////
@@ -35,10 +35,9 @@ function search(animals, animalName){
     for (var i = 0; i <= animals.length; i++){
         if (animalName === animals[i].name){
         return animalName[i];
-    } else {
-        return null;
     }
 }
+    return null;
 }
 
 /**
