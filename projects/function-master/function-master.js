@@ -71,10 +71,17 @@ function capitalizeWord(string) {
 // Function 6 - Capitalize All Words /////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-    //All first characters of all words, I think. 
-    //think I should split up the string by space, 
-    //then caps each 1st char of the words
-    //then rejoin them all with either .join(" ")?? or catanate
+    //make containers for output string, string into array, & iteration
+    //use .split() convert string into an array for looping
+    //loop through new array with the values given in string
+    // make iteration container within for loop
+    //code block to be ran on each iteration is to look at iterated array index,
+        //replace within that iteration element the 0 index character,
+        //replace it with the iterated element in the array's 0 index character
+        //that has been made to uppercase
+    //reassign output string with the iteration container concatenated with a space
+    //return output string outside of loop and use trim() to remove space at the end
+    
 
 function capitalizeAllWords(string) {
 var outputCaps = "";
@@ -86,6 +93,7 @@ outputCaps += replacement + " ";
 }
 return outputCaps.trim(); //use to remove spaces from begining and end of a string
 }
+
 
 //////////////////////////////////////////////////////////////////////
 // Function 7 - Welcome Message //////////////////////////////////////
