@@ -86,6 +86,12 @@ _.typeOf = function(value){
 *   _.first(["a", "b", "c"], 2) -> ["a", "b"]
 */
 
+_.first = function(arr, num){
+
+}
+
+
+
 
 /** _.last
 * Arguments:
@@ -105,6 +111,9 @@ _.typeOf = function(value){
 *   _.last(["a", "b", "c"], 2) -> ["b", "c"]
 */
 
+_.last = function(arr, num){
+
+}
 
 /** _.indexOf
 * Arguments:
@@ -122,6 +131,11 @@ _.typeOf = function(value){
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
 
+_.indexOf = function(arr, value){
+
+}
+
+
 
 /** _.contains
 * Arguments:
@@ -137,6 +151,10 @@ _.typeOf = function(value){
 * Examples:
 *   _.contains([1,"two", 3.14], "two") -> true
 */
+
+_.contains = function(arr, value){
+
+}
 
 
 /** _.each
@@ -155,6 +173,10 @@ _.typeOf = function(value){
 *      -> should log "a" "b" "c" to the console
 */
 
+_.each = function (collection, func){
+
+}
+
 
 /** _.unique
 * Arguments:
@@ -165,6 +187,11 @@ _.typeOf = function(value){
 * Examples:
 *   _.unique([1,2,2,4,5,6,5,2]) -> [1,2,4,5,6]
 */
+
+_.unique = function(arr){
+
+}
+
 
 
 /** _.filter
@@ -183,6 +210,11 @@ _.typeOf = function(value){
 *   use _.each in your implementation
 */
 
+_.filter = function(arr, func){
+
+}
+
+
 
 /** _.reject
 * Arguments:
@@ -196,6 +228,11 @@ _.typeOf = function(value){
 * Examples:
 *   _.reject([1,2,3,4,5], function(e){return e%2 === 0}) -> [1,3,5]
 */
+
+
+_.reject = function(arr, func){
+
+}
 
 
 /** _.partition
@@ -217,6 +254,10 @@ _.typeOf = function(value){
 }
 */
 
+_.partition = function(arr, func){
+
+}
+
 
 /** _.map
 * Arguments:
@@ -235,6 +276,11 @@ _.typeOf = function(value){
 */
 
 
+_.map = function(collection, func){
+
+}
+
+
 /** _.pluck
 * Arguments:
 *   1) An array of objects
@@ -245,6 +291,10 @@ _.typeOf = function(value){
 * Examples:
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
 */
+
+_.pluck = function(arrObj, property){
+
+}
 
 
 /** _.every
@@ -267,6 +317,10 @@ _.typeOf = function(value){
 *   _.every([2,4,6], function(e){return e % 2 === 0}) -> true
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
+
+_.every = function(collection, func){
+
+}
 
 
 /** _.some
@@ -291,6 +345,12 @@ _.typeOf = function(value){
 */
 
 
+_.some = function(collection, func){
+
+}
+
+
+
 /** _.reduce
 * Arguments:
 *   1) An array
@@ -310,6 +370,10 @@ _.typeOf = function(value){
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
 
+_.reduce = function(arr, func, seed){
+
+}
+
 
 /** _.extend
 * Arguments:
@@ -325,6 +389,12 @@ _.typeOf = function(value){
 *   _.extend(data, {b:"two"}); -> data now equals {a:"one",b:"two"}
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
+
+
+_.extend = function(obj1, obj2, moreobjssomehowpossibly){
+    
+}
+
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
