@@ -86,10 +86,36 @@ _.typeOf = function(value){
 *   _.first(["a", "b", "c"], 2) -> ["a", "b"]
 */
 
-_.first = function(arr, num){
+//conditional chain, with 3 possible returns
+    //if array !== arr ? return [] and if number === NaN return the first element in array
+    //otherwise return first number items of array
+//Edge cases: number negative? number greater than array.length?
 
+//need to check if array is an array
+    //if an array should be able to check the number against array
+    //if NOT an array return []
+//need to check if number is a number
+    //if a number return that many number of things in the array
+    //if NOT a number NaN nor given return first element of array
+
+_.first = function(array, number){
+console.log(array, number, "argument values");
+    var outputArr = [];
+if(!Array.isArray(array)){
+    return [];
+  } else if(number !== NaN && number <= 0){
+    for(var i = 0; i <= number; i++){
+    outputArr.push(array[i]);
+    //console.log(outputArr, "what is in this darn array?");
+    }
+    console.log(outputArr, "where art thou array?")
+    return outputArr;
+  } else {
+      return array[0]; //not sure if I should have this be an else if before trying to pull numbers
+  }
 }
 
+//(3) ['a', 'b', 'c'] -1 'argument values'
 
 
 
@@ -392,7 +418,7 @@ _.reduce = function(arr, func, seed){
 
 
 _.extend = function(obj1, obj2, moreobjssomehowpossibly){
-    
+
 }
 
 
