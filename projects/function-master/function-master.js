@@ -121,7 +121,9 @@ function profileInfo(object) {
 // Function 9 - Maybe Noises /////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-    //read test preview to see what need to do
+    //takes an obj
+        //if obj has noises return oit as a STRING seperated by SPACE
+        //if NO noises then return "there are no noises"
 
 function maybeNoises(object) {
 
@@ -131,7 +133,9 @@ function maybeNoises(object) {
 // Function 10 - Has Words ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-    //read test preview to see what need to do
+    //takes arguments of a string and a word
+        //should return TRUE if <word> is in <string>
+        //else return false if <word> not in <string>
 
 function hasWord(string, word) {
 
@@ -141,7 +145,9 @@ function hasWord(string, word) {
 // Function 11 - Add Friend //////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-    //read test preview to see what need to do
+    //takes a name and an object
+        //ADD the name to the object's friends array
+        //return the object
 
 function addFriend (name, object) {
 
@@ -151,7 +157,9 @@ function addFriend (name, object) {
 // Function 12 - Is Friend ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-    //read test preview to see what need to do
+    //takes a name and an object
+        //return TRUE if <name> is a friend of <object>
+        //else return FALSE
 
 function isFriend(name, object) {
 
@@ -161,7 +169,8 @@ function isFriend(name, object) {
 // Function 13 - Non-Friends /////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-    //read test preview to see what need to do
+    //takes a name and a list/array of people
+        //return a list/array of all names that <name> is NOT friends with
 
 function nonFriends(name, array) {
 
@@ -171,7 +180,9 @@ function nonFriends(name, array) {
 // Function 14 - Update Object ///////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-    //read test preview to see what need to do
+    //takes an object, a key, and a value
+        //if there is a key in object then update proptery <key> on <object> with new <value>
+        //else if NO <key> in <object> then CREATE IT
 
 function updateObject(object, key, value) {
 
@@ -182,6 +193,8 @@ function updateObject(object, key, value) {
 //////////////////////////////////////////////////////////////////////
 
     //.splice?
+    //takes an object and an array of STRINGS
+    //REMOVE any properties on <objecT> that are in <array>
 
 function removeProperties(object, array) {
 
@@ -191,7 +204,8 @@ function removeProperties(object, array) {
 // Function 16 - Dedup ///////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-    //read the test preview to see what need to do
+    //takes and array
+        //return an array with ALL duplicates REMOVED
 
 
 function dedup(array) {
