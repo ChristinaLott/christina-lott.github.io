@@ -115,6 +115,7 @@ if(!Array.isArray(array)){
   }
 }
 
+//try playing around with console.log to see what's actually happens when argus are passed through to see where I'm bumbling
 //(3) ['a', 'b', 'c'] -1 'argument values'
 
 
