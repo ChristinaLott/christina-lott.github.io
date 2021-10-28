@@ -73,16 +73,14 @@ function search(animals, animalName){
 
     function replace(animals, name, replace){
         for(var i = 0; i <= animals.length; i++){
-          if (name === animals.name){ //I think my issue is likely with my condition
-            animals.splice(i, 1, replace);
+          if (name === animals[i].name){ 
+            return animals.splice(i, 1, replace);
+          } else {
+            return animals;
           }
         }
     }
-    /**
-     * 
-     * NOT DONE YET
-     */
-
+  
 
 //////////////////////////////////////////////////////////////////////
 // Step 3 - Remove ///////////////////////////////////////////////////
