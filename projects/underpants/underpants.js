@@ -136,7 +136,15 @@ if(!Array.isArray(array) || number <= 0){
 */
 
 _.last = function(arr, num){
-
+if(!Array.isArray(arr) || num < 0){
+    return [];
+} else if (num === undefined || num === NaN){
+    return arr[arr.length - 1];
+} else if (num > arr.length) {
+    return arr;
+} else {
+    return arr.slice(-num); //using - before a number/parameter with slice will remove everything before that number
+}
 }
 
 /** _.indexOf
