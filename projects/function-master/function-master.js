@@ -104,14 +104,20 @@ return outputCaps.trim(); //use to remove spaces from begining and end of a stri
 
 function welcomeMessage(object) {
     var outputName = "";
-    for(var key in object){
-        return object["name"];
-    }
+    return "Welcome" + object.name;
+    //for(var key in object){
+    //    outputName = object[key]["name"];
+   // }
     //outputName = object.keys(object).find;
     //console.log(outputName);
     //console.log("Welcome" + outputName, "what's printing for welcomeMessage");
-    return "Welcome" + outputName;
+   // return "Welcome" + outputName;
 }
+
+/**
+ * 
+ * this is wrong...I think this one is pretty simple...either for in loop or use keywords or referencing the specfic key
+ */
 
 //////////////////////////////////////////////////////////////////////
 // Function 8 - Profile Info /////////////////////////////////////////

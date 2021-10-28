@@ -48,11 +48,11 @@ _.identity = function(value){
 */
 
 _.typeOf = function(value){
-    if (typeOf (value) !== "object"){
-      return typeOf (value);
+    if(typeof value !== "object"){
+        return typeof value;
     } else if (Array.isArray(value)){
         return "array";
-    } else if (typeOf (value) === "object" && Array.isArray(value) !== true && value !== null && !(value instanceof Date)){ //double check Scratch pad day 3 type.js
+    } else if (typeof value === "object" && Array.isArray(value) !== true && value !== null && !(value instanceof Date)){
         return "object";
     } else if (value === null){
         return "null";
@@ -60,12 +60,6 @@ _.typeOf = function(value){
         return "date";
     }
 }
-
-/**
- * NOT PASSING...looks complete to me though...
- */
-
-
 
 
 /** _.first
@@ -101,22 +95,25 @@ _.typeOf = function(value){
 _.first = function(array, number){
 console.log(array, number, "argument values");
     var outputArr = [];
-if(!Array.isArray(array)){
-    return [];
-  } else if(number !== NaN && number <= 0){
-    for(var i = 0; i <= number; i++){
-    outputArr.push(array[i]);
-    //console.log(outputArr, "what is in this darn array?");
-    }
-    console.log(outputArr, "where art thou array?")
-    return outputArr;
+if(!Array.isArray(array) || number <= 0){
+      return [];
+  } else if(number === undefined || number === NaN){
+      return array[0];
+  } else if (number > array.length) {
+      return array;
   } else {
-      return array[0]; //not sure if I should have this be an else if before trying to pull numbers
+    return array.slice(0, number);
   }
 }
-
-//try playing around with console.log to see what's actually happens when argus are passed through to see where I'm bumbling
-//(3) ['a', 'b', 'c'] -1 'argument values'
+    //} else if(number !== "undefined" && number !== NaN && number > 0){
+   // for(var i = 0; i <= array.length; i++){
+   // outputArr.push(array[i]);
+    //console.log(outputArr, "what is in this darn array?");
+  //  console.log(outputArr, "where art thou array?")
+  //  return outputArr;
+ // } else {
+ //     return array[0]; //not sure if I should have this be an else if before trying to pull numbers
+ // }
 
 
 
