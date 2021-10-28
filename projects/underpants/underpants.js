@@ -197,9 +197,16 @@ _.indexOf = function(array, value){
 *   _.contains([1,"two", 3.14], "two") -> true
 */
 
-_.contains = function(arr, value){
+ //IF <array> has <value> return TRUE
+ //Else return FALSE (<value> is undefined, array does NOT have value)
+ //use ternary operator
 
-}
+_.contains = function(array, value){
+    for(var i = 0; i <= array.length; i++){ //includes doesn't need i, for some reason
+       return array.includes(value) ? true : false;  //I don't know why  return array[i] === value ? true : false;  couldn't pass one of the tests...
+    }
+} 
+
 
 
 /** _.each
@@ -218,8 +225,15 @@ _.contains = function(arr, value){
 *      -> should log "a" "b" "c" to the console
 */
 
-_.each = function (collection, func){
+//if <collection> === array, run <function> ONCE on EACH element that has arguments (element, index, <collection>)
+//if <collection> === object, run <function> ONCE on EACH property that has arguments (property's value, key, <collection>)
 
+
+_.each = function (collection, func){
+    if(Array.isArray(collection)){
+        for(var i = 0; i <= collection.length; i++)
+        func(element, collection[i], collection);
+    }
 }
 
 
