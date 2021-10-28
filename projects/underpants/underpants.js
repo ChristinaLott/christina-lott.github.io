@@ -236,6 +236,11 @@ _.each = function (collection, func){
     }
 }
 
+//
+//no where near done yet, reference either notes or recording from 10/26 to see code example
+//
+
+
 
 /** _.unique
 * Arguments:
@@ -247,9 +252,23 @@ _.each = function (collection, func){
 *   _.unique([1,2,2,4,5,6,5,2]) -> [1,2,4,5,6]
 */
 
-_.unique = function(arr){
 
+//return NEW ARRAY with ALL elements from <array> && remove duplicates
+    //~~need to loop...when looping need to check for duplicates...then remove 'em
+//need to us _.indexOf(), this returns the index number of when first hit value or -1 if not in the array
+
+
+_.unique = function(arr){
+    for(var i = 0; i <= length; i++){
+        if(_.indexOf) //hrrrrmmmm
+    }
 }
+
+/**
+ * NOT DONE YET
+ * 
+ */
+
 
 
 
