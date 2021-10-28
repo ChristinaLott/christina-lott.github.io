@@ -163,9 +163,22 @@ if(!Array.isArray(arr) || num < 0){
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
 
-_.indexOf = function(arr, value){
 
-}
+//return index[#] of array at first occurance/iteration of <value>
+    //looping through most likely
+//return -1 IF <value> !Array.isArray/<array> not the thing
+//NO [].indexOf()
+
+
+
+_.indexOf = function(array, value){
+    for(var i = 0; i <= array.length - 1; i++){
+        if(array[i] === value){
+            return i; //returning the index number where the match is at
+        } 
+     } return -1; //have this outside of the for loop because otherwise when iterate it would hit this on the first loop and exit out
+ }
+
 
 
 
