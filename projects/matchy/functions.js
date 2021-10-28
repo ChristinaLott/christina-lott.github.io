@@ -68,7 +68,7 @@ function search(animals, animalName){
 //make function replace...with a signature of "replace(animals, name, replace){//...}" ---what is a signature?
     //needs to take/input of 3 para: array of animals, string of name of an animal to search, and object animal to replace with
     //If animal exists with that name in animals array, replace entire object with replacement object
-    //if not, do nada
+    //if not, just return animals and do nada to it
       //func, loop to search for animal to replace animal object, then have an if statement if a match 
 
     function replace(animals, name, replace){
@@ -99,12 +99,13 @@ function search(animals, animalName){
     //if an animal with name exists in animals array remove it
 
     function remove(animals, name){
-      for(var i = 0; i <= animals.length - 1; i++);
-      if(name === animals.name){ //maybe my issue is here?
-        animals.splice(i, 1);
-      }
+      for(var i = 0; i <= animals.length; i++);
+      if(name === animals[i].name){ //maybe my issue is here?
+        return animals.splice(i, 1); //really not sure why it isn't just removing it
+      } else {
+        return animals;
     }
-
+  }
     /**
      * 
      * NOT DONE YET

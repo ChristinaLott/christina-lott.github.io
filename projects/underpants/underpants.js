@@ -233,7 +233,6 @@ _.each = function (collection, func){
     if(Array.isArray(collection) === true){
         for(var i = 0; i <= collection.length; i++)
         func(collection[i], i , collection);
-    } 
     } else {
         for(var key in collection){
            func(collection[key], key, collection)
@@ -263,11 +262,11 @@ _.each = function (collection, func){
 //need to us _.indexOf(), this returns the index number of when first hit value or -1 if not in the array
 
 
-_.unique = function(arr){
-    for(var i = 0; i <= length; i++){
+/**_.unique = function(arr){
+    for(var i = 0; i <= length; i){
         if(_.indexOf) //hrrrrmmmm
     }
-}
+} */
 
 /**
  * NOT DONE YET
