@@ -95,8 +95,8 @@ function makeContactList() {
         //add \n to each iterations, EXCEPT last iterations
 
         printAllContactNames: function(){
-            var outputPrintNames = "";
-            for(var i = 0; i < contacts.length - 1; i++){
+            var outputPrintNames = [];
+            for(var i = 0; i <= contacts.length - 1; i++){
                 outputPrintNames.push(contacts[i].nameFirst + " " + contacts[i].nameLast);
             }
             return outputPrintNames.join("\n");

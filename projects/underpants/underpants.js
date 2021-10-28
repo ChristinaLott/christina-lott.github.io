@@ -230,14 +230,19 @@ _.contains = function(array, value){
 
 
 _.each = function (collection, func){
-    if(Array.isArray(collection)){
+    if(Array.isArray(collection) === true){
         for(var i = 0; i <= collection.length; i++)
-        func(element, collection[i], collection);
-    }
+        func(collection[i], i , collection);
+    } 
+    } else {
+        for(var key in collection){
+           func(collection[key], key, collection)
+        }
+    }   
 }
 
 //
-//no where near done yet, reference either notes or recording from 10/26 to see code example
+//pulled from class example...not done yet, reference either notes or recording from 10/26 to see code example
 //
 
 

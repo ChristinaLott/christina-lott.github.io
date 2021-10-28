@@ -102,7 +102,7 @@ return outputCaps.trim(); //use to remove spaces from begining and end of a stri
     //take obj and pluck out name property to return below statement
     //concatnate to include "Welcome <name>!"
 
-function welcomeMessage(object) {
+//function welcomeMessage(object) {
     var outputName = "";
     return "Welcome" + object.name;
     //for(var key in object){
