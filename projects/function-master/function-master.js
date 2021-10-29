@@ -101,17 +101,12 @@ return outputCaps.trim(); //use to remove spaces from begining and end of a stri
 
     //take obj and pluck out name property to return below statement
     //concatnate to include "Welcome <name>!"
+    //test wants letter name Captilized
 
-//function welcomeMessage(object) {
-    var outputName = "";
-    return "Welcome" + object.name;
-    //for(var key in object){
-    //    outputName = object[key]["name"];
-   // }
-    //outputName = object.keys(object).find;
-    //console.log(outputName);
-    //console.log("Welcome" + outputName, "what's printing for welcomeMessage");
-   // return "Welcome" + outputName;
+function welcomeMessage(object){
+    capsName = object.name[0];
+    outputCapsName = object.name[0].toUppercase + object.name.slice(1);
+    return "Welcome "  + outputCapsName + "!";
 }
 
 /**
@@ -125,6 +120,7 @@ return outputCaps.trim(); //use to remove spaces from begining and end of a stri
 
     //take obj with a name and species
     //return "<Name> is a <Species>"
+    //wants first letter of each property to be caps
 
 function profileInfo(object) {
 
