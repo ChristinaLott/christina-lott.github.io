@@ -135,14 +135,14 @@ function search(animals, animalName){
    //then ADD new given animal obj
 
    function add(animals, animal){
-    for (var i = 0; i <= animals.length; i++){
-       if (animal.name.length > 0 && animal.species.length > 0 && animal.name !== animals.name){ //I'm pretty sure I'm off with the unqiue name search
-        //return animals[i] = animal;
-        return animals.push(animal);
-       } else {
-         return animals;
-       }
-     } 
+    for (var i = 0; i < animals.length; i++){
+       if (animal.name.length > 0 && animal.species.length > 0 && animal.name === animals[i].name){ //I'm pretty sure I'm off with the unqiue name search
+        return animals;
+       } else if (animal.name.length > 0 && animal.species.length > 0 && animal.name !== animals[i].name){
+         return animals.push(animal);
+       } else {}
+     }
+
 
     /**return {
       nameCheck: function()
