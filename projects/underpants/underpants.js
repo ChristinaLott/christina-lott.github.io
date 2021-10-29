@@ -261,19 +261,28 @@ _.each = function (collection, func){
     //~~need to loop...when looping need to check for duplicate elements...then remove 'em
 //need to use _.indexOf(), this returns the index number of when first hit value or -1 if not in the array
 
+//underscore's version of unique uses === AND returns just the 1st value of it and not the second
+    //look for match;
+        //push 1st instance to new array
+    //keep going, so don't return (??)
+    //if match again IGNORE
 //can I slice out i when there is a match??
 
-_.unique = function(arr){
-    for(var i = 0; i < arr.length; i++){
-        if(_.indexOf(arr, i)){ //I'm really not sure how to keep iterating AND check that the value I'm iterating doesn't have any matches...
-        }
-    }
-}
+//only pull
 
-/**
- * NOT DONE YET
- * 
- */
+//var container for nabbed 1st values, then loop to grab those 1st values with an if statement (if not in array then add, if in array/theres a match then do nothing)
+
+_.unique = function(arr){
+    var outputArr = [];
+    for(var i = 0; i < arr.length; i++){
+        if(-1 === _.indexOf(outputArr, arr[i])){ //indexOf is looking for matches, if NO match then it returns -1. Which means it's NOT in the array. So we can use -1 to determine when to ADD elements into our array
+            outputArr.push(arr[i]);          //then return the value of that iterated element in the given array
+        }
+        }
+        return outputArr;
+    }
+
+//this one is nifty and head hurter! But DONE!
 
 
 
