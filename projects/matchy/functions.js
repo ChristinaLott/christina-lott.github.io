@@ -99,7 +99,7 @@ function search(animals, animalName){
     //if an animal with name exists in animals array remove it
 
     function remove(animals, name){
-      for(var i = 0; i <= animals.length; i++);
+      for(var i = 0; i < animals.length; i++);
       if(name === animals[i].name){ //maybe my issue is here?
         return animals.splice(i, 1); //really not sure why it isn't just removing it
       } else {
@@ -138,9 +138,12 @@ function search(animals, animalName){
    //then ADD new given animal obj
 
    function add(animals, animal){
-    for (var i = 0; i <= animals.length - 1; i++){
+    for (var i = 0; i <= animals.length; i++){
        if (animal.name.length > 0 && animal.species.length > 0 && animal.name !== animals.name){ //I'm pretty sure I'm off with the unqiue name search
-        return animals.push[i];
+        //return animals[i] = animal;
+        return animals.push(animal);
+       } else {
+         return animals;
        }
      } 
 

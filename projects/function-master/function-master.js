@@ -110,7 +110,7 @@ function welcomeMessage(object){
 }
 
 /**
- * 
+ * Reference 10/28 recording to get a grasp on how  to implement this one
  * this is wrong...I think this one is pretty simple...either for in loop or use keywords or referencing the specfic key
  */
 
@@ -131,7 +131,7 @@ function profileInfo(object) {
 //////////////////////////////////////////////////////////////////////
 
     //takes an obj
-        //if obj has noises return oit as a STRING seperated by SPACE
+        //if obj has noises return it as a STRING seperated by SPACE
         //if NO noises then return "there are no noises"
 
 function maybeNoises(object) {

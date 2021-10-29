@@ -241,7 +241,7 @@ _.each = function (collection, func){
 }
 
 //
-//pulled from class example...not done yet, reference either notes or recording from 10/26 to see code example
+//Is this actually complete? No returns? pulled from class example...not done yet, reference either notes or recording from 10/26 to see code example
 //
 
 
@@ -258,13 +258,14 @@ _.each = function (collection, func){
 
 
 //return NEW ARRAY with ALL elements from <array> && remove duplicates
-    //~~need to loop...when looping need to check for duplicates...then remove 'em
-//need to us _.indexOf(), this returns the index number of when first hit value or -1 if not in the array
+    //~~need to loop...when looping need to check for duplicate elements...then remove 'em
+//need to use _.indexOf(), this returns the index number of when first hit value or -1 if not in the array
 
+//can I slice out i when there is a match??
 
 _.unique = function(arr){
-    for(var i = 0; i <= length; i++){
-        if(_.indexOf){
+    for(var i = 0; i < arr.length; i++){
+        if(_.indexOf(arr, i)){ //I'm really not sure how to keep iterating AND check that the value I'm iterating doesn't have any matches...
         }
     }
 }
@@ -293,10 +294,24 @@ _.unique = function(arr){
 *   use _.each in your implementation
 */
 
-_.filter = function(arr, func){
+    //use function on EACH element in <array> - looping
+        //use element, element's index, <array> as arguments
+    //RETURN NEW array of elements when <function> returns true (func outcome === true, then return a NEW array with same values)
+    //what do if array returns something other than t/f??? idk
+    //special credit if use _.each...eeeeh
 
+_.filter = function(arr, func){
+    var outputArr = []; //..think I need a container for the func'd values
+    for(var i = 0; i < array.length; i++){
+        func(array[i], i, arr);
+      // outputArr; //eeeh, I think that this var should be reassigned the values from the func??? .push each iteration that survives the func here???
+        return outputArr;
+    }
 }
 
+/**
+ * NOT DONE YET...eeeeeh, more workto do for sure weep. Broke the code too
+ */
 
 
 /** _.reject
