@@ -103,16 +103,16 @@ return outputCaps.trim(); //use to remove spaces from begining and end of a stri
     //concatnate to include "Welcome <name>!"
     //test wants letter name Captilized
 
-function welcomeMessage(object){
-    capsName = object.name[0];
-    outputCapsName = object.name[0].toUppercase + object.name.slice(1);
-    return "Welcome "  + outputCapsName + "!";
-}
+//function welcomeMessage(object){
+   // capsName = object.name[0];
+   // outputCapsName = object.name[0].toUpperCase() + object.name.slice(1);
+   // return "Welcome "  + outputCapsName + "!";
+//}
 
-/**
- * Reference 10/28 recording to get a grasp on how  to implement this one
- * this is wrong...I think this one is pretty simple...either for in loop or use keywords or referencing the specfic key
- */
+function welcomeMessage(object){
+    capsName = capitalizeWord(object.name); //being fancy, higher order functions, reference prior func! :D
+    return "Welcome " + capsName + "!";
+}
 
 //////////////////////////////////////////////////////////////////////
 // Function 8 - Profile Info /////////////////////////////////////////
