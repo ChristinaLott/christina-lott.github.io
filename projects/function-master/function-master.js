@@ -137,10 +137,20 @@ function profileInfo(object) {
     //takes an obj
         //if obj has noises return it as a STRING seperated by SPACE
         //if NO noises then return "there are no noises"
+        //can probably use the 
 
 function maybeNoises(object) {
-
+    if(object.noises !== undefined){ //wondering if I can use value to string, but need to drill down to the specfic noises key 
+        return valuestoString(object.noises);
+    } else {
+        return "there are no noises";
+    }
 }
+
+/**  
+ * NOT DONE, unsure what is off here...perhaps the function doesn't work how I want?
+*
+*/
 
 //////////////////////////////////////////////////////////////////////
 // Function 10 - Has Words ///////////////////////////////////////////
@@ -151,8 +161,15 @@ function maybeNoises(object) {
         //else return false if <word> not in <string>
 
 function hasWord(string, word) {
-
+    var outputArr = [];
+    outputArr = string.split(" "); //changed the string  into an array to  work with
+    if(outputArr.includes(word)){ //use new method to  check if thing is in the array
+        return true; 
+    } else {
+        return false; 
 }
+}
+
 
 //////////////////////////////////////////////////////////////////////
 // Function 11 - Add Friend //////////////////////////////////////////
