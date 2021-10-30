@@ -195,9 +195,19 @@ function addFriend (name, object) {
         //return TRUE if <name> is a friend of <object>
         //else return FALSE
 
-function isFriend(name, object) {
-
+function isFriend(name, object){
+    if(object.friends.includes(name) && object !== undefined){
+        return true;
+    } else {
+        return false;
+    }
 }
+
+/**
+ * 
+ * NOT DONE YET, not passing 3rd test...becuase the object is empty...how do I pass it?
+ */
+
 
 //////////////////////////////////////////////////////////////////////
 // Function 13 - Non-Friends /////////////////////////////////////////
@@ -206,9 +216,25 @@ function isFriend(name, object) {
     //takes a name and a list/array of people
         //return a list/array of all names that <name> is NOT friends with
 
-function nonFriends(name, array) {
-
+function nonFriends(name, array){
+    var outputArr = [];
+    for(var i = 0; i < array.length; i++){
+        if(array.includes(name) !== true){
+           outputArr.push(i);
+        }
+    } return outputArr;
+    
+    //if not friends  then return that name as an array???
+    //not passing any tests...
+    
 }
+
+/**
+ * 
+ * NOT DONE...kinda lost how  to approach if what I'm doing isn't right in any way
+ */
+
+
 
 //////////////////////////////////////////////////////////////////////
 // Function 14 - Update Object ///////////////////////////////////////
