@@ -44,9 +44,9 @@ function valuesToString(object){
     //return argument as either an "array" or as an "object"
 
 function arrayOrObject(collection) {
-    if(typeof collection === "object" && collection === Array.isArray){
+    if(typeof collection === "object" && Array.isArray(collection)){
         return "array";
-    } else if (typeof collection === "object" && collection !== null && !(value instanceof date)){
+    } else if(typeof collection === "object" && collection !== null && !(value instanceof date)){
         return "object";
     }
 }
@@ -210,16 +210,15 @@ function isFriend(name, object){
 
 function nonFriends(name, array){
     var outputArr = [];
+    //use isFriends if false then push those people over a cliff
     for(var i = 0; i < array.length; i++){
-        if(array.includes(name) !== true){
-           outputArr.push(i);
+        if(isFriend(name, array[i]) === false){
+           outputArr.push(array[i].name);
         }
-    } return outputArr;
-    
-    //if not friends  then return that name as an array???
-    //not passing any tests...
-    
+    } 
+    return outputArr; 
 }
+    //not passing any tests...
 
 /**
  * 
