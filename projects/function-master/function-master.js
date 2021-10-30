@@ -123,8 +123,12 @@ function welcomeMessage(object){
     //wants first letter of each property to be caps
 
 function profileInfo(object) {
-
+    capsName = capitalizeWord(object.name);
+    capsSpecies = capitalizeWord(object.species);
+    return capsName + " is a " + capsSpecies;
 }
+
+
 
 //////////////////////////////////////////////////////////////////////
 // Function 9 - Maybe Noises /////////////////////////////////////////
