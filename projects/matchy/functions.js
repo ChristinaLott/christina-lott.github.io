@@ -140,7 +140,7 @@ function search(animals, animalName){
         return animals;
        } else if (animal.name.length > 0 && animal.species.length > 0 && animal.name !== animals[i].name){
          return animals.push(animal);
-       } else {}
+       }
      }
 
 

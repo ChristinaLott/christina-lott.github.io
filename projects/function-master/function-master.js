@@ -180,8 +180,12 @@ function hasWord(string, word) {
         //return the object
 
 function addFriend (name, object) {
-
+    object.friends.push(name);
+    return object;
 }
+
+
+
 
 //////////////////////////////////////////////////////////////////////
 // Function 12 - Is Friend ///////////////////////////////////////////
