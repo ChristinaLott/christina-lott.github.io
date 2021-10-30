@@ -140,17 +140,14 @@ function profileInfo(object) {
         //can probably use the 
 
 function maybeNoises(object) {
-    if(object.noises !== undefined){ //wondering if I can use value to string, but need to drill down to the specfic noises key 
-        return valuestoString(object.noises);
+    if(Array.isArray(object.noises) && object.noises.length > 0){ //check first that the obj has the array, then check that array has anything in it
+        return valuesToString(object.noises);
     } else {
         return "there are no noises";
     }
 }
 
-/**  
- * NOT DONE, unsure what is off here...perhaps the function doesn't work how I want?
-*
-*/
+
 
 //////////////////////////////////////////////////////////////////////
 // Function 10 - Has Words ///////////////////////////////////////////
@@ -196,17 +193,12 @@ function addFriend (name, object) {
         //else return FALSE
 
 function isFriend(name, object){
-    if(object.friends.includes(name) && object !== undefined){
+    if(Array.isArray(object.friends) && object.friends.includes(name)){
         return true;
     } else {
         return false;
     }
 }
-
-/**
- * 
- * NOT DONE YET, not passing 3rd test...becuase the object is empty...how do I pass it?
- */
 
 
 //////////////////////////////////////////////////////////////////////
@@ -245,7 +237,7 @@ function nonFriends(name, array){
         //else if NO <key> in <object> then CREATE IT
 
 function updateObject(object, key, value) {
-
+    
 }
 
 //////////////////////////////////////////////////////////////////////
