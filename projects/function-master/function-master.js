@@ -212,18 +212,13 @@ function nonFriends(name, array){
     var outputArr = [];
     //use isFriends if false then push those people over a cliff
     for(var i = 0; i < array.length; i++){
-        if(isFriend(name, array[i]) === false){
+        if(array[i].name !== name && isFriend(name, array[i]) === false){ //check that the given name arg isn't equal to the the name iterating through in list of objs, then run func to return anyone without that friend name
            outputArr.push(array[i].name);
         }
     } 
     return outputArr; 
 }
-    //not passing any tests...
-
-/**
- * 
- * NOT DONE...kinda lost how  to approach if what I'm doing isn't right in any way
- */
+  
 
 
 
