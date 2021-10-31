@@ -232,17 +232,11 @@ function nonFriends(name, array){
         //else if NO <key> in <object> then CREATE IT
 
 function updateObject(object, key, value) {
-    if(object.key !== undefined || object.key === key){ //kinda doing this duplicate
-       return object.key = value;
-    } else if(object.key !== key){
-        return object.key = value;
-    }
+    object[key] = value; //Dot notation wouldn't work because it was looking for the key NAMED key, rather than looking for the arugment with the placeholder name of key
+    return object;
 }
 
-/**
- * 
- * Not done yet- not passing any tests...seems straight forward, but could be missing something? not fully understanding the given arguments
- */
+
 
 //////////////////////////////////////////////////////////////////////
 // Function 15 - Remove Properties ///////////////////////////////////
@@ -278,7 +272,7 @@ function dedup(array) {
             //
         }
     }
-}
+
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
