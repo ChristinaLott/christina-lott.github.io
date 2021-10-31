@@ -305,18 +305,24 @@ _.unique = function(arr){
 
     //use function on EACH element in <array> - looping
         //use element, element's index, <array> as arguments
-    //RETURN NEW array of elements when <function> returns true (func outcome === true, then return a NEW array with same values)
+    //RETURN NEW array of elements when <function> returns true 
+        //(func outcome === true, then return a NEW array with same values)
     //what do if array returns something other than t/f??? idk
     //special credit if use _.each...eeeeh
 
 _.filter = function(arr, func){
     var outputArr = []; //..think I need a container for the func'd values
-    for(var i = 0; i < array.length; i++){
-        func(array[i], i, arr);
-      // outputArr; //eeeh, I think that this var should be reassigned the values from the func??? .push each iteration that survives the func here???
-        return outputArr;
+    for(var i = 0; i < arr.length; i++){
+        if(func(arr[i], [i], arr) === true){
+            outputArr.push(arr[i]); //thought this was new array elements? but undefined??
+        }
     }
+    return outputArr;
+      // outputArr; //eeeh, I think that this var should be reassigned the values from the func??? .push each iteration that survives the func here???
 }
+
+//if(each(arr[i], [i], arr))???
+
 
 /**
  * NOT DONE YET...eeeeeh, more workto do for sure weep. Broke the code too
