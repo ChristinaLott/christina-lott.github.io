@@ -228,11 +228,21 @@ function nonFriends(name, array){
 
     //takes an object, a key, and a value
         //if there is a key in object then update proptery <key> on <object> with new <value>
+            //if key, then update that object's key with value
         //else if NO <key> in <object> then CREATE IT
 
 function updateObject(object, key, value) {
-    
+    if(object.key !== undefined || object.key === key){ //kinda doing this duplicate
+       return object.key = value;
+    } else if(object.key !== key){
+        return object.key = value;
+    }
 }
+
+/**
+ * 
+ * Not done yet- not passing any tests...seems straight forward, but could be missing something? not fully understanding the given arguments
+ */
 
 //////////////////////////////////////////////////////////////////////
 // Function 15 - Remove Properties ///////////////////////////////////
@@ -241,21 +251,33 @@ function updateObject(object, key, value) {
     //.splice?
     //takes an object and an array of STRINGS
     //REMOVE any properties on <objecT> that are in <array>
+        //if a match from a value in the array within the properties of object, remove it
+
 
 function removeProperties(object, array) {
-
+    for(var i = 0; i < array.length; i++){
+        //if(array.(array[i]) === object){ //based on tests may not need to iterate, because only 1 element in array that is an object
+        //delete object property...not sure how to specify what to delete exactly without the keys...instead of deleting the whole thing
+        //}
+    }
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 16 - Dedup ///////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-    //takes and array
+    //takes an array
         //return an array with ALL duplicates REMOVED
 
 
 function dedup(array) {
-
+    var outputArr = [];
+    for(var i = 0; i < array.length; i++){
+        //if(//there is a match - between looped i and what is ){
+            //remove the duplicate
+            //
+        }
+    }
 }
 
 //////////////////////////////////////////////////////////////////////
