@@ -313,20 +313,13 @@ _.unique = function(arr){
 _.filter = function(arr, func){
     var outputArr = []; //..think I need a container for the func'd values
     for(var i = 0; i < arr.length; i++){
-        if(func(arr[i], [i], arr) === true){
+        if(func(arr[i], [i], arr) === true){ //if condition AUTOMATICALLY checks for truthy, so could drop === true
             outputArr.push(arr[i]); //thought this was new array elements? but undefined??
         }
     }
     return outputArr;
-      // outputArr; //eeeh, I think that this var should be reassigned the values from the func??? .push each iteration that survives the func here???
 }
 
-//if(each(arr[i], [i], arr))???
-
-
-/**
- * NOT DONE YET...eeeeeh, more workto do for sure weep. Broke the code too
- */
 
 
 /** _.reject
@@ -350,20 +343,14 @@ _.filter = function(arr, func){
 
 
 _.reject = function(arr, func){
-    var outputArr = []; //..think I need a container for the func'd values
+    var outputArr = []; 
     for(var i = 0; i < arr.length; i++){
         if(func(arr[i], [i], arr) === false){
-            outputArr.push(arr[i]); //thought this was new array elements? but undefined??
+            outputArr.push(arr[i]);
         }
     }
     return outputArr;
 }
-
-
-/**
- * 
- * NOT DONE YET, lifted exact code from inverse of reject, changed true to false, once correct other can fix
- */
 
 
 
