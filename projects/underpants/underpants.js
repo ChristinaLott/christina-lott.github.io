@@ -343,9 +343,23 @@ _.filter = function(arr, func){
 */
 
 
-_.reject = function(arr, func){
+//use function on EACH element in array = loop
+    //use element, element's  index, array as arguments
+//RETURN NEW array of elements when using function results in FALSE
+    //protip: filter method in reverse
 
+
+_.reject = function(arr, func){
+    
 }
+
+
+/**
+ * 
+ * NOT DONE YET, only psuedocoded
+ */
+
+
 
 
 /** _.partition
@@ -367,9 +381,23 @@ _.reject = function(arr, func){
 }
 */
 
+
+//use function on EACH element in array
+    //use element, key, array as arguments func(element, key, arr)
+//RETURN array with 2 sub arrays
+    //0 array (1st array) has ALL values for func returned truthy (> 0, true, all else)
+    //1 array (2nd array) has ALL values for func returned falsy (null, 0, false, undefined, NaN, "")
+        //this is an array WITH arrays within it... so maybe something like: arr = [[1,2,3], ["a","b',"c"], [false, true, NaN]]
+
+
 _.partition = function(arr, func){
 
 }
+
+/** 
+ * NOT DONE YET, only psedocoded
+*/
+
 
 
 /** _.map
@@ -389,9 +417,24 @@ _.partition = function(arr, func){
 */
 
 
+//use func on EACH element in the collection
+    //IF an ARRAY    
+        //use element, element's index, collection as arguments: func(collection[i], [i], collection)
+    //IF an OBJECT
+        //use value, key, collection as arguments: func(collection[i]??, [i]?? ,collection)
+//make a container array for new value of each function
+        //var outputArr = [];
+        //outputArr.push(arr[i])???
+        //return outputArr;
+
 _.map = function(collection, func){
 
 }
+
+/** 
+ * NOT DONE YET, just psuedocoded
+ */
+
 
 
 /** _.pluck
@@ -405,9 +448,21 @@ _.map = function(collection, func){
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
 */
 
+
+//RETURN array with property's value for EVERY element in array = looping
+    //make a new container??
+//use map!
+
+
 _.pluck = function(arrObj, property){
 
 }
+
+
+/**
+ * NOT DONE YET, just started lightly psuedocoding
+ */
+
 
 
 /** _.every
