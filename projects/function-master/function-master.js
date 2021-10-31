@@ -249,11 +249,12 @@ function updateObject(object, key, value) {
 
 
 function removeProperties(object, array) {
-    for(var i = 0; i < array.length; i++){
+    for(var i = 0; i < array.length; i++){ //remember that i is a number instead of the value
+        var key = array[i];
         //if(array.(array[i]) === object){ //based on tests may not need to iterate, because only 1 element in array that is an object
-        //delete object property...not sure how to specify what to delete exactly without the keys...instead of deleting the whole thing
-        //}
-    }
+        delete object[key];
+        //could also write object[key] as object[array[i]], because we are working iterated as array[i] value as the possible key within the array. just `i` is JUST A NUMBER/INDEX!!!
+    }   //this is working by pulling the element i from array so that it equals a key name in the object. If no matching key it can't do anything cause it doesn't know it exists
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -265,13 +266,17 @@ function removeProperties(object, array) {
 
 
 function dedup(array) {
-    var outputArr = [];
+    var outputArr = []; //container for nonduplicated values/elements
     for(var i = 0; i < array.length; i++){
-        //if(//there is a match - between looped i and what is ){
-            //remove the duplicate
-            //
+        var value = array[i];
+        if(!outputArr.includes(value)){ //checking for NO MATCHES, so that PUSH into EMPTY outputArr. When there IS A MATCH, it does nothing. So that way, we SKIP duplicates
+            outputArr.push(value);
         }
     }
+    return outputArr; //returning the unduplicated array elements
+}
+
+
 
 
 //////////////////////////////////////////////////////////////////////
