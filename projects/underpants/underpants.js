@@ -313,7 +313,7 @@ _.unique = function(arr){
 _.filter = function(arr, func){
     var outputArr = []; //..think I need a container for the func'd values
     for(var i = 0; i < arr.length; i++){
-        if(func(arr[i], [i], arr) === true){ //if condition AUTOMATICALLY checks for truthy, so could drop === true
+        if(func(arr[i], i, arr) === true){ //if condition AUTOMATICALLY checks for truthy, so could drop === true
             outputArr.push(arr[i]); //thought this was new array elements? but undefined??
         }
     }
@@ -345,7 +345,7 @@ _.filter = function(arr, func){
 _.reject = function(arr, func){
     var outputArr = []; 
     for(var i = 0; i < arr.length; i++){
-        if(func(arr[i], [i], arr) === false){
+        if(func(arr[i], i, arr) === false){
             outputArr.push(arr[i]);
         }
     }
@@ -384,7 +384,9 @@ _.reject = function(arr, func){
 
 
 _.partition = function(arr, func){
-    var outputArr = []; //would I need to outputArrs? need to check the test args to see what use
+    return [_.filter(arr, func), _.reject(arr, func)]; //referenced back prior methods cause they do the thing of resulting in arrays that correspond to if the condition was true or false..
+}
+    /* var outputArr = []; //would I need to outputArrs? need to check the test args to see what use
     var outputArr2 = [];
     for(var i = 0; i < arr.length; i++){
         if(arr[i] === true){
@@ -394,11 +396,8 @@ _.partition = function(arr, func){
         }
     }
     return outputArr; //not sure if I should have two different outputArrs that return for each condition
-}
+} */
 
-/** 
- * NOT DONE YET
-*/
 
 
 
@@ -431,24 +430,29 @@ _.partition = function(arr, func){
 
 _.map = function(collection, func){
     var outputArr = [];
-    var outputArr2 = [];
-    for(var i = 0; i < collection.length; i++){
-        if(Array.isArray(collection) === true){
-            func(collection[i], [i], collection);
-            outputArr.push(collection[i]);
-        } else if (object === true /*grab that long arse code to distinigush between arr/obj or finish that prior func to plop in */){
-            func(/*I'm kinda stumped on the arguments to plug in here...*/);
-            outputArr2.push(collection[i]); //eeeeh, how would we update the array with the value? guess we could push the obj/key/value into the array still??
+   if(Array.isArray(collection) === true){
+       for(var i = 0; i < collection.length; i++){
+        outputArr.push(func(collection[i], i, collection)); //functions evaluate to their RESULT. so can expect that outcome, and therefore slip it into an array
+       }
+   } else {
+        for(var key in collection){
+            outputArr.push(func(collection[key], key, collection));
         }
-    }
+   }
     return outputArr;
 }
 
-//curious if could use map once figure out? not sure how else to get the new outputArr...maybe another line of code within the condition?
 
-/** 
- * NOT DONE YET
- */
+    //for(var i = 0; i < collection.length; i++){
+      //  if(Array.isArray(collection) === true){
+           // func(collection[i], i, collection);
+            //outputArr.push(collection[i]);
+       // } else if (object === true /*grab that long arse code to distinigush between arr/obj or finish that prior func to plop in */){
+    //         func(/*I'm kinda stumped on the arguments to plug in here...*/);
+    //         outputArr2.push(collection[i]); //eeeeh, how would we update the array with the value? guess we could push the obj/key/value into the array still??
+    //     }
+    // }
+
 
 
 
