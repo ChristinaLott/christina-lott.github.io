@@ -350,13 +350,19 @@ _.filter = function(arr, func){
 
 
 _.reject = function(arr, func){
-    
+    var outputArr = []; //..think I need a container for the func'd values
+    for(var i = 0; i < arr.length; i++){
+        if(func(arr[i], [i], arr) === false){
+            outputArr.push(arr[i]); //thought this was new array elements? but undefined??
+        }
+    }
+    return outputArr;
 }
 
 
 /**
  * 
- * NOT DONE YET, only psuedocoded
+ * NOT DONE YET, lifted exact code from inverse of reject, changed true to false, once correct other can fix
  */
 
 
@@ -391,11 +397,20 @@ _.reject = function(arr, func){
 
 
 _.partition = function(arr, func){
-
+    var outputArr = []; //would I need to outputArrs? need to check the test args to see what use
+    var outputArr2 = [];
+    for(var i = 0; i < arr.length; i++){
+        if(arr[i] === true){
+            outputArr.push(arr[i]);
+        } else if (arr[i] === false){
+            outputArr2.push(arr[i]);
+        }
+    }
+    return outputArr; //not sure if I should have two different outputArrs that return for each condition
 }
 
 /** 
- * NOT DONE YET, only psedocoded
+ * NOT DONE YET
 */
 
 
@@ -428,11 +443,24 @@ _.partition = function(arr, func){
         //return outputArr;
 
 _.map = function(collection, func){
-
+    var outputArr = [];
+    var outputArr2 = [];
+    for(var i = 0; i < collection.length; i++){
+        if(Array.isArray(collection) === true){
+            func(collection[i], [i], collection);
+            outputArr.push(collection[i]);
+        } else if (object === true /*grab that long arse code to distinigush between arr/obj or finish that prior func to plop in */){
+            func(/*I'm kinda stumped on the arguments to plug in here...*/);
+            outputArr2.push(collection[i]); //eeeeh, how would we update the array with the value? guess we could push the obj/key/value into the array still??
+        }
+    }
+    return outputArr;
 }
 
+//curious if could use map once figure out? not sure how else to get the new outputArr...maybe another line of code within the condition?
+
 /** 
- * NOT DONE YET, just psuedocoded
+ * NOT DONE YET
  */
 
 
