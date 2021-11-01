@@ -654,11 +654,28 @@ _.reduce = function(arr, func, seed){
 //if given more objects, then copy their properties to object 1/first object too - but in the order received
 //return updated object 1
 
+    //...how to make room for more objects, if given?
+    //how to setup a function to take any # of arguments???
 
 
-_.extend = function(obj1, obj2, moreobjssomehowpossibly){
+_.extend = function(obj1, ...moreObjs){ //use rest parameter, which is an array thingie
+var outputObj = obj1;
 
+for(var i = 0; i < moreObjs.length; i++){
+    var currentObj = moreObjs[i]; //created to help clarify what working with
+    for(var key in currentObj){ //pulling i/index here to pinpoint iterated obj arguments that are fed in
+        outputObj[key] = currentObj[key];//assign the iterated key to my container obj and PULL the value of the currentObj[key] into it (need the obj name and [key], because that gets the properties)
+    }
 }
+    return outputObj;
+}
+
+    //loop through obj1's key and somehow copy it's stuff into a new var container
+    //for second obj2 loop through it too and copy it's stuff to new var that has obj1's stuff already there
+        //use that bracket notation
+        //can treat ...moreobjs like an array
+
+
 
 
 //////////////////////////////////////////////////////////////////////
