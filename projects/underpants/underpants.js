@@ -625,12 +625,29 @@ _.some = function(collection, func){
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
 
+
+//reduce will perform an action on the seed through use of iteration
+//reduce takes a seed and modifies that seed, which becomes the output (for this function)
+//use function on EVERY element in collection
+    //Input: array, function, seed (starting/initial element/value that can be applied/passed through repeatedly. So that don't have to repeatedly declare it)
+        //EDGE CASE: if NO SEED given then use the first element/value in collection to be seed and keep moving throughout elements
+        //Seed could be any kind of data type (WILDCARD), iterate through the seed 
+    //Output: function value the iteration for use for next iteration. Return final function (???)
+
+
 _.reduce = function(arr, func, seed){
    // if(seed === undefined){
      //   seed = array[0];
        // for(var i = 0; i < 
     //}
 }
+
+/**
+ * 
+ * NOT DONE YET, pseudocoded some...revisit concept of seed, need it to ACT upon with the func
+ */
+
+
 
 
 /** _.extend
