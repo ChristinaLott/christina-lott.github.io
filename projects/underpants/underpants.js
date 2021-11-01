@@ -436,7 +436,7 @@ _.map = function(collection, func){
        }
    } else {
         for(var key in collection){
-            outputArr.push(func(collection[key], key, collection));
+            outputArr.push(func(collection[key], key, collection)); //so like, indexes and keys or whatever kinda work the same because they're both properties in their collections
         }
    }
     return outputArr;
@@ -474,7 +474,11 @@ _.map = function(collection, func){
 
 
 _.pluck = function(arrObj, property){
-
+    var outputArr = [];
+    for(var i = 0; i = arrObj.length; i++){
+        //_.map
+    }
+    return outputArr.push(_.map(property, key, arrObj)); //contains value of property for every element in arrObj
 }
 
 
@@ -505,8 +509,33 @@ _.pluck = function(arrObj, property){
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
 
-_.every = function(collection, func){
 
+//use function on EVERY element of collection
+    //IF collection === array, then use current element[i], element's index i, and collection as arguments
+    //IF/else collection is an object then use current value/object[key], current key, and collection as arguments
+//IF EVERY element return value is true, return true
+//IF ANY of the values return false then return false
+//IF NO FUNCTION given, return true if every element === truthy, if any/even one return false then return false
+//what do if function results aren't boolean???
+
+
+
+_.every = function(collection, func){
+    if(Array.isArray(collection)){
+        for(var i = 0; i < collection.length; i++){
+            if(func(collection[i], i, collection) === false){
+                return false;
+            } 
+        } 
+        return true;
+    } else {
+        for(var key in collection){
+            if(func(collection[key], key, collection) === false){
+                return false;
+            }
+        }
+        return true;
+    }
 }
 
 
