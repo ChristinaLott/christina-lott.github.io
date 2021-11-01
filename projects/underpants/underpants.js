@@ -442,6 +442,9 @@ _.map = function(collection, func){
     return outputArr;
 }
 
+//re-review this concept...think of mapping like mapping the field values in Salesforce when importing in data
+
+
 
     //for(var i = 0; i < collection.length; i++){
       //  if(Array.isArray(collection) === true){
@@ -474,18 +477,15 @@ _.map = function(collection, func){
 
 
 _.pluck = function(arrObj, property){
-    var outputArr = [];
-    for(var i = 0; i = arrObj.length; i++){
-        //_.map
-    }
-    return outputArr.push(_.map(property, key, arrObj)); //contains value of property for every element in arrObj
+   return _.map(arrObj, function(element, i, co) {
+       // console.log(element, '<-- val')
+       return element[property]; //bracket notation calculates what the thing is - so thinking, vs. dot notation which is literally looking for thing as written/verbitum ...need the value at this property.;
+   }); //lines 480 - 482 are part of the annoymous/inner function code block
 }
 
 
-/**
- * NOT DONE YET, just started lightly psuedocoding
- */
-
+//revisit to get a firmer grasp on this concept
+//for later me, if wanna do for better clarity, could assign the inner function  to it's own var named function to better get it
 
 
 /** _.every
@@ -587,7 +587,10 @@ _.some = function(collection, func){
 */
 
 _.reduce = function(arr, func, seed){
-
+   // if(seed === undefined){
+     //   seed = array[0];
+       // for(var i = 0; i < 
+    //}
 }
 
 
