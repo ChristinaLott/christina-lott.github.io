@@ -521,22 +521,31 @@ _.pluck = function(arrObj, property){
 
 
 _.every = function(collection, func){
+    if(!func === true){ //we are checking if func is falsy with !func, if it is FALSY/ === true, then do...
+     func = function(element){
+        return element;
+     }     
+    } //this is a default if statement, so that when hit other coniditional chain, have func already "defined"
+
     if(Array.isArray(collection)){
         for(var i = 0; i < collection.length; i++){
-            if(func(collection[i], i, collection) === false){
+            if(!func(collection[i], i, collection)){ //for this function, we're checking if it's RESULT isn't TRUTHY/is falsy - so the result ends being falsy
                 return false;
             } 
         } 
         return true;
     } else {
         for(var key in collection){
-            if(func(collection[key], key, collection) === false){
+            if(!func(collection[key], key, collection)){
                 return false;
             }
         }
         return true;
     }
 }
+
+
+//need to revisit for deeper understanding, esp. regarding how element comes to be in first if
 
 
 /** _.some
