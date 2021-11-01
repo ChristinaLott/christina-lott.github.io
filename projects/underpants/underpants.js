@@ -570,10 +570,40 @@ _.every = function(collection, func){
 */
 
 
+//use function on EVERY element of the collection
+    //IF collection is an ARRAY: element, element's index, collection are the arguments
+    //IF collection is an Object: current value, current key, collection
+//return TRUE if at least ONE element with function called on it is/results  to true
+//return false if ALL element return false(so 0 true returns)
+//if function not given, return true if at least ONE element is truthy, otherwise return false
+
 _.some = function(collection, func){
+    if(!func === true){ //we are checking if func is falsy with !func, if it is FALSY/ === true, then do...
+        func = function(element){
+           return element;
+        }     
+       } //this is a default if statement, so that when hit other coniditional chain, have func already "defined"
+   
+       if(Array.isArray(collection)){
+           for(var i = 0; i < collection.length; i++){
+               if(func(collection[i], i, collection)){ 
+                   return true;
+               } 
+           } 
+           return false;
+       } else {
+           for(var key in collection){
+               if(func(collection[key], key, collection)){
+                   return true;
+               }
+           }
+           return false;
+       }
+   }
 
-}
-
+//for this function used same logic of every (default if return that creates  a function if none, conidtional chain to suss out truthy and falsy results)
+   //difference is that not looking for ALL things to amount to either true or false
+        //instead looking for SOME truthy-ness...so swapped the true false outcomes and dropped the ! statements
 
 
 /** _.reduce
