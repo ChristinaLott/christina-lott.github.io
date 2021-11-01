@@ -649,6 +649,13 @@ _.reduce = function(arr, func, seed){
 */
 
 
+//copy properties from the 2nd object onto/into the first object
+    //if has same key then overwrite the value with new one
+//if given more objects, then copy their properties to object 1/first object too - but in the order received
+//return updated object 1
+
+
+
 _.extend = function(obj1, obj2, moreobjssomehowpossibly){
 
 }
