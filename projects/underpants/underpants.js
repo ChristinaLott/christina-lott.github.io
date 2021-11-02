@@ -636,10 +636,17 @@ _.some = function(collection, func){
 
 
 _.reduce = function(arr, func, seed){
-   // if(seed === undefined){
-     //   seed = array[0];
-       // for(var i = 0; i < 
-    //}
+   if(seed === undefined){
+     seed = arr[0];
+       for(var i = 0; i < arr.length; i++){
+           seed = func(seed, arr[i], i);
+       }
+       } else {
+           for (var i = 0; i < arr.length; i++){
+               seed = func(seed, arr[i], i);
+           }
+       }
+    return seed;
 }
 
 /**
