@@ -72,6 +72,10 @@ var range = function(x, y) {
 var exponent = function(base, exp) {
 };
 
+//-1 numbers in exponents = turning it into a fraction, multiplied by however many times the exponentional numbers is
+
+
+
 // 8. Determine if a number is a power of two.
 // powerOfTwo(1); // true
 // powerOfTwo(16); // true
