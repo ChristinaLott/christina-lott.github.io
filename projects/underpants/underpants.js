@@ -638,9 +638,9 @@ _.some = function(collection, func){
 _.reduce = function(arr, func, seed){
    if(seed === undefined){
      seed = arr[0];
-       for(var i = 0; i < arr.length; i++){
+       for(var i = 1; i < arr.length; i++){  //start iterating at 1 because no seed given so move to the next element
            seed = func(seed, arr[i], i);
-       }
+             }
        } else {
            for (var i = 0; i < arr.length; i++){
                seed = func(seed, arr[i], i);
