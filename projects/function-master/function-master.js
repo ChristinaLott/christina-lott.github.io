@@ -46,7 +46,7 @@ function valuesToString(object){
 function arrayOrObject(collection) {
     if(typeof collection === "object" && Array.isArray(collection)){
         return "array";
-    } else if(typeof collection === "object" && collection !== null && !(value instanceof date)){
+    } else if(typeof collection === "object" && collection !== null){
         return "object";
     }
 }
