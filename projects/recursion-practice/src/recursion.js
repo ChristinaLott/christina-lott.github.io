@@ -27,12 +27,18 @@ if(n === 1){
 
 /**
  * 
- * still need to do the return null for negative integers
+ * NOT DONE YET- still need to do the return null for negative integers
  */
+
 
 
 // 2. Compute the sum of an array of integers.
 // Example:  sum([1, 2, 3, 4, 5, 6]);  // 21
+
+  //need to add/sum up each integer together
+  //Base at last value?
+  //start at index 0?
+
 var sum = function(array) {
   //base
 
@@ -40,22 +46,41 @@ var sum = function(array) {
   //recursion
 };
 
+
+
 // 3. Sum all numbers in an array containing nested arrays.
 // Example: arraySum([1,[2,3],[[4]],5]); // 15
     //array.flat() <-- allows you to turn a list of arrays into values
 
+  //need to add/sum up all values within the nested arrays
+  //base/end/stop at last value in array??
+  //start at index 0??
 
 var arraySum = function(array) {
+  //base
 
+
+  //recursion
 };
+
 
 // 4. Check if a number is even.
+  //num % 2= 0 //use to see if even
+  //If statement?? Do I need to return if it's odd or even? Or just check that even is true???
+  //base/stop when num is 0 or 1??
+  //recursion ...by 2?
+
 var isEven = function(n) {
+  //base
+
+  //recursion
 };
+
 
 // 5. Sum all integers below a given integer.
 // sumBelow(10); // 45
 // sumBelow(7); // 21
+  //
 var sumBelow = function(n) {
 };
 
