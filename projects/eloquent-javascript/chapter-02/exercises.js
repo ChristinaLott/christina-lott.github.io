@@ -3,15 +3,44 @@
 // triangles ///////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function triangles() {
+/*Write a loop that makes seven calls to console.log to output the following triangle:
 
+#
+##
+###
+####
+#####
+######
+#######
+ */
+
+function triangles(num) {
+  for(var i = "#"; i.length < num; i += "#"){
+    console.log(i);
+  }
 }
+
+//Not passing test, but it looks like it works in repl...is test weird?
+//passes 1 of the tests when I hardcode the num in the for loop, but obvy doesn't pass any input tests
+
+
 ////////////////////////////////////////////////////////////////////////////////
 // fizzBuzz ////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
 function fizzBuzz() {
-  
+  for(var i = 1; i <= 15; i++){
+    if (i % 3 === 0 && i % 5 === 0){
+        console.log("fizzbuzz");
+    } else if (i % 3 === 0){
+        console.log("fizz");
+    } else if (i % 5 === 0){
+        console.log("buzz");
+    } else {
+        console.log(i)
+    }
+    
+} 
 }
 
 ////////////////////////////////////////////////////////////////////////////////
