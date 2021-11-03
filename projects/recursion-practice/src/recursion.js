@@ -12,7 +12,10 @@ if(n === 1){
   return 1;
 } else if (n === 0){ //edge case: how to handle given 0
   return 1;
+} else if (n < 0){ //this takes care of negative values
+  return null;
 }
+
   //recursion
  return n * factorial(n - 1);
   //      5 * factorial(4)
@@ -25,11 +28,6 @@ if(n === 1){
 
 //return 5 * 4 * 3 * 2 * 1
 
-/**
- * 
- * NOT DONE YET- still need to do the return null for negative integers
- */
-
 
 
 // 2. Compute the sum of an array of integers.
@@ -41,9 +39,11 @@ if(n === 1){
 
 var sum = function(array) {
   //base
-
-
+if(array.length === 0){
+  return 0;
+}
   //recursion
+  return array[0] + sum(array.slice(1));
 };
 
 
@@ -65,15 +65,38 @@ var arraySum = function(array) {
 
 
 // 4. Check if a number is even.
-  //num % 2= 0 //use to see if even
-  //If statement?? Do I need to return if it's odd or even? Or just check that even is true???
+  //num % 2 = 0 CAN'T USE b/c MODULO//use to see if even
+  //If statement?? need to return true or false
   //base/stop when num is 0 or 1??
   //recursion ...by 2?
 
 var isEven = function(n) {
   //base
+  if(n === 0){
+    return true;
+  } else if (n === 1){
+    return false;
+  } //need to figure out how to make it work on negative integers
 
   //recursion
+
+    //for even?
+    //n = 10 
+      // n - 2 = 8
+      //reassign n to 8?
+        // n - 2 = 6
+        //reassign n to 6
+          //...
+          //n - 2 = 2
+          //reassign n to 2
+            //n - 2 = 0
+            //reassign n to 0 <- 
+
+    //for odd?
+    //n = 9
+      
+      // n - 2 = 1
+
 };
 
 
