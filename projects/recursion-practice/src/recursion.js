@@ -123,18 +123,12 @@ var sumBelow = function(n) {
 };
 
   //sumBelow(7)
-    // 1 + 2 + 3 + 4 + 5 + 6 = 21 || < 7
     //6 + 5 + 4 + 3 + 2 + 1 = 21  || < 7   <---
       //grab all integers BELOW n(7)
       //ADD/sum all of those integers together
         //STOP before use/count n(7)???
         //STOP at 0???
 
-
-/**
- * 
- * NOT DONE YET...still grabbing n, the number given
- */
 
 
 
@@ -150,9 +144,20 @@ var range = function(x, y) {
   return range(/*put code in here! :D */)
 };
 
-  //output is to push/add/unshift to array
+  //output/return is to push/add/unshift to array
     //grab only numbers inbetween x and y
-    //
+    //return empty array if no integers in range (??) - check test to see what this looks like
+    //should work on negatives
+    //should work if starting integer/x is greater than y
+
+
+
+  /**
+   * 
+   * NOT DONE YET
+   * 
+   * 
+   */
 
 
 // 7. Compute the exponent of a number.
@@ -161,10 +166,23 @@ var range = function(x, y) {
 // Example:  exponent(4,3);  // 64
 // https://www.khanacademy.org/computing/computer-science/algorithms/recursive-algorithms/a/computing-powers-of-a-number
 var exponent = function(base, exp) {
+  //base
+
+  //recursion
+
 };
 
 //-1 numbers in exponents = turning it into a fraction, multiplied by however many times the exponentional numbers is
+//compute negative and non negative integers
+//return 1 when exponeent === 0
+//returns base when exponent === 1, so stop
 
+
+/**
+ * 
+ * NOT DONE YET
+ * 
+ */
 
 
 // 8. Determine if a number is a power of two.
@@ -172,15 +190,63 @@ var exponent = function(base, exp) {
 // powerOfTwo(16); // true
 // powerOfTwo(10); // false
 var powerOfTwo = function(n) {
+  //base
+
+  //recursion
+
 };
+  
+  //Refresh on powers of two mathings...maybe like squaring?
+  //return a boolean
+    //return true for powers of two
+
+
+/**
+ * NOT DONE YET
+ * 
+ */
+
 
 // 9. Write a function that accepts a string a reverses it.
 var reverse = function(string) {
+  //base
+
+  //recursion
+
 };
+
+  //return a string in reverse
+  //use nothing fancy
+
+
+
+/**
+ * NOT DONE YET 
+ * 
+ * */
 
 // 10. Write a function that determines if a string is a palindrome.
 var palindrome = function(string) {
+  //base
+
+  //recursion
+
 };
+
+  //palindromes: read the same backwords
+    //string === string in reverse?
+  //return a boolean
+    //return true for palindromes
+    //return false if not
+    //ignore spaces and capital letters - so make case insenitive...not sure about spaces
+
+
+
+
+/** 
+ * NOT DONE YET
+ * 
+ */
 
 // 11. Write a function that returns the remainder of x divided by y without using the
 // modulo (%) operator.
