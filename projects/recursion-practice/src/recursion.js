@@ -130,21 +130,29 @@ var sumBelow = function(n) {
 
 // 6. Get the integers in range (x, y).
 // Example:  range(2, 9);  // [3, 4, 5, 6, 7, 8]
-var range = function(x, y) {
+var range = function(x, y, arr = []) { //added a default parameter, with the array literal
   //base ...when we stop and what value we may need to return
-  if(arr.length <= y){ //NOT IT...helpdesk said to reference same thing have in recursion, so use arr
-    return x - 1; //I think this will remove the ending number from range? Maybe could also return 0?
+  if(x + 1 === y){ //need to see if x is actually a number BELOW y, so add 1 to it and see if === y
+    return arr; 
   }
-
   //recursion
-  arr = [];
-  arr.push(x);
-  if(x < y){
-    return x + 1, range(x + 1); //should work if x is LESS than y, countup
-  } else {
-    return x - 1, range(x - 1);  //should work on if x is GREATER than y, countdown
-  }
+  arr.push(x + 1); //[4]
+  return range(x + 1, y, arr); //(4, y) ...remember to bring back array, so that the values carry on
+ 
+     //should work if x is LESS than y, countup
+    //should work on if x is GREATER than y, countdown
+  
 }
+
+
+  //need to get this to work for negative numbers and ranges that are the same x and y
+    //probably need conditional branching
+
+  //[]
+  //[2]
+  //[2, 3]
+  //[2, 3, 4]
+  //[2, 3, 4, 5]
 
   //output/return is to push/add/unshift to array
     //grab only numbers inbetween x and y
