@@ -110,17 +110,15 @@ if(n > 0){ //this is checking if it's a whole integer
 var sumBelow = function(n) {
 //base
   //return 0 WHEN AT THE END ???
-  if(n === 1){
-    return 1;
-  } else if (n === 0){ //edge case: how to handle given 0 (is this true here??)
-    return 1;
-  } else if (n < 0){ //this takes care of negative values (is this true here??)
-    return null;
-  }
+  if(n === 0){
+    return n;
+  } 
  
 //recursion - what do we do when NOT hitting the base case
   if(n > 0){
-    return n + sumBelow(n - 1)
+    return n - 1 + sumBelow(n - 1) //we minus 1 to remove the given number so can work below
+  } else {
+    return n + 1 + sumBelow(n + 1); //handles any negative values, have to add them to get towards 0
   }
 };
 
