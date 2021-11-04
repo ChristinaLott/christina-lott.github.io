@@ -261,6 +261,8 @@ var palindrome = function(string) {
 var modulo = function(x, y) {
 };
 
+//SKIP! Has been blued out! Do not have to do!!!
+
 // 12. Write a function that multiplies two numbers without using the * operator  or
 // JavaScript's Math object.
 // ATTENTION DO NOT LEAVE COMMENTS IN THIS FUNCTION. The test is looking for any ('/').
@@ -269,10 +271,22 @@ var multiply = function(x, y) {
   -2 + -2 + -2
 };
 
+
+//use addition and subtraction to get the effects of multiplication, can not use * or /
+//return a number
+
+
+/**
+ * 
+ * NOT DONE YET
+ * 
+ */
+
 // 13. Write a function that divides two numbers without using the / operator  or
 // JavaScript's Math object.
 var divide = function(x, y) {
 };
+//SKIP! DO NOT DO! IN BLUE
 
 // 14. Find the greatest common divisor (gcd) of two positive numbers.  The GCD of two
 // integers is the greatest integer that divides both x and y with no remainder.
@@ -281,6 +295,7 @@ var divide = function(x, y) {
 // https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/the-euclidean-algorithm
 var gcd = function(x, y) {
 };
+//SKIP! DO NOT DO! IN BLUE
 
 // 15. Write a function that compares each character of two strings and returns true if
 // both are identical.
@@ -290,14 +305,44 @@ var gcd = function(x, y) {
 var compareStr = function(str1, str2) {
 };
 
+  //returns a boolean
+    //true for identical strings
+
+
+  /**
+   * 
+   * NOT DONE YET
+   * 
+   */  
+
 // 16. Write a function that accepts a string and creates an array where each letter
 // occupies an index of the array.
 var createArray = function(str){
 };
 
+  //returns an array
+    //in array each index is a letter of the string
+  
+
+   /**
+   * 
+   * NOT DONE YET
+   * 
+   */ 
+
 // 17. Reverse the order of an array
 var reverseArr = function (array) {
 };
+
+  //return an array
+    //reversed order
+
+
+  /**
+   * 
+   * NOT DONE YET
+   * 
+   */
 
 // 18. Create a new array with a given value and length.
 // buildList(0,5) // [0,0,0,0,0]
@@ -305,16 +350,48 @@ var reverseArr = function (array) {
 var buildList = function(value, length) {
 };
 
+  //return an array
+    //array should have given length with given value at each index
+
+
+/**
+   * 
+   * NOT DONE YET
+   * 
+   */
+
+
 // 19. Count the occurence of a value inside a list.
 // countOccurrence([2,7,4,4,1,4], 4) // 3
 // countOccurrence([2,'banana',4,4,1,'banana'], 'banana') // 2
 var countOccurrence = function(array, value) {
 };
 
+  //return a number
+    //number should be number of occurances of the value
+
+
+/**
+   * 
+   * NOT DONE YET
+   * 
+   */
+
 // 20. Write a recursive version of map.
 // rMap([1,2,3], timesTwo); // [2,4,6]
 var rMap = function(array, callback) {
 };
+
+  //can't use native of map
+  //return new array without mutating
+  //apply function at every value in array
+
+
+  /**
+   * 
+   * NOT DONE YET
+   * 
+   */
 
 // 21. Write a function that counts the number of times a key occurs in an object.
 // var testobj = {'e': {'x':'y'}, 't':{'r': {'e':'r'}, 'p': {'y':'r'}},'y':'e'};
