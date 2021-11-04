@@ -76,10 +76,15 @@ var isEven = function(n) {
     return true;
   } else if (n === 1){
     return false;
-  } //need to figure out how to make it work on negative integers
+  }
 
   //recursion
-
+if(n > 0){ //this is checking if it's a whole integer
+  return isEven(n - 2);
+} else {
+  return isEven(n + 2); //this is checking if it's a negative integer
+}
+}
     //for even?
     //n = 10 
       // n - 2 = 8
@@ -97,14 +102,13 @@ var isEven = function(n) {
       
       // n - 2 = 1
 
-};
-
 
 // 5. Sum all integers below a given integer.
 // sumBelow(10); // 45
 // sumBelow(7); // 21
-  //
+  //add up everything below the < n
 var sumBelow = function(n) {
+
 };
 
 // 6. Get the integers in range (x, y).
@@ -151,6 +155,8 @@ var modulo = function(x, y) {
 // JavaScript's Math object.
 // ATTENTION DO NOT LEAVE COMMENTS IN THIS FUNCTION. The test is looking for any ('/').
 var multiply = function(x, y) {
+  2+2
+  -2 + -2 + -2
 };
 
 // 13. Write a function that divides two numbers without using the / operator  or

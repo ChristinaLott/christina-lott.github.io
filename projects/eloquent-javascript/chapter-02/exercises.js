@@ -71,7 +71,7 @@ When you have a program that generates this pattern, define a binding size = 8 a
 
 function drawChessboard() {
   for(var i = " #"; i.length < 8; i += " #"){
-    console.log (i + \n); 
+   // console.log (i + \n); 
   }
 }
 
