@@ -108,13 +108,54 @@ if(n > 0){ //this is checking if it's a whole integer
 // sumBelow(7); // 21
   //add up everything below the < n
 var sumBelow = function(n) {
-
+//base
+  //return 0 WHEN AT THE END ???
+  if(n === 1){
+    return 1;
+  } else if (n === 0){ //edge case: how to handle given 0 (is this true here??)
+    return 1;
+  } else if (n < 0){ //this takes care of negative values (is this true here??)
+    return null;
+  }
+ 
+//recursion - what do we do when NOT hitting the base case
+  if(n > 0){
+    return n + sumBelow(n - 1)
+  }
 };
+
+  //sumBelow(7)
+    // 1 + 2 + 3 + 4 + 5 + 6 = 21 || < 7
+    //6 + 5 + 4 + 3 + 2 + 1 = 21  || < 7   <---
+      //grab all integers BELOW n(7)
+      //ADD/sum all of those integers together
+        //STOP before use/count n(7)???
+        //STOP at 0???
+
+
+/**
+ * 
+ * NOT DONE YET...still grabbing n, the number given
+ */
+
+
+
 
 // 6. Get the integers in range (x, y).
 // Example:  range(2, 9);  // [3, 4, 5, 6, 7, 8]
 var range = function(x, y) {
+  //base ...when we stop and what value we may need to return
+
+
+  //recursion
+
+  return range(/*put code in here! :D */)
 };
+
+  //output is to push/add/unshift to array
+    //grab only numbers inbetween x and y
+    //
+
 
 // 7. Compute the exponent of a number.
 // The exponent of a number says how many times the base number is used as a factor.
