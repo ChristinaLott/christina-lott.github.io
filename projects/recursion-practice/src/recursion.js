@@ -132,7 +132,6 @@ var sumBelow = function(n) {
 
 
 
-
 // 6. Get the integers in range (x, y).
 // Example:  range(2, 9);  // [3, 4, 5, 6, 7, 8]
 var range = function(x, y) {
@@ -151,11 +150,16 @@ var range = function(x, y) {
     //should work if starting integer/x is greater than y
 
 
+    //if x < y then count up x + 1
+    //if x > y then count down x - 1
+    //stop when x = y? or a little before then?
+
+
+
 
   /**
    * 
    * NOT DONE YET
-   * 
    * 
    */
 
@@ -218,6 +222,7 @@ var reverse = function(string) {
   //return a string in reverse
   //use nothing fancy
 
+  //can i use the index within the string...? or split?
 
 
 /**
