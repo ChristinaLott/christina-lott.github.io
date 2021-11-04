@@ -57,10 +57,6 @@ if(array.length === 0){
   //start at index 0??
 
 var arraySum = function(array) {
-  //base
-
-
-  //recursion
 };
 
 
@@ -123,7 +119,7 @@ var sumBelow = function(n) {
 };
 
   //sumBelow(7)
-    //6 + 5 + 4 + 3 + 2 + 1 = 21  || < 7   <---
+    //6 + 5 + 4 + 3 + 2 + 1 = 21  || < 7  
       //grab all integers BELOW n(7)
       //ADD/sum all of those integers together
         //STOP before use/count n(7)???
@@ -136,12 +132,19 @@ var sumBelow = function(n) {
 // Example:  range(2, 9);  // [3, 4, 5, 6, 7, 8]
 var range = function(x, y) {
   //base ...when we stop and what value we may need to return
-
+  if(arr.length <= y){ //NOT IT...helpdesk said to reference same thing have in recursion, so use arr
+    return x - 1; //I think this will remove the ending number from range? Maybe could also return 0?
+  }
 
   //recursion
-
-  return range(/*put code in here! :D */)
-};
+  arr = [];
+  arr.push(x);
+  if(x < y){
+    return x + 1, range(x + 1); //should work if x is LESS than y, countup
+  } else {
+    return x - 1, range(x - 1);  //should work on if x is GREATER than y, countdown
+  }
+}
 
   //output/return is to push/add/unshift to array
     //grab only numbers inbetween x and y
@@ -171,9 +174,13 @@ var range = function(x, y) {
 // https://www.khanacademy.org/computing/computer-science/algorithms/recursive-algorithms/a/computing-powers-of-a-number
 var exponent = function(base, exp) {
   //base
-
+if(exp === 0){
+  return 1;
+} else if (exp === 1){ //counting down number of exp remaining, when get to 1 return base to finish recursion
+  return base;
+}
   //recursion
-
+ return exponent(base + base, exp - 1); //have base add upon itself until reach exp?
 };
 
 //-1 numbers in exponents = turning it into a fraction, multiplied by however many times the exponentional numbers is
@@ -184,7 +191,7 @@ var exponent = function(base, exp) {
 
 /**
  * 
- * NOT DONE YET
+ * NOT DONE YET...it doesn't seem to be even working on positive integers...not sure what's happening. Think issue is with recursion
  * 
  */
 
@@ -195,9 +202,13 @@ var exponent = function(base, exp) {
 // powerOfTwo(10); // false
 var powerOfTwo = function(n) {
   //base
-
+if(n === 0){
+  return true;
+} else {
+  return false;
+}
   //recursion
-
+return powerOfTwo(n % 2); //not sure why can't reach code...probably because activating base right off the bat...
 };
   
   //Refresh on powers of two mathings...maybe like squaring?
