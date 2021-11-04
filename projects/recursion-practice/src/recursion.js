@@ -146,7 +146,7 @@ var range = function(x, y, arr = []) { //added a default parameter, with the arr
 
 
   //need to get this to work for negative numbers and ranges that are the same x and y
-    //probably need conditional branching
+    //probably need conditional
 
   //[]
   //[2]
@@ -182,26 +182,25 @@ var range = function(x, y, arr = []) { //added a default parameter, with the arr
 // https://www.khanacademy.org/computing/computer-science/algorithms/recursive-algorithms/a/computing-powers-of-a-number
 var exponent = function(base, exp) {
   //base
-if(exp === 0){
-  return 1;
-} else if (exp === 1){ //counting down number of exp remaining, when get to 1 return base to finish recursion
+if(exp === 1){//counting down number of exp remaining, when get to 1 return base to finish recursion
   return base;
+} else if (exp === 0){ 
+  return 1;
 }
   //recursion
- return exponent(base + base, exp - 1); //have base add upon itself until reach exp?
-};
+ if(exp < 0){
+   return 1/base * exponent(base, exp + 1).toFixed(4); //works on negs because dividing...? multipling a negative number gives a positive...the test is looking for few numbers after the decimal, which .toFixed handles by limiting # of places after decimal
+ } else {
+  return base * exponent(base, exp - 1); //have base times the recursion if a whole positive integer
+  }
+}
 
+  //somehwere .toFixed should be used  to accomodate less decimal numbers
 //-1 numbers in exponents = turning it into a fraction, multiplied by however many times the exponentional numbers is
 //compute negative and non negative integers
 //return 1 when exponeent === 0
 //returns base when exponent === 1, so stop
 
-
-/**
- * 
- * NOT DONE YET...it doesn't seem to be even working on positive integers...not sure what's happening. Think issue is with recursion
- * 
- */
 
 
 // 8. Determine if a number is a power of two.
