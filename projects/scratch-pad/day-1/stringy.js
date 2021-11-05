@@ -209,18 +209,13 @@ function sortAscending(stringOne, stringTwo) {
                             //need to figure out how compare order of alphabets
            
 
-        if (stringOne > stringTwo){ //the instructions prompted for 0 index, did not need, as this will work too to compare the two
-               return 1;
-           } else if (stringOne < stringTwo){
-               return 0;
-           } else {
+        if (stringOne < stringTwo){ //the instructions prompted for 0 index, did not need, as this will work too to compare the two
                return -1;
+           } else if (stringOne > stringTwo){
+               return 1;
+           } else {
+               return 0;
            } 
-
-            /*
-            *
-            *is correct will need manual greenlighting*/
-
 
     // YOUR CODE ABOVE HERE //
 }
@@ -242,19 +237,17 @@ function sortDescending(stringOne, stringTwo) {
     //if the second is lower in alphabetical order than return -1
     //return 0 if they two strings are equal 
     
-             if (stringOne < stringTwo){
+             if(stringOne > stringTwo){
                return -1;
-           } else if (stringOne < stringTwo){
-               return 0;
-           } else {
+           } else if(stringOne < stringTwo){
                return 1;
+           } else {
+               return 0;
            } 
         
         /*
         *
         * is correct, will need manual greenlighting */
-
-
 
     // YOUR CODE ABOVE HERE //
 }
