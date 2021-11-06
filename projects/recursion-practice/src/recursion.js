@@ -359,13 +359,22 @@ var gcd = function(x, y) {
 // compareStr('tomato', 'tomato') // true
 var compareStr = function(str1, str2) {
   //base
-//if(){
-//return true;
-//}
-//
+if(str1.length === 1 && str2.length === 1){ //checking if at the last character to know when to stop
+  if(str1[0] === str2[0]){ //if at the last character checking if the characters are the same at index 0
+  return true; //if both ifs are met then we know that the strings are identical
+  }
+}
   //recursion
-//
+if(str1[0] === str2[0]){ //not sure how to tell it to check for matching empty strings...doing === "" for both did not work here
+  return compareStr(str1.slice(0, 1), str2.slice(0, 1)); //just adding the recursion, has no edits yet
+  }
+if(str1 === undefined || str2 === undefined && str1[0] != str2[0]){ 
+  return false;
+  }
 };
+
+//recursing infinintely for some reason...and also not returning the right boolean
+//tried to add [length - 1] to rule out if not the same length...but still having the same issue
 
   //compare each character of two strings
   //returns a boolean
@@ -378,7 +387,7 @@ var compareStr = function(str1, str2) {
 
   /**
    * 
-   * NOT DONE YET
+   * NOT DONE YET...think I'm close, but not sure why reoccuring infinitely and not returning correct boolean
    * 
    */  
 
