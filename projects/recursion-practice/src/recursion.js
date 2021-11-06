@@ -236,8 +236,8 @@ if(string.length === 1){ //or maybe string === "";
   return string;
 }
   //recursion
-  outputStr += string[string.length - 1];
-  return outputStr + reverse(string.slice(- 1)); //use negative number to go backwards
+  outputStr += string[string.length - 1]; //need to call upon default str to keep it and use
+  return outputStr + reverse(string.slice(0, - 1)); //use negative number to go backwards
 };
 
   //return a string in reverse
