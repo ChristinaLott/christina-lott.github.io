@@ -302,18 +302,20 @@ var modulo = function(x, y) {
 // JavaScript's Math object.
 // ATTENTION DO NOT LEAVE COMMENTS IN THIS FUNCTION. The test is looking for any ('/').
 var multiply = function(x, y) {
- if(y === 1){
+ if (x === 0 || y === 0){
+   return 0;
+ } else if (y === 1){
    return x;
  }
   
-  if (x < 0 && y < 0){
-    return x + multiply(x, y + 1);
-  } else if (x > 0 && y > 0){
-    return x + multiply(x, y - 1);
+  if (x > 0 && y > 0|| x < 0 && y < 0){
+      return x + multiply(x, y - 1);
+  } else if (x < 0 || y < 0){
+      return x + multiply(x, y + 1);
   }
 };
 
-//hrm...getting undefined as my result for some reason...this is problably not the right approach...unsure how to use the countdowning
+//now getting an infinite recursion...hrm...
 
 //2+2
 //  -2 + -2 + -2
@@ -328,7 +330,7 @@ var multiply = function(x, y) {
 
 /**
  * 
- * NOT DONE YET
+ * NOT DONE YET, but think I'm kinda close?
  * 
  */
 
