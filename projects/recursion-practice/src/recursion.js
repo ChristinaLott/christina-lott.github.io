@@ -494,6 +494,10 @@ var countOccurrence = function(array, value) {
 // 20. Write a recursive version of map.
 // rMap([1,2,3], timesTwo); // [2,4,6]
 var rMap = function(array, callback) {
+  //base
+
+  //recursion
+
 };
 
   //can't use native of map
@@ -529,6 +533,7 @@ var rMap = function(array, callback) {
 // countKeysInObj(testobj, 'e') // 2
 var countKeysInObj = function(obj, key) {
 };
+  //SKIP DO NOT DO
 
 // 22. Write a function that counts the number of times a value occurs in an object.
 // var testobj = {'e': {'x':'y'}, 't':{'r': {'e':'r'}, 'p': {'y':'r'}},'y':'e'};
@@ -536,11 +541,13 @@ var countKeysInObj = function(obj, key) {
 // countValuesInObj(testobj, 'e') // 1
 var countValuesInObj = function(obj, value) {
 };
+  //SKIP DO NOT DO
 
 // 23. Find all keys in an object (and nested objects) by a provided name and rename
 // them to a provided new name while preserving the value stored at that key.
 var replaceKeysInObj = function(obj, key, newKey) {
 };
+  //SKIP DO NOT DO
 
 // 24. Get the first n Fibonacci numbers.  In the Fibonacci Sequence, each subsequent
 // number is the sum of the previous two.
@@ -549,6 +556,7 @@ var replaceKeysInObj = function(obj, key, newKey) {
 // Note:  The 0 is not counted.
 var fibonacci = function(n) {
 };
+  //SKIP DO NOT DO
 
 // 25. Return the Fibonacci number located at index n of the Fibonacci sequence.
 // [0,1,1,2,3,5,8,13,21]
@@ -556,7 +564,39 @@ var fibonacci = function(n) {
 // nthFibo(7); // 13
 // nthFibo(3); // 2
 var nthFibo = function(n) {
+  //base
+if (n < 0){
+  return null;
+} else if (n < 2){ //base? n === 0, return 0. n === 1, return 1. or n < 2, return n - because first and second numbers in fibonacci are not the prior sums
+  return n; //I think this would bring back the value at n
+}
+  //recursion
+//var fibo = [0, 1, 1, 2, 3, 5, 8, 13, 21];// fibo-1 + fibo-2???
+if(n > 0){
+  return nthFibo(n - 1) + nthFibo(n - 2);
+} else {
+  return null;
+  }
 };
+
+//not sure at all how  this works...or how to make it work...
+//https://sebhastian.com/fibonacci-recursion-javascript/
+
+//return the Fibonacci...basically, return the number at n index...wow.
+//wait...maybe I need to get it to calculate the fibnoacci to then match with n?
+  //Not sure if I should be creating my own array with the fibonacci numbers within it?
+    //need to cycle through each index until get to n index and then return value at n index
+      //return a number/the number value at n index
+      //should return null for negative integers/n
+      //start at index 0 and work way up until n === ...
+//Fibonacci number is a series of numbers where the two previous numbers are the sum of next number
+  //ex: 1, 1, 2, 3, 5, 8
+
+
+/**
+ * 
+ * NOT DONE YET
+ */
 
 // 26. Given an array of words, return a new array containing each word capitalized.
 // var words = ['i', 'am', 'learning', 'recursion'];
