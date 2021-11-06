@@ -230,22 +230,38 @@ return powerOfTwo(n % 2); //not sure why can't reach code...probably because act
 
 
 // 9. Write a function that accepts a string a reverses it.
-var reverse = function(string) {
+var reverse = function(string, outputStr = "") { //I added default of outputStr
   //base
-
+if(string.length === 1){ //or maybe string === "";
+  return string;
+}
   //recursion
-
+  outputStr += string[string.length - 1];
+  return outputStr + reverse(string.slice(- 1)); //use negative number to go backwards
 };
 
   //return a string in reverse
+    //can use .length - 1 because also works on strings 0th index "list"
+    //can also use .slice on the string
   //use nothing fancy
 
+  //could either use a default string or have the string itialized in the recursion return
+      //would need to return/call upon 
   //can i use the index within the string...? or split?
-
+  //my example: input of "christina" -> to output of "anitsirhc"
+    //""
+    //"a"
+    //"an"
+    //"ani"
+    //"anit"
+    //"anits"
+    //"anitsi"
+    //"anitsir"
+    //"anitsirh"
+    //"anitsirhc" <-what I want to return/so base case
 
 /**
- * NOT DONE YET 
- * 
+ * NOT DONE YET ...though I think I have it? not passing any tests * 
  * */
 
 // 10. Write a function that determines if a string is a palindrome.
@@ -263,6 +279,8 @@ var palindrome = function(string) {
     //return false if not
     //ignore spaces and capital letters - so make case insenitive...not sure about spaces
 
+  //think this might use the above reverse string recursion to see if the outputStr === old string...but wait that requires taking letters out
+  //think I should make two outputStr? that way one can hold a copy of the string input to compare against if it ends up with the recursive string being the same backwards?
 
 
 
@@ -280,6 +298,8 @@ var modulo = function(x, y) {
 };
 
 //SKIP! Has been blued out! Do not have to do!!!
+
+
 
 // 12. Write a function that multiplies two numbers without using the * operator  or
 // JavaScript's Math object.
@@ -315,17 +335,32 @@ var gcd = function(x, y) {
 };
 //SKIP! DO NOT DO! IN BLUE
 
+
+
+
 // 15. Write a function that compares each character of two strings and returns true if
 // both are identical.
 // compareStr('house', 'houses') // false
 // compareStr('', '') // true
 // compareStr('tomato', 'tomato') // true
 var compareStr = function(str1, str2) {
+  //base
+//if(){
+//return true;
+//}
+//
+  //recursion
+//
 };
 
+  //compare each character of two strings
   //returns a boolean
-    //true for identical strings
+    //true for identical strings, false if not
 
+  //go through each index of both of the strings?
+  //roll through them until reach their length/end
+  //make the false statement first? so have it check if any characters are index are not strictly equal kick out false
+  
 
   /**
    * 
@@ -333,14 +368,26 @@ var compareStr = function(str1, str2) {
    * 
    */  
 
+
+
 // 16. Write a function that accepts a string and creates an array where each letter
 // occupies an index of the array.
 var createArray = function(str){
+  //base
+
+  //recursion
+
 };
 
-  //returns an array
+
+  //returns an array from a string
     //in array each index is a letter of the string
   
+    //my example: input of "wazzup" -> ["w", "a", "z", "z", "u", "p"]
+      //convert the string into an array
+      //split up each part of the string by letter
+      //base when at end of string/string is empty?...think I need to probably manually pull each letter out
+
 
    /**
    * 
@@ -349,12 +396,18 @@ var createArray = function(str){
    */ 
 
 // 17. Reverse the order of an array
-var reverseArr = function (array) {
+var reverseArr = function (array, outputArr = []) {
+//base
+
+//recursion
+outputA
+return reverseArr()
 };
 
   //return an array
     //reversed order
-
+  //could probably pop each item off into a new array
+  //stop once given array is emptied
 
   /**
    * 
