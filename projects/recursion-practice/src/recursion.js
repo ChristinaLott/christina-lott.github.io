@@ -424,10 +424,10 @@ if(str.length === 0){
 // 17. Reverse the order of an array
 var reverseArr = function (array, outputArr = []) {
 //base
-
+if(array.length === 0)
 //recursion
-outputA
-return reverseArr()
+outputArr = array.pop();
+return reverseArr(array.pop());
 };
 
   //return an array
