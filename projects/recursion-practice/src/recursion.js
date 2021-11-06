@@ -573,13 +573,13 @@ if (n < 0){
   //recursion
 //var fibo = [0, 1, 1, 2, 3, 5, 8, 13, 21];// fibo-1 + fibo-2???
 if(n > 0){
-  return nthFibo(n - 1) + nthFibo(n - 2);
+  return nthFibo(n - 1) + nthFibo(n - 2); //return the function twice to get two previous terms in the fibonacci sequence
 } else {
   return null;
   }
 };
 
-//not sure at all how  this works...or how to make it work...
+//I don't understand how it moves through/counts down from the given n
 //https://sebhastian.com/fibonacci-recursion-javascript/
 
 //return the Fibonacci...basically, return the number at n index...wow.
@@ -593,21 +593,44 @@ if(n > 0){
   //ex: 1, 1, 2, 3, 5, 8
 
 
-/**
- * 
- * NOT DONE YET
- */
 
 // 26. Given an array of words, return a new array containing each word capitalized.
 // var words = ['i', 'am', 'learning', 'recursion'];
 // capitalizedWords(words); // ['I', 'AM', 'LEARNING', 'RECURSION']
 var capitalizeWords = function(input) {
+  //base
+
+  //recursion
 };
+
+  //caps every character in an every element in the given array
+  //think I need to make sure I've gone through the start [0] of each element until that length
+  //then make sure I've gone through the whole length of the array
+  //use toUpperCase on them - would I be able to just use this on the element to effect all characters?
+
+
+
+/**
+ * 
+ * NOT DONE YET
+ */
 
 // 27. Given an array of strings, capitalize the first letter of each index.
 // capitalizeFirst(['car', 'poop', 'banana']); // ['Car', 'Poop', 'Banana']
 var capitalizeFirst = function(array) {
 };
+
+
+  //take an array and within it caps the index [0] of each element
+  //take an array and return an array
+  //use toUpperCase on [0]...do I also need to slice(1) in the rest of the word?
+  //recourse by moving through each element, [0] and going until reach length - 1?
+  
+
+/**
+ * NOT DONE YET
+ * 
+ */
 
 // 28. Return the sum of all even numbers in an object containing nested objects.
 // var obj1 = {
@@ -620,11 +643,13 @@ var capitalizeFirst = function(array) {
 // nestedEvenSum(obj1); // 10
 var nestedEvenSum = function(obj) {
 };
+//SKIP
 
 // 29. Flatten an array containing nested arrays.
 // Example: flatten([1,[2],[3,[[4]]],5]); // [1,2,3,4,5]
 var flatten = function(arrays) {
 };
+//SKIP
 
 // 30. Given a string, return an object containing tallies of each letter.
 // letterTally('potato'); // {'p':1, 'o':2, 't':2, 'a':1}
