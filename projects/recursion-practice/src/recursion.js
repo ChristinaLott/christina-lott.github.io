@@ -724,6 +724,9 @@ var minimizeZeroes = function(array) {
 // alternateSign([2,7,8,3,1,4]) // [2,-7,8,-3,1,-4]
 // alternateSign([-2,-7,8,3,-1,4]) // [2,-7,8,-3,1,-4]
 var alternateSign = function(array) {
+  //base
+
+  //recursion
 };
 
 
@@ -741,6 +744,17 @@ var alternateSign = function(array) {
 // Assume all numbers are single digits (less than 10).
 // numToText("I have 5 dogs and 6 ponies"); // "I have five dogs and six ponies"
 var numToText = function(str) {
+  //base
+if(str.length === 0){
+  return "";
+}
+  //recursion
+  var obj = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six", 7: "seven", 8: "eight", 9: "nine"};
+  var arr = str.split; //think I'm off...not sure how to make it a string again and swap number to word
+  if(str[0] != NaN){
+    return numToText(str);
+  }
+  
 };
 
 
@@ -749,6 +763,7 @@ var numToText = function(str) {
   //look for numbers and change to word version
     //could I use loosely equals? or should I somehow write out each digit to words?
       //??? 1:one, 2:two, 3:three, 4:four, 5:five, 6:six, 7:seven, 8:eight, 9:nine ???
+        //could I add this as a default obj???
 
 /**
  * NOT DONE YET!
