@@ -426,13 +426,13 @@ var reverseArr = function (array, outputArr = []) {
 //base
 if(array.length === 0)
 //recursion
-outputArr = array.pop();
-return reverseArr(array.pop());
+outputArr += array.length - 1;
+return reverseArr(array[array.length - 1]);
 };
 
   //return an array
     //reversed order
-  //could probably pop each item off into a new array
+  //could probably pop each item off into a new array...don't think that actually worked? not sure how to do
   //stop once given array is emptied
 
   /**
@@ -444,7 +444,14 @@ return reverseArr(array.pop());
 // 18. Create a new array with a given value and length.
 // buildList(0,5) // [0,0,0,0,0]
 // buildList(7,3) // [7,7,7]
-var buildList = function(value, length) {
+var buildList = function(value, length, outputArr = []) {
+  //base
+if(length === 0){
+  return outputArr;
+}
+  //recursion
+  outputArr.push(value);
+  return buildList(value, length - 1, outputArr); //remember to include the output array so can keep collecting in it
 };
 
   //return an array
@@ -454,11 +461,6 @@ var buildList = function(value, length) {
         //push the 1st num into the array as an element, so probably don't use +?
 
 
-/**
-   * 
-   * NOT DONE YET
-   * 
-   */
 
 
 // 19. Count the occurence of a value inside a list.
