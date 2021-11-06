@@ -395,11 +395,14 @@ if(str1 === undefined || str2 === undefined && str1[0] != str2[0]){
 
 // 16. Write a function that accepts a string and creates an array where each letter
 // occupies an index of the array.
-var createArray = function(str){
+var createArray = function(str, outputArr = []){ //added a default array...eeeh
   //base
-
+if(str.length === 0){
+  return outputArr;
+}
   //recursion
-
+  outputArr.push(str.slice(1));
+  return outputArr = createArray(str.slice(1)); //lost on how to get this to actually pull each letter
 };
 
 
@@ -414,7 +417,7 @@ var createArray = function(str){
 
    /**
    * 
-   * NOT DONE YET
+   * NOT DONE YET...pretty sure I am missing something fundamental about this one
    * 
    */ 
 
