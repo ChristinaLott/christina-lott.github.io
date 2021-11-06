@@ -656,6 +656,22 @@ var flatten = function(arrays) {
 var letterTally = function(str, obj) {
 };
 
+
+
+  //make a string return as an object
+    //object contains tallies of each letter - counting
+      //my ex: "Christina" -> {C:1, h:1, r:1, i:2, s:1, t:1, n:1, a:1}
+    //base the length - 1 of the str? recourse to the next index?
+    //is the obj empty? I think I'm gonna assume so, cause I don't want hardcode the indexes...
+    //not sure how I would find letter matches AND add their tally where needed...
+      //maybe looking if thereis no match, then add that letter to the object as a key
+      //should I split up the string? eeeh...
+
+/**
+ * NOT DONE YET 
+ * 
+ * */
+
 // 31. Eliminate consecutive duplicates in a list.  If the list contains repeated
 // elements they should be replaced with a single copy of the element. The order of the
 // elements should not be changed.
@@ -664,17 +680,44 @@ var letterTally = function(str, obj) {
 var compress = function(list) {
 };
 
+  //input an array, output/return an array
+  //remove consecutive duplicates...huh
+  //don't change elements order
+  //maybe use something like seed? compare past value to current, if a match splice/slice it out?
+
+/** 
+ * NOT DONE YET 
+ * 
+ * */
+
+
 // 32. Augment every element in a list with a new value where each element is an array
 // itself.
 // Example: augmentElements([[],[3],[7]], 5); // [[5],[3,5],[7,5]]
 var augmentElements = function(array, aug) {
 };
+//SKIP!!!!
 
 // 33. Reduce a series of zeroes to a single 0.
 // minimizeZeroes([2,0,0,0,1,4]) // [2,0,1,4]
 // minimizeZeroes([2,0,0,0,1,0,0,4]) // [2,0,1,0,4]
 var minimizeZeroes = function(array) {
 };
+
+
+  //need to merge/collapse reoccuring 0's down to one 0
+  //takes an array, returns an array
+  //perhaps pulling each number from the array and putting into a new array?
+    //if number does not exist then add it to new array? else do nothing?
+  //base at array's length - 1?
+  //recourse by checking condition of if number element exists in empty array
+  //make a default array, to hold non dup numbers?
+
+
+/** 
+ * NOT DONE YET 
+ * 
+ * */
 
 // 34. Alternate the numbers in an array between positive and negative regardless of
 // their original sign.  The first number in the index always needs to be positive.
@@ -683,11 +726,34 @@ var minimizeZeroes = function(array) {
 var alternateSign = function(array) {
 };
 
+
+  //change to positive/negative and alternate
+  //first number has to be positive
+  //change -+ regardless of original sign
+  //if [0] make positive?, if even index make negative??? how do I change the sign of a value?
+
+/** 
+ * NOT DONE YET 
+ * 
+ * */
+
 // 35. Given a string, return a string with digits converted to their word equivalent.
 // Assume all numbers are single digits (less than 10).
 // numToText("I have 5 dogs and 6 ponies"); // "I have five dogs and six ponies"
 var numToText = function(str) {
 };
+
+
+  //input is a string, return string that converts digits to word version
+  //all numbers are < 10, single digits
+  //look for numbers and change to word version
+    //could I use loosely equals? or should I somehow write out each digit to words?
+      //??? 1:one, 2:two, 3:three, 4:four, 5:five, 6:six, 7:seven, 8:eight, 9:nine ???
+
+/**
+ * NOT DONE YET!
+ */
+
 
 // *** EXTRA CREDIT ***
 
