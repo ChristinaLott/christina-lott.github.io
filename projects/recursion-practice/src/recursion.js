@@ -260,9 +260,6 @@ if(string.length === 1){ //or maybe string === "";
     //"anitsirh"
     //"anitsirhc" <-what I want to return/so base case
 
-/**
- * NOT DONE YET ...though I think I have it? not passing any tests * 
- * */
 
 // 10. Write a function that determines if a string is a palindrome.
 var palindrome = function(string) {
@@ -305,13 +302,28 @@ var modulo = function(x, y) {
 // JavaScript's Math object.
 // ATTENTION DO NOT LEAVE COMMENTS IN THIS FUNCTION. The test is looking for any ('/').
 var multiply = function(x, y) {
-  2+2
-  -2 + -2 + -2
+ if(y === 1){
+   return x;
+ }
+  
+  if (x < 0 && y < 0){
+    return x + multiply(x, y + 1);
+  } else if (x > 0 && y > 0){
+    return x + multiply(x, y - 1);
+  }
 };
 
+//hrm...getting undefined as my result for some reason...this is problably not the right approach...unsure how to use the countdowning
 
+//2+2
+//  -2 + -2 + -2
 //use addition and subtraction to get the effects of multiplication, can not use * or /
 //return a number
+//if(exp < 0){
+ // return 1/base * exponent(base, exp + 1).toFixed(4); //works on negs because dividing...? multipling a negative number gives a positive...the test is looking for few numbers after the decimal, which .toFixed handles by limiting # of places after decimal
+//} else {
+ //return base * exponent(base, exp - 1); //have base times the recursion if a whole positive integer
+ //}
 
 
 /**
@@ -423,6 +435,9 @@ var buildList = function(value, length) {
 
   //return an array
     //array should have given length with given value at each index
+        //think I can count down from the 2nd num that tells how many needed of 1st num
+        //each occurance put into an empty default array
+        //push the 1st num into the array as an element, so probably don't use +?
 
 
 /**
@@ -440,7 +455,10 @@ var countOccurrence = function(array, value) {
 
   //return a number
     //number should be number of occurances of the value
-
+      //need to look through given array for matches of the given value and then return count
+      //maybe create a variable to assign the count to and to keep counting with?
+        //if index = value, then push + 1 into outputVar?
+        //stop...when at the end of the array
 
 /**
    * 
@@ -456,6 +474,22 @@ var rMap = function(array, callback) {
   //can't use native of map
   //return new array without mutating
   //apply function at every value in array
+
+  
+      //map code below
+  /**_.map = function(collection, func){
+    var outputArr = [];
+   if(Array.isArray(collection) === true){
+       for(var i = 0; i < collection.length; i++){
+        outputArr.push(func(collection[i], i, collection)); //functions evaluate to their RESULT. so can expect that outcome, and therefore slip it into an array
+       }
+   } else {
+        for(var key in collection){
+            outputArr.push(func(collection[key], key, collection)); //so like, indexes and keys or whatever kinda work the same because they're both properties in their collections
+        }
+   }
+    return outputArr;
+} */
 
 
   /**
