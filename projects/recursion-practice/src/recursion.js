@@ -467,6 +467,15 @@ if(length === 0){
 // countOccurrence([2,7,4,4,1,4], 4) // 3
 // countOccurrence([2,'banana',4,4,1,'banana'], 'banana') // 2
 var countOccurrence = function(array, value) {
+  //base
+  if(array.length - 1){; //if end of the array is true?
+    return outputCount;
+  }
+    //recursion
+  outputCount += 1; //I feel like this is the way to count??? 
+  if(array[0] === value){
+  return countOccurrence(array, value);
+  }
 };
 
   //return a number
@@ -478,7 +487,7 @@ var countOccurrence = function(array, value) {
 
 /**
    * 
-   * NOT DONE YET
+   * NOT DONE YET...function comes back undefined...Not sure to make sure it still has a value
    * 
    */
 
