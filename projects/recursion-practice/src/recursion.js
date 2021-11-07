@@ -618,6 +618,14 @@ var capitalizeWords = function(input) {
 // 27. Given an array of strings, capitalize the first letter of each index.
 // capitalizeFirst(['car', 'poop', 'banana']); // ['Car', 'Poop', 'Banana']
 var capitalizeFirst = function(array) {
+  //base
+if(array.length === 0){ //stop once given array is empty
+return [];
+}
+  //recursion
+  var helperArr = array[0].split(""); /
+  helperArr[0] = helperArr[0].toUpperCase();
+  return [helperArr.join("")].concat(capitalizeFirst(array.slice(1)));
 };
 
 
@@ -628,7 +636,7 @@ var capitalizeFirst = function(array) {
   
 
 /**
- * NOT DONE YET
+ * Done, but I need  more clarity on how the drilling into the array/spliting is working
  * 
  */
 
@@ -655,8 +663,6 @@ var flatten = function(arrays) {
 // letterTally('potato'); // {'p':1, 'o':2, 't':2, 'a':1}
 var letterTally = function(str, obj) {
 };
-
-
 
   //make a string return as an object
     //object contains tallies of each letter - counting
