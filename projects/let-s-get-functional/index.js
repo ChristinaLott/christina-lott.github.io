@@ -25,23 +25,108 @@ var maleCount = function(array) {
 
 };
 
-var femaleCount;
+    //# of male customers
+    //input: array
+    //output: number
+    //use filter
 
-var oldestCustomer;
 
-var youngestCustomer;
+var femaleCount = function(array){
 
-var averageBalance;
+};
 
-var firstLetterCount;
+    //# of female customers
+    //input: array
+    //output: number
+    //use reduce
 
-var friendFirstLetterCount;
 
-var friendsCount;
 
-var topThreeTags;
+var oldestCustomer = function(array){
 
-var genderCount;
+};
+
+    //oldest customer name
+    //input: array
+    //output: string
+        //can use whatever works, I guess?
+
+
+
+var youngestCustomer = function(array){
+
+};
+
+   //youngest customer name
+    //input: array
+    //output: string
+        //can use whatever works, I guess?
+
+
+var averageBalance = function(array){
+
+};
+
+    //average balance of all customers
+    //input: array
+    //output: number
+        //can use whatever works, I guess?
+
+
+
+var firstLetterCount = function(array, letter){
+
+};
+
+    //how many customers names begin with given letter
+    //input: array, letter
+    //output: number
+        //use whatevs?
+
+
+
+var friendFirstLetterCount = function (array, customer, letter){
+
+};
+
+    //how many friends of a customer has have names that start with given letter
+    //input: array, customer(obj?), letter
+    //output: number
+
+
+var friendsCount = function (array, name){
+
+};
+
+    //find customers that have given customer's name in their friends
+    //input: array, name (str?)
+    //output: array
+
+
+
+var topThreeTags = function(array){
+
+};
+
+
+    //find three most common tags among customers
+    //input: array
+    //output: array
+
+
+
+var genderCount = function(array){
+
+};
+
+
+    //summary of genders
+        //male: 1
+        //female: 3
+        //non-binary: 2
+    //input: array
+    //output: object
+    //use reduce
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////

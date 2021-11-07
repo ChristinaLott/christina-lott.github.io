@@ -623,7 +623,7 @@ if(array.length === 0){ //stop once given array is empty
 return [];
 }
   //recursion
-  var helperArr = array[0].split(""); /
+  var helperArr = array[0].split("");
   helperArr[0] = helperArr[0].toUpperCase();
   return [helperArr.join("")].concat(capitalizeFirst(array.slice(1)));
 };
