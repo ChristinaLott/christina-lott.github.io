@@ -22,13 +22,14 @@ var _ = require("underbar");
  */
 
 var maleCount = function(array) {
-
+    
 };
 
     //# of male customers
     //input: array
     //output: number
     //use filter
+        //review notes for support
 
 
 var femaleCount = function(array){
@@ -92,7 +93,7 @@ var friendFirstLetterCount = function (array, customer, letter){
     //how many friends of a customer has have names that start with given letter
     //input: array, customer(obj?), letter
     //output: number
-
+        //review notes for support
 
 var friendsCount = function (array, name){
 
