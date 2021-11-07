@@ -263,11 +263,18 @@ if(string.length === 1){ //or maybe string === "";
 
 // 10. Write a function that determines if a string is a palindrome.
 var palindrome = function(string) {
+string = string.toLowerCase().split(" ").join(""); // making case insensitive, then splitting up all the words at the spaces, then REjoining them without the spaces
   //base
-
-  //recursion
-
+  if (string.length <= 1){
+return true;
+} else if(string[0] != string[string.length - 1]){ //how we compare index 0 and the last index
+return false;
+} 
+  //recursion   //give me everything from index 1 UNTIL/END BEFORE the last index      
+                                                       //0123456   -> acoca < - snatching the inside
+return palindrome(string.slice(1, string.length - 1)); //TacocaT...when goes through at first looks at the start and end characters in the base. Then rolls through 
 };
+  //ex: tacocat = palindrome
 
   //palindromes: read the same backwords
     //string === string in reverse?
@@ -302,20 +309,36 @@ var modulo = function(x, y) {
 // JavaScript's Math object.
 // ATTENTION DO NOT LEAVE COMMENTS IN THIS FUNCTION. The test is looking for any ('/').
 var multiply = function(x, y) {
+ if(x < 0 && y < 0){
+   x = -x;
+   y = -y;
+ }
+
+
  if (x === 0 || y === 0){
    return 0;
- } else if (y === 1){
+ } else if (y === 1 || y === -1){
    return x;
  }
   
-  if (x > 0 && y > 0|| x < 0 && y < 0){
-      return x + multiply(x, y - 1);
-  } else if (x < 0 || y < 0){
-      return x + multiply(x, y + 1);
-  }
+var helperCountDownToBase = y > 0 ? y - 1 : y + 1;
+
+if (x > 0 && y > 0 || x < 0 && y > 0){
+  return x + multiply(x, helperCountDownToBase);
+} else if (x > 0 && y < 0){
+  return x - multiply(x, helperCountDownToBase);
+}
 };
 
-//now getting an infinite recursion...hrm...
+//now getting 0 from -275, -502 being ran in the test. Failing at test 3 subtest 5
+  //remember can't use complex math...need to somehow account for the mathatical need to have - time - = +
+  //maybe if check if both signs are negative then < 0 ...somehow change to positive...
+
+// if (x > 0 && y > 0|| x < 0 && y < 0){
+//   return x + multiply(x, helperNeg);
+// } else if (x < 0 || y < 0){
+//   return x - multiply(x, helperNeg);
+// }
 
 //2+2
 //  -2 + -2 + -2
@@ -328,11 +351,6 @@ var multiply = function(x, y) {
  //}
 
 
-/**
- * 
- * NOT DONE YET, but think I'm kinda close?
- * 
- */
 
 // 13. Write a function that divides two numbers without using the / operator  or
 // JavaScript's Math object.
@@ -359,21 +377,20 @@ var gcd = function(x, y) {
 // compareStr('tomato', 'tomato') // true
 var compareStr = function(str1, str2) {
   //base
-if(str1.length === 1 && str2.length === 1){ //checking if at the last character to know when to stop
+if(str1.length <= 1 && str2.length <= 1){ //checking if at the last character to know when to stop
   if(str1[0] === str2[0]){ //if at the last character checking if the characters are the same at index 0
   return true; //if both ifs are met then we know that the strings are identical
   }
 }
   //recursion
 if(str1[0] === str2[0]){ //not sure how to tell it to check for matching empty strings...doing === "" for both did not work here
-  return compareStr(str1.slice(0, 1), str2.slice(0, 1)); //just adding the recursion, has no edits yet
+  return compareStr(str1.slice(1), str2.slice(1)); //just adding the recursion, has no edits yet
   }
-if(str1 === undefined || str2 === undefined && str1[0] != str2[0]){ 
+if(str1[0] != str2[0]){ //str1 === undefined || str2 === undefined, removed this because not test relevant here, but helpful in actual coding. Here could break test because not checking in base for undefined, error: "can not read length of undefined" Undefined has no length
   return false;
   }
 };
 
-//recursing infinintely for some reason...and also not returning the right boolean
 //tried to add [length - 1] to rule out if not the same length...but still having the same issue
 
   //compare each character of two strings
@@ -385,12 +402,6 @@ if(str1 === undefined || str2 === undefined && str1[0] != str2[0]){
   //make the false statement first? so have it check if any characters are index are not strictly equal kick out false
   
 
-  /**
-   * 
-   * NOT DONE YET...think I'm close, but not sure why reoccuring infinitely and not returning correct boolean
-   * 
-   */  
-
 
 
 // 16. Write a function that accepts a string and creates an array where each letter
@@ -401,8 +412,8 @@ if(str.length === 0){
   return outputArr;
 }
   //recursion
-  outputArr.push(str.slice(1));
-  return outputArr = createArray(str.slice(1)); //lost on how to get this to actually pull each letter
+  outputArr.push(str.slice(0, 1)); //0, 1 basically is GIVE ME from 0 to 1 that thing. And just .slice(1) means give me EVERYTHING after index 1
+  return createArray(str.slice(1), outputArr); //lost on how to get this to actually pull each letter
 };
 
 
@@ -414,20 +425,15 @@ if(str.length === 0){
       //split up each part of the string by letter
       //base when at end of string/string is empty?...think I need to probably manually pull each letter out
 
-
-   /**
-   * 
-   * NOT DONE YET...pretty sure I am missing something fundamental about this one
-   * 
-   */ 
-
 // 17. Reverse the order of an array
 var reverseArr = function (array, outputArr = []) {
 //base
-if(array.length === 0)
+if(array.length === 0){
+  return outputArr;
+}
 //recursion
-outputArr += array.length - 1;
-return reverseArr(array[array.length - 1]);
+outputArr.push(array.pop());
+return reverseArr(array, outputArr); 
 };
 
   //return an array
@@ -435,11 +441,7 @@ return reverseArr(array[array.length - 1]);
   //could probably pop each item off into a new array...don't think that actually worked? not sure how to do
   //stop once given array is emptied
 
-  /**
-   * 
-   * NOT DONE YET
-   * 
-   */
+
 
 // 18. Create a new array with a given value and length.
 // buildList(0,5) // [0,0,0,0,0]
@@ -466,16 +468,17 @@ if(length === 0){
 // 19. Count the occurence of a value inside a list.
 // countOccurrence([2,7,4,4,1,4], 4) // 3
 // countOccurrence([2,'banana',4,4,1,'banana'], 'banana') // 2
-var countOccurrence = function(array, value) {
+var countOccurrence = function(array, value, outputCount = 0) {
   //base
-  if(array.length - 1){; //if end of the array is true?
+  if(array.length === 0){; //need to get to the end of the array by removing the things to get to stop
     return outputCount;
   }
     //recursion
-  outputCount += 1; //I feel like this is the way to count??? 
+  
   if(array[0] === value){
-  return countOccurrence(array, value);
+  outputCount += 1; //I feel like this is the way to count???   
   }
+  return countOccurrence(array.slice(1), value, outputCount); //want to keep ahold of whatever variable use
 };
 
   //return a number
@@ -485,11 +488,6 @@ var countOccurrence = function(array, value) {
         //if index = value, then push + 1 into outputVar?
         //stop...when at the end of the array
 
-/**
-   * 
-   * NOT DONE YET...function comes back undefined...Not sure to make sure it still has a value
-   * 
-   */
 
 // 20. Write a recursive version of map.
 // rMap([1,2,3], timesTwo); // [2,4,6]
@@ -597,10 +595,14 @@ if(n > 0){
 // 26. Given an array of words, return a new array containing each word capitalized.
 // var words = ['i', 'am', 'learning', 'recursion'];
 // capitalizedWords(words); // ['I', 'AM', 'LEARNING', 'RECURSION']
-var capitalizeWords = function(input) {
+var capitalizeWords = function(input, index = 0, outputArr = []) {
   //base
-
-  //recursion
+  if(index === input.length){ //stop once have copied all elements into new outputArr
+    return outputArr;
+  }
+    //recursion
+    outputArr.push(input[index].toUpperCase());
+    return capitalizeWords(input, index + 1, outputArr); //could also do index++ this is so can move through index
 };
 
   //caps every character in an every element in the given array
@@ -609,12 +611,6 @@ var capitalizeWords = function(input) {
   //use toUpperCase on them - would I be able to just use this on the element to effect all characters?
 
 
-
-/**
- * 
- * NOT DONE YET
- */
-
 // 27. Given an array of strings, capitalize the first letter of each index.
 // capitalizeFirst(['car', 'poop', 'banana']); // ['Car', 'Poop', 'Banana']
 var capitalizeFirst = function(array) {
@@ -622,23 +618,18 @@ var capitalizeFirst = function(array) {
 if(array.length === 0){ //stop once given array is empty
 return [];
 }
-  //recursion
-  var helperArr = array[0].split("");
-  helperArr[0] = helperArr[0].toUpperCase();
-  return [helperArr.join("")].concat(capitalizeFirst(array.slice(1)));
-};
-
+  //recursion     //[car, poop, etc] - > helperArr to array[0].split("") - > [c, a, r], pulls 1st index element -> [helper.join("")] -> [Car]
+  var helperArr = array[0].split(""); //splits the element at index 0 on the recursion
+  helperArr[0] = helperArr[0].toUpperCase(); //then we focus on the first index of that word and caps it
+  return [helperArr.join("")].concat(capitalizeFirst(array.slice(1))); //[helperArr.join("")] is an actual array that I've brought back with the string joined/rejoined //the slicing happening here is to remove items from array to meet base
+};       //makes an array to work with methods    //concat is concating the rest of the characters BACK ONTO the now caps 1st letter
+//
 
   //take an array and within it caps the index [0] of each element
   //take an array and return an array
   //use toUpperCase on [0]...do I also need to slice(1) in the rest of the word?
   //recourse by moving through each element, [0] and going until reach length - 1?
-  
 
-/**
- * Done, but I need  more clarity on how the drilling into the array/spliting is working
- * 
- */
 
 // 28. Return the sum of all even numbers in an object containing nested objects.
 // var obj1 = {
@@ -661,8 +652,18 @@ var flatten = function(arrays) {
 
 // 30. Given a string, return an object containing tallies of each letter.
 // letterTally('potato'); // {'p':1, 'o':2, 't':2, 'a':1}
-var letterTally = function(str, obj) {
+var letterTally = function(str, outputObj = {}) {
+  //base
+if(str.length === 0){
+  return outputObj;
+}
+  //recursion
+  var firstLetter = str[0];
+  outputObj[firstLetter] = outputObj[firstLetter] ? outputObj[firstLetter] + 1 : 1; //asks if outputObj[firstLetter] has a value? if YES: add 1 to existing value. If NO then give key the value of 1.
+  return letterTally(str.slice(1), outputObj); //slicing off index 0 to rotate through and then working with the next NEW index 0
 };
+
+    //does outputObj have firstLetter? is check we're doing
 
   //make a string return as an object
     //object contains tallies of each letter - counting
@@ -673,28 +674,29 @@ var letterTally = function(str, obj) {
       //maybe looking if thereis no match, then add that letter to the object as a key
       //should I split up the string? eeeh...
 
-/**
- * NOT DONE YET 
- * 
- * */
 
 // 31. Eliminate consecutive duplicates in a list.  If the list contains repeated
 // elements they should be replaced with a single copy of the element. The order of the
 // elements should not be changed.
 // Example: compress([1, 2, 2, 3, 4, 4, 5, 5, 5]) // [1, 2, 3, 4, 5]
 // Example: compress([1, 2, 2, 3, 4, 4, 2, 5, 5, 5, 4, 4]) // [1, 2, 3, 4, 2, 5, 4]
-var compress = function(list) {
+var compress = function(list, outputArr = []) {
+  //base
+if(list.length === 0){
+  return outputArr;
+}
+  //recursion
+  
+  if(list[0] != outputArr[outputArr.length - 1]){ //checking if index 0 of the list we're slicing from IS NOT/is falsy IS NOT equal to the LAST element added to outputArr - this is to dodge consecutive duplicates
+    outputArr.push(list[0]);
+  }
+  return compress(list.slice(1), outputArr);
 };
 
   //input an array, output/return an array
   //remove consecutive duplicates...huh
   //don't change elements order
   //maybe use something like seed? compare past value to current, if a match splice/slice it out?
-
-/** 
- * NOT DONE YET 
- * 
- * */
 
 
 // 32. Augment every element in a list with a new value where each element is an array
@@ -707,7 +709,16 @@ var augmentElements = function(array, aug) {
 // 33. Reduce a series of zeroes to a single 0.
 // minimizeZeroes([2,0,0,0,1,4]) // [2,0,1,4]
 // minimizeZeroes([2,0,0,0,1,0,0,4]) // [2,0,1,0,4]
-var minimizeZeroes = function(array) {
+var minimizeZeroes = function(array, outputArr = []) {
+  //base
+if(array.length === 0){
+  return outputArr;
+}
+  //recursion
+  if(array[0] != 0 || array[0] != outputArr[outputArr.length - 1]){ //pushing in anything that is not zero, after get first zero (letting in ANYTHING that isn't a zero)
+    outputArr.push(array[0]);
+  }
+  return minimizeZeroes(array.slice(1), outputArr);
 };
 
 
@@ -715,55 +726,74 @@ var minimizeZeroes = function(array) {
   //takes an array, returns an array
   //perhaps pulling each number from the array and putting into a new array?
     //if number does not exist then add it to new array? else do nothing?
-  //base at array's length - 1?
+  //base at array's length - 1? --- NAH, base  at .length
   //recourse by checking condition of if number element exists in empty array
-  //make a default array, to hold non dup numbers?
+  //make a default array, to hold non dup numbers
 
-
-/** 
- * NOT DONE YET 
- * 
- * */
 
 // 34. Alternate the numbers in an array between positive and negative regardless of
 // their original sign.  The first number in the index always needs to be positive.
 // alternateSign([2,7,8,3,1,4]) // [2,-7,8,-3,1,-4]
 // alternateSign([-2,-7,8,3,-1,4]) // [2,-7,8,-3,1,-4]
-var alternateSign = function(array) {
+var alternateSign = function(array, outputArr = []) {
   //base
-
+if(array.length === 0){
+  return outputArr;
+}
   //recursion
+  //(# % 2 === 0) even, else odd        //[the brackets here allow us to work on the ACTUAL array]
+if(outputArr.length === 0 || outputArr[outputArr.length - 1] < 0){ //first checking if outputArr is empty, if so push in the number set to positive. OR if the PRIOR number was NEGATIVE, then push in a positive number.
+  outputArr.push(Math.abs(array[0]));
+} else {
+ outputArr.push(-Math.abs(array[0])); //having the negative in front of Math.abs is making sure it's ALWAYS set to negative. If tried to make the array negative and the value was negative already it would then become positive by mathing. Not wanted here
+}
+  //if(array.length % 2 === 0){
+
+return alternateSign(array.slice(1), outputArr);
 };
 
+//read up more on Math.abs - takes a number and always returns the positive. When put a minus in front of it it NOW ALWAYS MAKES A NEGATIVE number
 
   //change to positive/negative and alternate
   //first number has to be positive
   //change -+ regardless of original sign
   //if [0] make positive?, if even index make negative??? how do I change the sign of a value?
 
-/** 
- * NOT DONE YET 
- * 
- * */
 
 // 35. Given a string, return a string with digits converted to their word equivalent.
 // Assume all numbers are single digits (less than 10).
 // numToText("I have 5 dogs and 6 ponies"); // "I have five dogs and six ponies"
 var numToText = function(str) {
+  var obj = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six", 7: "seven", 8: "eight", 9: "nine"}; 
   //base
-if(str.length === 0){
+  if(str.length === 0){
   return "";
 }
   //recursion
-  var obj = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six", 7: "seven", 8: "eight", 9: "nine"};
-  var arr = str.split; //think I'm off...not sure how to make it a string again and swap number to word
-  if(str[0] != NaN){
-    return numToText(str);
+  var arr = str.split(" "); //think I'm off...not sure how to make it a string again and swap number to word
+  var firstWord = arr[0];
+  if(obj[firstWord]){
+    firstWord = obj[firstWord];
   }
-  
-};
+ return firstWord + " " + numToText(arr.splice(1).join(" ")).trim();
+}
 
-
+        //** BELOW is a neato way of to work more on the array. Uses concat like in capitalizeFirst. On each
+        //recursion was concating the words and then joining with spaces. Inner join puts the full sentence back together
+        //with the right amount of spaces, sans first word. Outter join made the final sentence returned without that surplus hanging space */
+// var numToText = function(str) {
+//   var obj = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six", 7: "seven", 8: "eight", 9: "nine"}; 
+//   //base
+//   if(str.length === 0){
+//   return "";
+// }
+//   var arr = str.split(" "); //think I'm off...not sure how to make it a string again and swap number to word
+//   var firstWord = arr[0];
+//   if(obj[firstWord]){
+//     firstWord = obj[firstWord];
+//   }
+//   return [firstWord].concat(numToText(arr.splice(1).join(" "))).join(" ");
+// }
   //input is a string, return string that converts digits to word version
   //all numbers are < 10, single digits
   //look for numbers and change to word version
@@ -771,9 +801,6 @@ if(str.length === 0){
       //??? 1:one, 2:two, 3:three, 4:four, 5:five, 6:six, 7:seven, 8:eight, 9:nine ???
         //could I add this as a default obj???
 
-/**
- * NOT DONE YET!
- */
 
 
 // *** EXTRA CREDIT ***
