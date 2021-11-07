@@ -491,19 +491,26 @@ var countOccurrence = function(array, value, outputCount = 0) {
 
 // 20. Write a recursive version of map.
 // rMap([1,2,3], timesTwo); // [2,4,6]
-var rMap = function(array, callback) {
+var rMap = function(array, callback, outputArr = []) {
   //base
-
+if(array.length === outputArr.length){ //so we stop when the two array's length's match because have gone through completely
+  return outputArr;
+}
   //recursion
-
+outputArr.push(callback(array[outputArr.length])); // < --- using outputArr as the recursing index number, becaue it's changing with each push
+return rMap(array, callback, outputArr);
 };
+
+//as move through the recursions, the .length number/property will change as more things are added into that outputArr, 
+//therefore, we're just moving along with it
+//outputArr is holding values and the index
 
   //can't use native of map
   //return new array without mutating
   //apply function at every value in array
 
   
-      //map code below
+        //map code below
   /**_.map = function(collection, func){
     var outputArr = [];
    if(Array.isArray(collection) === true){
@@ -519,11 +526,6 @@ var rMap = function(array, callback) {
 } */
 
 
-  /**
-   * 
-   * NOT DONE YET
-   * 
-   */
 
 // 21. Write a function that counts the number of times a key occurs in an object.
 // var testobj = {'e': {'x':'y'}, 't':{'r': {'e':'r'}, 'p': {'y':'r'}},'y':'e'};
