@@ -132,13 +132,18 @@ var sumBelow = function(n) {
 // Example:  range(2, 9);  // [3, 4, 5, 6, 7, 8]
 var range = function(x, y, arr = []) { //added a default parameter, with the array literal
   //base ...when we stop and what value we may need to return
-  if(x + 1 === y){ //need to see if x is actually a number BELOW y, so add 1 to it and see if === y
-    return arr; 
+  if(x + 1 === y || x === y){ //need to see if x is actually a number BELOW y, so add 1 to it and see if === y
+    return arr;               //if x === y on its own, then there is no range so just return the array
+  } else if (x - 1 === y){
+    return arr;
   }
   //recursion
   arr.push(x + 1); //[4]
+  if (x < y){
   return range(x + 1, y, arr); //(4, y) ...remember to bring back array, so that the values carry on
- 
+} else if (x > y){
+  return range(x - 1, y, arr);
+}
      //should work if x is LESS than y, countup
     //should work on if x is GREATER than y, countdown
   
