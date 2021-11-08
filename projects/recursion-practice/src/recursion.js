@@ -209,13 +209,13 @@ if(exp === 1){//counting down number of exp remaining, when get to 1 return base
 // powerOfTwo(10); // false
 var powerOfTwo = function(n) {
   //base
-if(n === 0){
+if(n === 1){    //16/2=8, 8/2=4, 4/2=2...then it ends at 1, so a power of 2
   return true;
-} else {
+} else if (n < 1) { //but if it's not a power of two then the last recursion will come back as less than 1, so NOT a power of two
   return false;
 }
   //recursion
-return powerOfTwo(n % 2); //not sure why can't reach code...probably because activating base right off the bat...
+return powerOfTwo(n / 2); //not sure why can't reach code...probably because activating base right off the bat...
 };
   
   //Refresh on powers of two mathings...maybe like squaring?
