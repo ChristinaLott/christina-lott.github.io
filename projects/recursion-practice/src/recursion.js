@@ -144,10 +144,22 @@ var range = function(x, y, arr = []) { //added a default parameter, with the arr
 } else if (x > y){
   return range(x - 1, y, arr);
 }
+
+// if (x - y === 0) {
+//   return [x];
+// } else if (x <= y) {
+//   var numbers = range (x, y - 1);
+//   arr.push(y);
+//   return arr;
+// }
+
      //should work if x is LESS than y, countup
     //should work on if x is GREATER than y, countdown
   
 }
+  //in your return range
+  // try doing x, y -1
+  // and change the first else if to x <= y
 
 
   //need to get this to work for negative numbers and ranges that are the same x and y

@@ -94,7 +94,7 @@ _.typeOf = function(value){
 
 _.first = function(array, number){
 console.log(array, number, "argument values");
-    var outputArr = [];
+    //var outputArr = [];
 if(!Array.isArray(array) || number <= 0){
       return [];
   } else if(number === undefined || number === NaN){
