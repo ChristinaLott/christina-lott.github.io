@@ -4,6 +4,7 @@
 
 var customers = require('./data/customers.json');
 var _ = require("underbar");
+const { filter } = require('lodash');
 
 /**
  * 1. Import your lodown module using the require() method,
@@ -21,20 +22,34 @@ var _ = require("underbar");
  *    IMPORTANT: Make sure you replace <YOUR_GITHUB_FOLDER with your actual github folder name that is in your workspace.
  */
 
-var maleCount = function(array) {
-    
-};
+var maleCount = function() {
+    var males = filter(array, function(customers){
+        if (customer.gender === "male"){
+            return true;
+        } else {
+            return false;
+        }
+    });
+}; //how is this returning a number count? it looks like it would return the elements/values?
 
+
+//I want to get the number of males
+//use filter to filter/nab just those with gender male
     //# of male customers
     //input: array
     //output: number
     //use filter
-        //review notes for support
+
 
 
 var femaleCount = function(array){
-
+    //var female = reduce(customer, func){
+    //if(customer.gender === "female")
+   // }, 0);
 };
+
+//want the count/# of females
+//use reduce function
 
     //# of female customers
     //input: array
@@ -93,7 +108,7 @@ var friendFirstLetterCount = function (array, customer, letter){
     //how many friends of a customer has have names that start with given letter
     //input: array, customer(obj?), letter
     //output: number
-        //review notes for support
+        //notes
 
 var friendsCount = function (array, name){
 
@@ -128,6 +143,7 @@ var genderCount = function(array){
     //input: array
     //output: object
     //use reduce
+        //notes
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
