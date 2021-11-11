@@ -130,6 +130,7 @@ var sumBelow = function(n) {
 
 // 6. Get the integers in range (x, y).
 // Example:  range(2, 9);  // [3, 4, 5, 6, 7, 8]
+//(7, 2) -> []
 var range = function(x, y, arr = []) { //added a default parameter, with the array literal
   //base ...when we stop and what value we may need to return
   if(x + 1 === y || x === y){ //need to see if x is actually a number BELOW y, so add 1 to it and see if === y
@@ -138,10 +139,11 @@ var range = function(x, y, arr = []) { //added a default parameter, with the arr
     return arr;
   }
   //recursion
-  arr.push(x + 1); //[4]
   if (x < y){
+  arr.push(x + 1); //make sure to put this within the recursion, vs outside of it because there is a condition here
   return range(x + 1, y, arr); //(4, y) ...remember to bring back array, so that the values carry on
 } else if (x > y){
+  arr.push(x - 1);
   return range(x - 1, y, arr);
 }
 
@@ -430,6 +432,7 @@ if(str.length === 0){
 }
   //recursion
   outputArr.push(str.slice(0, 1)); //0, 1 basically is GIVE ME from 0 to 1 that thing. And just .slice(1) means give me EVERYTHING after index 1
+  //or could do: outputArr.push(str[0]);
   return createArray(str.slice(1), outputArr); //lost on how to get this to actually pull each letter
 };
 
