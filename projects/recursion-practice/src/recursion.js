@@ -187,13 +187,6 @@ var range = function(x, y, arr = []) { //added a default parameter, with the arr
 
 
 
-  /**
-   * 
-   * NOT DONE YET
-   * 
-   */
-
-
 // 7. Compute the exponent of a number.
 // The exponent of a number says how many times the base number is used as a factor.
 // 8^2 = 8 x 8 = 64.  Here, 8 is the base and 2 is the exponent.
@@ -242,10 +235,6 @@ return powerOfTwo(n / 2); //not sure why can't reach code...probably because act
     //return true for powers of two
 
 
-/**
- * NOT DONE YET
- * 
- */
 
 
 // 9. Write a function that accepts a string a reverses it.
