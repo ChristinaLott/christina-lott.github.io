@@ -649,11 +649,6 @@ _.reduce = function(arr, func, seed){
     return seed;
 }
 
-/**
- * 
- * NOT DONE YET, pseudocoded some...revisit concept of seed, need it to ACT upon with the func
- */
-
 
 
 
