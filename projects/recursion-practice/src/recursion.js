@@ -296,11 +296,6 @@ return palindrome(string.slice(1, string.length - 1)); //TacocaT...when goes thr
 
 
 
-/** 
- * NOT DONE YET
- * 
- */
-
 // 11. Write a function that returns the remainder of x divided by y without using the
 // modulo (%) operator.
 // modulo(5,2) // 1
