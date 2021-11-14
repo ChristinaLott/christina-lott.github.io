@@ -17,7 +17,7 @@ const { filter } = require('lodash');
  *
  * 4. To test your work, run the following command in your terminal:
  *
- *    npm start --prefix ./npm start --prefix ./christina-lott.github.io/projects/let-s-get-functional/projects/let-s-get-functional
+ *    npm start --prefix ./christina-lott.github.io/projects/let-s-get-functional
  *
  *    IMPORTANT: Make sure you replace <YOUR_GITHUB_FOLDER with your actual github folder name that is in your workspace.
  */
