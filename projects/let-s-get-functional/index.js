@@ -227,7 +227,7 @@ const { filter } = require('lodash');
 
 
 
-var maleCount = function() {
+var maleCount = function(array) {
     var males = _.filter(array, function(customer, index, array){ //customer stands in current value passing through the array
         if (customer.gender === "male"){
             return true;
@@ -255,11 +255,13 @@ var maleCount = function() {
 
 
 var femaleCount = function(array){
-    var female = _.reduce(customer, function(/**need to figure out the paramets for this tester function */), seed)
-    
-    //var female = _.reduce(customer, func){
-    //if(customer.gender === "female")
-   // }, 0);
+    var female = _.reduce(array, function(seed, customer, i){ //reduce is doing my iteration/loop and has the stop condition within it
+        if(customer.gender === "female"){
+            return seed + 1; //adds 1 when the condition is true
+        }
+        return seed; //need to return seed because if the condition is false, it wouold return undefined and can't add with that
+    }, 0);
+    return female;
 };
 
 //want the count/# of females
@@ -289,10 +291,19 @@ var femaleCount = function(array){
 
 
 var oldestCustomer = function(array){
-
+    var oldestCustomer = _.reduce(array, function(seedIsPreviousOldestCustomer, currentCustomer){
+        if(seedIsPreviousOldestCustomer.age < currentCustomer.age){
+            return currentCustomer;
+        }
+        return seedIsPreviousOldestCustomer;
+    }) //leaving seed undefined because reduce will set it to 0 already
+    return oldestCustomer.name; //use to return the name value want
 };
 
     //oldest customer name
+        //need to look at age key's value
+        //return their name
+            //just need 1 value back, so reduce is good
     //input: array
     //output: string
         //can use whatever works, I guess?
