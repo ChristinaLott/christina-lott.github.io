@@ -238,7 +238,6 @@ var maleCount = function(array) {
     return males.length; //this uses the filter's return value that is an array, and uses .length to get the count
 }; 
 
-//not passing the test for some reason??
 
 
 //I want to get the number of males
@@ -311,7 +310,22 @@ var oldestCustomer = function(array){
 
 
 var youngestCustomer = function(array){
+    return _.reduce(array, function(seedIsPreviousYoungestCustomer, currentCustomer){
+        if(seedIsPreviousYoungestCustomer.age > currentCustomer.age){
+            return currentCustomer;
+        }
+        return seedIsPreviousYoungestCustomer; 
+    }).name; //reduce evaluates to the object/within the same object/ still so can add .name to get the value needed
 
+
+            //here's a way to do it how I'm "familiar" with. Above is a nifty chain way
+    // var youngestCustomer = _.reduce(array, function(seedIsPreviousYoungestCustomer, currentCustomer){
+    //     if(seedIsPreviousYoungestCustomer.age > currentCustomer.age){
+    //         return currentCustomer;
+    //     }
+    //     return seedIsPreviousYoungestCustomer;
+    // })
+    // return youngestCustomer.name;
 };
 
    //youngest customer name
@@ -345,51 +359,176 @@ var averageBalance = function(array){
 
 
 var firstLetterCount = function(array, letter){
+    var firstLetter = _.filter(array, function(customer, index, array){ //customer stands in current value passing through the array
+        //need to make case insenstive
+        if (customer.name[0].toLowerCase() === letter.toLowerCase()){ //making all the things lowercase so no fox given
+            return true;
+        } else {
+            return false;
+        }
+    });
+    return firstLetter.length; //this uses the filter's return value that is an array, and uses .length to get the count
+}; 
 
-};
 
     //how many customers names begin with given letter
     //input: array, letter
     //output: number
+    //need to make case insenstive
         //use whatevs?
 
 
 
-var friendFirstLetterCount = function (array, customer, letter){
+var friendFirstLetterCount = function (array, customerName, letter){
+    //find customer
 
+    // var maleCount = function(array) {
+        var customer = _.filter(array, function(customer, index, array){ //customer stands in current value passing through the array
+            if (customer.name === customerName){
+                return true;
+            } else {
+                return false;
+            }
+        })[0]; //using method chaining to look within that pulled customer's array at index 0. variable customer was assigned this object in the array created from the filter method
+       return firstLetterCount(customer.friends, letter); //using the prior firstLetterCount function to look for first letters, then pass in as arugments the array within the specfic given customer to look at their matched customer object in their object of friends, and pass in the letter to look for
 };
 
-    //how many friends of a customer has have names that start with given letter
+
+
+//need to find customer with name (so look for match with given input customer name)
+//then need to look within that customer's object of friends (so drill into the variable created of that specfic customer and look at the key friends)
+//then need to look at each friend's first letter of name [0] (used prior firstLetterCount function)
+    //how many friends of a customer has names that start with given letter
     //input: array, customer(obj?), letter
     //output: number
+    //needs to be case insensitive
         //notes
 
-var friendsCount = function (array, name){
-
+var friendsCount = function (array, friendName){
+    //use filter to return an array
+    var customersWithFriend = _.filter(array, function(customer, index, array){
+        //need to write tester - test to find customers that have input name in their friends object
+        var friendsWithName = _.filter(customer.friends, function(friend){ //doing a filter on each customer's friend's array
+            if(friend.name === friendName){ //does this customer's friend have this name?
+                return true;
+            } else {
+                return false;
+            }
+        });
+        if(friendsWithName.length > 0){ //checking if this filter actually has anything in it, checking truthiness of length
+            return true; 
+        } else {
+            return false; //if false then they're not added to the returned customersWithFriend array
+        }
+    });
+    return _.pluck(customersWithFriend, "name"); //use pluck because it uses map to map values we already want, and
+    //for this we want to grab/pluck JUST the names of those customer's who are friends with the input name person
 };
+
+//this is a nested loop, dear LORD. have to loop/move through each customer, in order to THEN loop
+//through each of the customer's friend's lists that are arrays of objects of their friends
+//do this these double loops in order to pull the names of customers who are friends with the given
+//friend input name...
+
+
+//need to find match of the name in all friend objects that have that name listed
+//return an array of those friends with that name as a friend...so anyone who has that friend return their names
 
     //find customers that have given customer's name in their friends
     //input: array, name (str?)
     //output: array
 
+    // function filter (arr, func){
+    //     var outputArr = []; 
+    //     for(var i = 0; i < arr.length; i++){
+    //         if(func(arr[i], i, arr) === true){ //if condition AUTOMATICALLY checks for truthy, so could drop === true
+    //             outputArr.push(arr[i]); 
+    //         }
+    //     }
+    //     return outputArr;
+    // }
+
+
+    // function search(animals, animalName){
+    //     for (var i = 0; i < animals.length; i++){
+    //         if (animalName === animals[i].name){
+    //         return animals[i];
+    //     }
+    // }
+    //     return null;
+    // }
 
 
 var topThreeTags = function(array){
-
+    var allTags = _.pluck(array, "tags"); //taking every customers tags and putting them ALL into an array
+    var tagCounts = _.reduce(allTags, function(previousTagCountSeed, currentTagsArr){ //previousTagCountSeed is an object
+        for(var i = 0; i < currentTagsArr.length; i++){ //need to iterate through the collected tags, one by one
+            var tagName = currentTagsArr[i]; //assigning tagName to each of the tags, so not just one  giant array
+            if(previousTagCountSeed[tagName] != undefined){
+                previousTagCountSeed[tagName] += 1;
+             } else {
+                 previousTagCountSeed[tagName] = 1; //setting previousTagCount if it doesn't exist already, so that means there is 1 of it so far
+             }
+        }
+        return previousTagCountSeed;
+    }, {});//the empty object is our seed. Using reduce we are able to return the above for looop as an object with the tags made as keys and their counts
+    var tagList = []; //retrieving the individual unqiue tag names (can't use the unique method because that takes an array as an argument instead of an obj)
+    for(var tag in tagCounts){ //then for in looping to create array with every tag within it only ONCE
+        tagList.push(tag);
+    } 
+    return tagList.sort(function(tagA, tagB){ //sort returns either a -1 or 1, which is used to sort
+        if (tagCounts[tagA] > tagCounts[tagB]){
+            return -1;
+        } else {
+            return 1;
+        }
+    }).slice(0,3); //slice out all other elements within the array, because it has sorted and we just want the  top 3 tags
 };
 
+//just sorting tagList based on the counts we got from tagCounts
+//get more clarity on what's happening with tagList and tagCounts
+
+// sorted = flatTags.sort((a, b) => tagCount[a] > tagCount[b] ? 1 : -1)
+
+//need to iterate through all customers
+//need to look within their tags key
+    //count? how the tags that occur the most
+    //return the top three tags with highest numbers
+    //why.
 
     //find three most common tags among customers
     //input: array
     //output: array
 
 
+    // var femaleCount = function(array){
+    //     var female = _.reduce(array, function(seed, customer, i){ //reduce is doing my iteration/loop and has the stop condition within it
+    //         if(customer.gender === "female"){
+    //             return seed + 1; //adds 1 when the condition is true
+    //         }
+    //         return seed; //need to return seed because if the condition is false, it wouold return undefined and can't add with that
+    //     }, 0);
+    //     return female;
+    // };
+
+
 
 var genderCount = function(array){
+    var genderCounts = _.reduce(array, function(previousGenderCountSeed, customer){ //previousTagCountSeed is an object
+        var gender = customer.gender;
+        if(previousGenderCountSeed[gender] != undefined){
+            previousGenderCountSeed[gender] += 1;
+        } else {
+            previousGenderCountSeed[gender] = 1; //setting previousGenderCount if it doesn't exist already, so that means there is 1 of it so far
+        }
+        return previousGenderCountSeed;
+    }, {});//the empty object is our seed
+        //use reduce to make a thing, set seed as an object
+    return genderCounts;
+ };
 
-};
-
-
+// should return an object
+// should return a summary of customer genders
     //summary of genders
         //male: 1
         //female: 3
